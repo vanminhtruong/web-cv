@@ -1,0 +1,110 @@
+{
+  "app": {
+    "title": "Lý Lịch Cá Nhân",
+    "language": "Tiếng Việt"
+  },
+  "nav": {
+    "home": "Trang Chủ",
+    "about": "Giới Thiệu",
+    "skills": "Kỹ Năng",
+    "experience": "Kinh Nghiệm",
+    "education": "Học Vấn",
+    "projects": "Dự Án",
+    "contact": "Liên Hệ",
+    "downloadCV": "Tải CV",
+    "links": "Liên Kết",
+    "connect": "Kết Nối"
+  },
+  "home": {
+    "greeting": "Xin chào, tôi là",
+    "role": "Lập trình viên Web",
+    "objective": "Mục tiêu",
+    "shortTermTitle": "Mục tiêu ngắn hạn",
+    "longTermTitle": "Mục tiêu dài hạn",
+    "description": "Đam mê tạo ra các ứng dụng web đẹp và chức năng",
+    "downloadCV": "Tải CV",
+    "contactMe": "Liên Hệ Tôi",
+    "shortTermGoal": "Trở thành một nhà phát triển Full Stack Web cấp độ junior trong năm tới.",
+    "longTermGoal": "Thăng tiến lên vị trí nhà phát triển Full Stack Web cấp độ senior trong vòng năm năm tới."
+  },
+  "about": {
+    "title": "Về Tôi",
+    "content": "Tôi là sinh viên năm cuối ngành Công nghệ Thông tin với niềm đam mê mạnh mẽ về lập trình, đặc biệt là phát triển web sử dụng các framework hiện đại như ReactJS. Tôi đã hoàn thành khóa thực tập 3 tháng tại Công ty TNHH Phát triển Phần mềm CY Việt Nam, nơi tôi đã có được kinh nghiệm thực tế quý báu trong việc phát triển và tối ưu hóa các ứng dụng web sử dụng ReactJS. Ngoài ra, tôi còn thực tập tại Công ty Cổ phần Công nghệ Nacencom, giúp nâng cao kỹ năng thực tế và kinh nghiệm trong lĩnh vực CNTT. Tôi mong muốn áp dụng kiến thức của mình và tiếp tục trau dồi kỹ năng lập trình trong môi trường làm việc chuyên nghiệp.",
+    "description": "Tôi là một nhà phát triển web tận tâm với niềm đam mê tạo ra các giải pháp sáng tạo. Tôi thích làm việc trên các dự án thách thức và liên tục học hỏi các công nghệ mới.",
+    "personalInfo": "Thông Tin Cá Nhân",
+    "name": "Tên",
+    "age": "Tuổi",
+    "email": "Email",
+    "phone": "Điện Thoại",
+    "address": "Địa Chỉ",
+    "addressValue": "Quận Hoàng Mai, Hà Nội",
+    "languages": "Ngôn Ngữ"
+  },
+  "skills": {
+    "title": "Kỹ Năng Của Tôi",
+    "technical": "Kỹ Năng Kỹ Thuật",
+    "soft": "Kỹ Năng Mềm",
+    "languages": "Ngôn Ngữ Lập Trình",
+    "frameworks": "Framework & Thư Viện",
+    "tools": "Công Cụ & Công Nghệ",
+    "course1": "Lập trình Hướng đối tượng (A)",
+    "course2": "Cấu trúc dữ liệu và Giải thuật (A-)",
+    "course3": "Cơ sở dữ liệu Quan hệ (A)"
+  },
+  "experience": {
+    "title": "Kinh Nghiệm Làm Việc",
+    "present": "Hiện Tại",
+    "responsibilities": "Trách Nhiệm",
+    "period1": "02/10/2024 - 01/01/2025",
+    "date1": "Tháng 2 năm 2024 - Hiện tại",
+    "company1": "Công ty TNHH Phát triển Phần mềm CY Việt Nam",
+    "position1": "Vị trí Thực tập sinh VueJS",
+    "department1": "Phát triển Front End",
+    "responsibility1": "Sử dụng VueJS để xây dựng giao diện người dùng và triển khai các tính năng như quản lý đơn hàng, thông báo trạng thái giao hàng và thanh toán trực tuyến tích hợp VNPay.",
+    "responsibility2": "Sử dụng Vue Router để xử lý điều hướng và tối ưu hóa ứng dụng cho trải nghiệm người dùng.",
+    "responsibility3": "Cải thiện trải nghiệm người dùng và giải quyết các vấn đề dựa trên phản hồi từ đội QA."
+  },
+  "education": {
+    "title": "Học Vấn",
+    "degree": "Bằng Cấp",
+    "field": "Lĩnh Vực Học Tập",
+    "gpa": "Điểm Trung Bình",
+    "schoolName": "Trường Cao đẳng Kinh tế Công nghiệp Hà Nội",
+    "major": "Chuyên ngành Kỹ thuật Phần mềm (GPA 3.56)",
+    "location": "Hà Nội, Việt Nam (Năm cuối)",
+    "period": "01/05/2021 - 05/06/2024"
+  },
+  "projects": {
+    "title": "Dự Án",
+    "viewProject": "Xem Dự Án",
+    "viewCode": "Xem Mã Nguồn"
+  },
+  "contact": {
+    "title": "Liên Hệ Tôi",
+    "name": "Tên",
+    "email": "Email",
+    "subject": "Chủ Đề",
+    "message": "Tin Nhắn",
+    "send": "Gửi Tin Nhắn",
+    "required": "Trường này là bắt buộc",
+    "validEmail": "Vui lòng nhập email hợp lệ",
+    "success": "Tin nhắn đã được gửi thành công!",
+    "error": "Lỗi khi gửi tin nhắn. Vui lòng thử lại.",
+    "mobile": "Di động",
+    "phoneNumber": "0982743860",
+    "emailAddress": "vanminhtruong95@gmail.com",
+    "githubProject": "Dự án GitHub",
+    "libraryProject": "Dự án Thư viện",
+    "projectWebsite": "Website Dự án",
+    "namePlaceholder": "Nhập tên của bạn",
+    "emailPlaceholder": "Nhập email của bạn",
+    "subjectPlaceholder": "Nhập chủ đề tin nhắn",
+    "messagePlaceholder": "Nhập tin nhắn của bạn"
+  },
+  "footer": {
+    "copyright": "Tất Cả Các Quyền Được Bảo Lưu",
+    "allRightsReserved": "Tất Cả Các Quyền Được Bảo Lưu",
+    "description": "Lập trình viên Frontend chuyên về tạo giao diện người dùng với kinh nghiệm phát triển ứng dụng web.",
+    "copyrightText": "© {year} {name}. Tất cả các quyền được bảo lưu."
+  }
+}

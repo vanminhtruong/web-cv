@@ -1,9 +1,12 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import { ref, onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { useThemeStore } from './stores/theme'
 import { useProfileStore } from './stores/profile'
+import LanguageSwitcher from './components/LanguageSwitcher.vue'
 
+const { t } = useI18n()
 const themeStore = useThemeStore()
 const profileStore = useProfileStore()
 const isMobileMenuOpen = ref(false)
@@ -51,21 +54,23 @@ onMounted(() => {
           <!-- Desktop Navigation -->
           <nav class="hidden md:flex space-x-8">
             <RouterLink to="/" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 py-2 text-base font-medium transition-colors duration-200">
-              Home
+              {{ t('nav.home') }}
             </RouterLink>
             <RouterLink to="/skills" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 py-2 text-base font-medium transition-colors duration-200">
-              Skill
+              {{ t('nav.skills') }}
             </RouterLink>
             <RouterLink to="/experience" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 py-2 text-base font-medium transition-colors duration-200">
-              Experience
+              {{ t('nav.experience') }}
             </RouterLink>
             <RouterLink to="/contact" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 py-2 text-base font-medium transition-colors duration-200">
-              Contact
+              {{ t('nav.contact') }}
             </RouterLink>
           </nav>
           
           <!-- Theme Toggle & Download CV Button (Desktop) -->
           <div class="hidden md:flex items-center space-x-4">
+            <!-- Language Switcher -->
+            <LanguageSwitcher />
             <!-- Theme Toggle Button -->
             <button @click="themeStore.toggleTheme" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300">
               <svg v-if="!themeStore.isDark" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -81,7 +86,7 @@ onMounted(() => {
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
               </svg>
-              Download CV
+              {{ t('nav.downloadCV') }}
             </a>
           </div>
           
@@ -103,25 +108,27 @@ onMounted(() => {
       <div v-if="isMobileMenuOpen" class="md:hidden bg-white dark:bg-gray-800 shadow-lg mt-2 py-3 px-4 transition-all duration-300">
         <div class="flex flex-col space-y-3">
           <RouterLink to="/" @click="closeMobileMenu" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 py-2 text-base font-medium transition-colors duration-200">
-            Trang chủ
+            {{ t('nav.home') }}
           </RouterLink>
           <RouterLink to="/skills" @click="closeMobileMenu" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 py-2 text-base font-medium transition-colors duration-200">
-            Kỹ năng
+            {{ t('nav.skills') }}
           </RouterLink>
           <RouterLink to="/experience" @click="closeMobileMenu" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 py-2 text-base font-medium transition-colors duration-200">
-            Kinh nghiệm
+            {{ t('nav.experience') }}
           </RouterLink>
           <RouterLink to="/contact" @click="closeMobileMenu" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 py-2 text-base font-medium transition-colors duration-200">
-            Liên hệ
+            {{ t('nav.contact') }}
           </RouterLink>
           
           <!-- Download CV Button (Mobile) -->
           <div class="flex items-center justify-between">
+            <!-- Language Switcher (Mobile) -->
+            <LanguageSwitcher />
             <a href="/TruongVanMinh-CV.pdf" download class="inline-flex items-center px-4 py-2 bg-indigo-600 dark:bg-indigo-700 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 dark:hover:bg-indigo-800 transition-colors duration-300">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
               </svg>
-              Tải CV
+              {{ t('nav.downloadCV') }}
             </a>
             
             <!-- Theme Toggle Button (Mobile) -->
@@ -149,30 +156,30 @@ onMounted(() => {
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 class="text-xl font-semibold mb-4">{{ profileStore.fullName }}</h3>
-            <p class="text-gray-400 mb-4">{{ profileStore.description }}</p>
-            <p class="text-gray-400">© {{ profileStore.year }} {{ profileStore.fullName }}. Tất cả các quyền được bảo lưu.</p>
+            <p class="text-gray-400 mb-4">{{ t('footer.description') }}</p>
+            <p class="text-gray-400">{{ t('footer.copyrightText', {year: profileStore.year, name: profileStore.fullName}) }}</p>
           </div>
           
           <div>
-            <h3 class="text-xl font-semibold mb-4">Liên kết</h3>
+            <h3 class="text-xl font-semibold mb-4">{{ t('nav.links') }}</h3>
             <ul class="space-y-2">
               <li>
-                <RouterLink to="/" class="text-gray-400 hover:text-white transition-colors duration-200">Trang chủ</RouterLink>
+                <RouterLink to="/" class="text-gray-400 hover:text-white transition-colors duration-200">{{ t('nav.home') }}</RouterLink>
               </li>
               <li>
-                <RouterLink to="/skills" class="text-gray-400 hover:text-white transition-colors duration-200">Kỹ năng</RouterLink>
+                <RouterLink to="/skills" class="text-gray-400 hover:text-white transition-colors duration-200">{{ t('nav.skills') }}</RouterLink>
               </li>
               <li>
-                <RouterLink to="/experience" class="text-gray-400 hover:text-white transition-colors duration-200">Kinh nghiệm</RouterLink>
+                <RouterLink to="/experience" class="text-gray-400 hover:text-white transition-colors duration-200">{{ t('nav.experience') }}</RouterLink>
               </li>
               <li>
-                <RouterLink to="/contact" class="text-gray-400 hover:text-white transition-colors duration-200">Liên hệ</RouterLink>
+                <RouterLink to="/contact" class="text-gray-400 hover:text-white transition-colors duration-200">{{ t('nav.contact') }}</RouterLink>
               </li>
             </ul>
           </div>
           
           <div>
-            <h3 class="text-xl font-semibold mb-4">Kết nối</h3>
+            <h3 class="text-xl font-semibold mb-4">{{ t('nav.connect') }}</h3>
             <div class="flex space-x-4">
               <a :href="profileStore.socialLinks.facebook" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors duration-200">
                 <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">

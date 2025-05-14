@@ -1,7 +1,9 @@
 <script setup>
 import { useThemeStore } from '../stores/theme'
+import { useI18n } from 'vue-i18n'
 
 const themeStore = useThemeStore()
+const { t } = useI18n()
 </script>
 
 <template>
@@ -17,7 +19,7 @@ const themeStore = useThemeStore()
               </svg>
             </div>
           </div>
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white inline-block pb-2 border-b-4 border-indigo-500 transform transition-all duration-300 hover:scale-105">EDUCATION</h2>
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white inline-block pb-2 border-b-4 border-indigo-500 transform transition-all duration-300 hover:scale-105">{{ t('education.title').toUpperCase() }}</h2>
         </div>
         
         <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-8 mb-8 transform hover:-translate-y-1 border-l-4 border-indigo-500">
@@ -31,16 +33,16 @@ const themeStore = useThemeStore()
                 </svg>
               </div>
               <div>
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white">Hanoi College of Industrial Economics College</h3>
-                <p class="text-lg font-medium text-indigo-600 mt-1">Major in Software Engineering (GPA 3.56)</p>
-                <div class="text-gray-600 dark:text-gray-400 mt-1">Hanoi, Vietnam (Senior year)</div>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white">{{ t('education.schoolName') }}</h3>
+                <p class="text-lg font-medium text-indigo-600 mt-1">{{ t('education.major') }}</p>
+                <div class="text-gray-600 dark:text-gray-400 mt-1">{{ t('education.location') }}</div>
               </div>
             </div>
             <div class="bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-gray-700 dark:to-gray-600 px-4 py-2 rounded-lg shadow-sm mt-4 md:mt-0 flex items-center">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
-              <span class="text-gray-700 dark:text-gray-300 font-medium">01/05/2021 - 05/06/2024</span>
+              <span class="text-gray-700 dark:text-gray-300 font-medium">{{ t('education.period') }}</span>
             </div>
           </div>
           
@@ -51,20 +53,26 @@ const themeStore = useThemeStore()
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
-              <h4 class="text-lg font-semibold text-gray-800 dark:text-white">Academic achievements</h4>
+              <h4 class="text-lg font-semibold text-gray-800 dark:text-white">{{ t('education.degree') }}</h4>
             </div>
             <ul class="ml-11 space-y-2">
               <li class="flex items-start">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
                 </svg>
-                <span>Web Programming (A)</span>
+                <span>{{ t('skills.course1') }}</span>
               </li>
               <li class="flex items-start">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
                 </svg>
-                <span>Relational Database (A)</span>
+                <span>{{ t('skills.course2') }}</span>
+              </li>
+              <li class="flex items-start">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
+                </svg>
+                <span>{{ t('skills.course3') }}</span>
               </li>
             </ul>
           </div>
@@ -81,7 +89,7 @@ const themeStore = useThemeStore()
               </svg>
             </div>
           </div>
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white inline-block pb-2 border-b-4 border-indigo-500 transform transition-all duration-300 hover:scale-105">SKILLS</h2>
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white inline-block pb-2 border-b-4 border-indigo-500 transform transition-all duration-300 hover:scale-105">{{ t('skills.title').toUpperCase() }}</h2>
         </div>
         
         <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-8 transform hover:-translate-y-1 border-l-4 border-indigo-500">
@@ -94,7 +102,7 @@ const themeStore = useThemeStore()
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
                     </svg>
                   </div>
-                  <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Front End</h3>
+                  <h3 class="text-xl font-semibold text-gray-900 dark:text-white">{{ t('skills.frameworks') }}</h3>
                 </div>
                 <div class="flex flex-wrap gap-2 ml-13">
                   <span class="px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/30 dark:to-indigo-900/30 text-indigo-800 dark:text-indigo-300 rounded-lg text-sm font-medium border border-indigo-100 shadow-sm hover:shadow transition-all duration-300 hover:-translate-y-1 flex items-center">

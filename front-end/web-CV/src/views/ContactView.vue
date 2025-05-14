@@ -1,7 +1,9 @@
 <script setup>
 import { useThemeStore } from '../stores/theme'
+import { useI18n } from 'vue-i18n'
 
 const themeStore = useThemeStore()
+const { t } = useI18n()
 </script>
 
 <template>
@@ -17,7 +19,7 @@ const themeStore = useThemeStore()
               </svg>
             </div>
           </div>
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white inline-block pb-2 border-b-4 border-indigo-500 transform transition-all duration-300 hover:scale-105">CONTACT</h2>
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white inline-block pb-2 border-b-4 border-indigo-500 transform transition-all duration-300 hover:scale-105">{{ t('contact.title').toUpperCase() }}</h2>
         </div>
         
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -29,7 +31,7 @@ const themeStore = useThemeStore()
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
-              <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">Contact Information</h3>
+              <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">{{ t('contact.title') }}</h3>
             </div>
             
             <div class="space-y-6 mt-8">
@@ -40,10 +42,10 @@ const themeStore = useThemeStore()
                   </svg>
                 </div>
                 <div>
-                  <h4 class="text-lg font-medium text-gray-900 dark:text-white mb-1">Phone</h4>
+                  <h4 class="text-lg font-medium text-gray-900 dark:text-white mb-1">{{ t('about.phone') }}</h4>
                   <p class="text-gray-600 dark:text-gray-300 flex items-center">
-                    <span class="px-3 py-1 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-300 rounded-full text-sm font-medium mr-2">Mobile</span>
-                    0982743860
+                    <span class="px-3 py-1 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-300 rounded-full text-sm font-medium mr-2">{{ t('contact.mobile') }}</span>
+                    {{ t('contact.phoneNumber') }}
                   </p>
                 </div>
               </div>
@@ -55,9 +57,9 @@ const themeStore = useThemeStore()
                   </svg>
                 </div>
                 <div>
-                  <h4 class="text-lg font-medium text-gray-900 dark:text-white mb-1">Email</h4>
+                  <h4 class="text-lg font-medium text-gray-900 dark:text-white mb-1">{{ t('about.email') }}</h4>
                   <p class="text-gray-600 dark:text-gray-300">
-                    <a href="mailto:vanminhtruong95@gmail.com" class="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-300 transition-colors">vanminhtruong95@gmail.com</a>
+                    <a href="mailto:vanminhtruong95@gmail.com" class="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-300 transition-colors">{{ t('contact.emailAddress') }}</a>
                   </p>
                 </div>
               </div>
@@ -70,8 +72,8 @@ const themeStore = useThemeStore()
                   </svg>
                 </div>
                 <div>
-                  <h4 class="text-lg font-medium text-gray-900 dark:text-white mb-1">Address</h4>
-                  <p class="text-gray-600 dark:text-gray-300">Hoang Mai district, Hanoi</p>
+                  <h4 class="text-lg font-medium text-gray-900 dark:text-white mb-1">{{ t('about.address') }}</h4>
+                  <p class="text-gray-600 dark:text-gray-300">{{ t('about.addressValue') }}</p>
                 </div>
               </div>
             </div>
@@ -84,20 +86,20 @@ const themeStore = useThemeStore()
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                   </svg>
                 </div>
-                <h4 class="text-lg font-semibold text-gray-900 dark:text-white">Connect With Me</h4>
+                <h4 class="text-lg font-semibold text-gray-900 dark:text-white">{{ t('contact.title') }}</h4>
               </div>
               <div class="flex flex-wrap gap-3 ml-11">
                 <a href="https://github.com/vanminhtruong/Team03-cy.git" class="flex items-center px-4 py-2 bg-gradient-to-r from-gray-800 to-gray-900 text-white rounded-lg shadow-md hover:from-gray-900 hover:to-black transition-all duration-300 transform hover:-translate-y-1" target="_blank" rel="noopener noreferrer">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                   </svg>
-                  GitHub Project
+                  {{ t('contact.githubProject') }}
                 </a>
                 <a href="https://github.com/vanminhtruong/libary.git" class="flex items-center px-4 py-2 bg-gradient-to-r from-gray-800 to-gray-900 text-white rounded-lg shadow-md hover:from-gray-900 hover:to-black transition-all duration-300 transform hover:-translate-y-1" target="_blank" rel="noopener noreferrer">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                   </svg>
-                  Library Project
+                  {{ t('contact.libraryProject') }}
                 </a>
                 <a href="https://team03-admin.cyvietnam.id.vn" class="flex items-center px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg shadow-md hover:from-blue-600 hover:to-blue-700 transition-all duration-300 transform hover:-translate-y-1" target="_blank" rel="noopener noreferrer">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
@@ -109,7 +111,7 @@ const themeStore = useThemeStore()
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m13 2h-2.5A3.5 3.5 0 0 0 12 8.5V11h-2v3h2v7h3v-7h3v-3h-3V9a1 1 0 0 1 1-1h2V5z"/>
                   </svg>
-                  Project Website
+                  {{ t('contact.projectWebsite') }}
                 </a>
               </div>
             </div>
@@ -123,55 +125,55 @@ const themeStore = useThemeStore()
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
                 </svg>
               </div>
-              <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">Send Message</h3>
+              <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">{{ t('contact.send') }}</h3>
             </div>
             
             <form action="#" method="POST" class="space-y-6">
               <div class="group">
-                <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 group-focus-within:text-indigo-600 transition-colors duration-200">Full Name</label>
+                <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 group-focus-within:text-indigo-600 transition-colors duration-200">{{ t('contact.name') }}</label>
                 <div class="relative">
                   <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 group-focus-within:text-indigo-500 transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                     </svg>
                   </div>
-                  <input type="text" id="name" name="name" class="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 placeholder-gray-400 dark:placeholder-gray-300 transition-all duration-200" placeholder="Enter your name" />
+                  <input type="text" id="name" name="name" class="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 placeholder-gray-400 dark:placeholder-gray-300 transition-all duration-200" :placeholder="t('contact.namePlaceholder')" />
                 </div>
               </div>
               
               <div class="group">
-                <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 group-focus-within:text-indigo-600 transition-colors duration-200">Email</label>
+                <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 group-focus-within:text-indigo-600 transition-colors duration-200">{{ t('contact.email') }}</label>
                 <div class="relative">
                   <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 group-focus-within:text-indigo-500 transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
-                  <input type="email" id="email" name="email" class="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 placeholder-gray-400 dark:placeholder-gray-300 transition-all duration-200" placeholder="Enter your email" />
+                  <input type="email" id="email" name="email" class="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 placeholder-gray-400 dark:placeholder-gray-300 transition-all duration-200" :placeholder="t('contact.emailPlaceholder')" />
                 </div>
               </div>
               
               <div class="group">
-                <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 group-focus-within:text-indigo-600 transition-colors duration-200">Subject</label>
+                <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 group-focus-within:text-indigo-600 transition-colors duration-200">{{ t('contact.subject') }}</label>
                 <div class="relative">
                   <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 group-focus-within:text-indigo-500 transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
                     </svg>
                   </div>
-                  <input type="text" id="subject" name="subject" class="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 placeholder-gray-400 dark:placeholder-gray-300 transition-all duration-200" placeholder="Enter message subject" />
+                  <input type="text" id="subject" name="subject" class="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 placeholder-gray-400 dark:placeholder-gray-300 transition-all duration-200" :placeholder="t('contact.subjectPlaceholder')" />
                 </div>
               </div>
               
               <div class="group">
-                <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 group-focus-within:text-indigo-600 transition-colors duration-200">Message</label>
+                <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 group-focus-within:text-indigo-600 transition-colors duration-200">{{ t('contact.message') }}</label>
                 <div class="relative">
                   <div class="absolute top-3 left-3 flex items-start pointer-events-none">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 group-focus-within:text-indigo-500 transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                     </svg>
                   </div>
-                  <textarea id="message" name="message" rows="5" class="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 placeholder-gray-400 dark:placeholder-gray-300 transition-all duration-200" placeholder="Enter your message"></textarea>
+                  <textarea id="message" name="message" rows="5" class="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 placeholder-gray-400 dark:placeholder-gray-300 transition-all duration-200" :placeholder="t('contact.messagePlaceholder')"></textarea>
                 </div>
               </div>
               
@@ -180,7 +182,7 @@ const themeStore = useThemeStore()
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                   </svg>
-                  Send Message
+                  {{ t('contact.send') }}
                 </button>
               </div>
             </form>

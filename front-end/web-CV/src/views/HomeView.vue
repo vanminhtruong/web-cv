@@ -1,11 +1,13 @@
 <script setup>
 import { useThemeStore } from '../stores/theme'
 import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 const themeStore = useThemeStore()
+const { t } = useI18n()
 
 // Hiệu ứng xổ ra từng chữ cho tên
-const fullName = "Trương Văn Minh"
+const fullName = "Trương Văn Minh" // Giữ nguyên tên này vì đây là tên riêng
 const displayedName = ref('')
 const isDeleting = ref(false)
 const loopNum = ref(0)
@@ -64,7 +66,7 @@ onBeforeUnmount(() => {
       <div class="flex flex-col md:flex-row items-center justify-between mb-16 gap-8">
         <div class="md:w-1/2 transform transition-all duration-300 hover:-translate-y-1">
           <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            <span class="block">Hello, I'm</span>
+            <span class="block">{{ t('home.greeting') }}</span>
             <span class="block text-indigo-600 transform transition-all duration-300 hover:scale-105">
               <span class="typing-effect">{{ displayedName }}</span>
               <span class="typing-cursor">|</span>
@@ -74,7 +76,7 @@ onBeforeUnmount(() => {
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
-            <span>ReactJS Intern Position</span>
+            <span>{{ t('home.role') }}</span>
           </h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-700 dark:text-gray-300 mb-8 bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border-l-4 border-indigo-500">
             <div class="flex items-center group">
@@ -84,7 +86,7 @@ onBeforeUnmount(() => {
                 </svg>
               </div>
               <div>
-                <div class="text-sm font-medium text-gray-500">Phone</div>
+                <div class="text-sm font-medium text-gray-500">{{ t('about.phone') }}</div>
                 <div class="font-medium">0982743860</div>
               </div>
             </div>
@@ -95,7 +97,7 @@ onBeforeUnmount(() => {
                 </svg>
               </div>
               <div>
-                <div class="text-sm font-medium text-gray-500">Email</div>
+                <div class="text-sm font-medium text-gray-500">{{ t('about.email') }}</div>
                 <div class="font-medium">vanminhtruong95@gmail.com</div>
               </div>
             </div>
@@ -118,8 +120,8 @@ onBeforeUnmount(() => {
                 </svg>
               </div>
               <div>
-                <div class="text-sm font-medium text-gray-500">Location</div>
-                <div class="font-medium">Hoang Mai district, Hanoi</div>
+                <div class="text-sm font-medium text-gray-500">{{ t('about.address') }}</div>
+                <div class="font-medium">{{ t('about.addressValue') }}</div>
               </div>
             </div>
           </div>
@@ -134,7 +136,7 @@ onBeforeUnmount(() => {
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
               </svg>
-              Download CV
+              {{ t('home.downloadCV') }}
             </a>
           </div>
         </div>
@@ -160,11 +162,11 @@ onBeforeUnmount(() => {
               </svg>
             </div>
           </div>
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white inline-block pb-2 border-b-4 border-indigo-500 transform transition-all duration-300 hover:scale-105">INTRODUCTION</h2>
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white inline-block pb-2 border-b-4 border-indigo-500 transform transition-all duration-300 hover:scale-105">{{ t('about.title').toUpperCase() }}</h2>
         </div>
         <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-8 mb-6 transform hover:-translate-y-1 border-l-4 border-indigo-500">
           <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-            I am a final-year Information Technology student with a strong passion for programming, particularly in web development using modern frameworks like ReactJS. I completed a 3-month internship at CY Vietnam Software Development Co., Ltd., where I gained valuable hands-on experience in developing and optimizing web applications using ReactJS. Additionally, I interned at Nacencom Technology Joint Stock Company, which further enhanced my practical skills and experience in the IT field. I am eager to apply my knowledge and continue honing my programming skills in a professional working environment.
+            {{ t('about.content') }}
           </p>
         </div>
       </div>
@@ -179,7 +181,7 @@ onBeforeUnmount(() => {
               </svg>
             </div>
           </div>
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white inline-block pb-2 border-b-4 border-indigo-500 transform transition-all duration-300 hover:scale-105">OBJECTIVE</h2>
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white inline-block pb-2 border-b-4 border-indigo-500 transform transition-all duration-300 hover:scale-105">{{ t('home.objective').toUpperCase() }}</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div class="rounded-xl shadow-lg p-8 mb-8 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-xl border-r-4 border-indigo-500 bg-white dark:bg-gray-800">
@@ -189,14 +191,14 @@ onBeforeUnmount(() => {
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Short-term Goal</h3>
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white">{{ t('home.shortTermTitle') }}</h3>
             </div>
             <ul class="ml-12 space-y-2">
               <li class="flex items-start">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
                 </svg>
-                <span class="text-lg text-gray-700 dark:text-gray-300">To become a junior Full Stack Web Developer within the next year.</span>
+                <span class="text-lg text-gray-700 dark:text-gray-300">{{ t('home.shortTermGoal') }}</span>
               </li>
             </ul>
           </div>
@@ -207,14 +209,14 @@ onBeforeUnmount(() => {
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                 </svg>
               </div>
-              <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Long-term Goal</h3>
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white">{{ t('home.longTermTitle') }}</h3>
             </div>
             <ul class="ml-12 space-y-2">
               <li class="flex items-start">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-purple-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
                 </svg>
-                <span class="text-lg text-gray-700 dark:text-gray-300">To advance to a senior Full Stack Web Developer role within the next five years.</span>
+                <span class="text-lg text-gray-700 dark:text-gray-300">{{ t('home.longTermGoal') }}</span>
               </li>
             </ul>
           </div>

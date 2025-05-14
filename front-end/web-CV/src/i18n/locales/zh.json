@@ -1,0 +1,110 @@
+{
+  "app": {
+    "title": "个人简历",
+    "language": "中文"
+  },
+  "nav": {
+    "home": "首页",
+    "about": "关于",
+    "skills": "技能",
+    "experience": "经验",
+    "education": "教育",
+    "projects": "项目",
+    "contact": "联系",
+    "downloadCV": "下载简历",
+    "links": "链接",
+    "connect": "连接"
+  },
+  "home": {
+    "greeting": "你好，我是",
+    "role": "网页开发者",
+    "objective": "目标",
+    "shortTermTitle": "短期目标",
+    "longTermTitle": "长期目标",
+    "description": "热衷于创建美观且功能强大的网络应用程序",
+    "downloadCV": "下载简历",
+    "contactMe": "联系我",
+    "shortTermGoal": "在明年内成为初级全栈网络开发人员",
+    "longTermGoal": "在未来五年内晋升为高级全栈网络开发人员角色"
+  },
+  "about": {
+    "title": "关于我",
+    "content": "我是一名信息技术专业的应届毕业生，对编程充满热情，特别是使用ReactJS等现代框架进行网络开发。我在CY越南软件开发有限公司完成了为期3个月的实习，在那里我获得了实用的经验，使用ReactJS开发和优化网络应用程序。此外，我还在Nacencom科技股份公司实习，这进一步提高了我在IT领域的实用技能和经验。我渴望在专业的工作环境中应用我的知识并继续提升我的编程技能。",
+    "description": "我是一名专注的网页开发者，热衷于创造创新解决方案。我喜欢从事具有挑战性的项目，并不断学习新技术。",
+    "personalInfo": "个人信息",
+    "name": "姓名",
+    "age": "年龄",
+    "email": "电子邮件",
+    "phone": "电话",
+    "address": "地址",
+    "addressValue": "河内黄麒区，河内",
+    "languages": "语言"
+  },
+  "skills": {
+    "title": "我的技能",
+    "technical": "技术技能",
+    "soft": "软技能",
+    "languages": "编程语言",
+    "frameworks": "框架和库",
+    "tools": "工具和技术",
+    "course1": "面向对象编程 (A)",
+    "course2": "数据结构与算法 (A-)",
+    "course3": "关系型数据库 (A)"
+  },
+  "experience": {
+    "title": "工作经验",
+    "present": "至今",
+    "responsibilities": "职责",
+    "period1": "02/10/2024 - 01/01/2025",
+    "date1": "2024年2月 - 至今",
+    "company1": "CY越南软件开发有限公司",
+    "position1": "VueJS实习生职位",
+    "department1": "前端开发",
+    "responsibility1": "使用VueJS构建用户界面并实现了订单管理、配送状态通知和集成VNPay的在线支付等功能。",
+    "responsibility2": "使用Vue Router处理导航并优化应用程序以提升用户体验。",
+    "responsibility3": "根据QA团队的反馈改进用户体验并解决问题。"
+  },
+  "education": {
+    "title": "教育背景",
+    "degree": "学位",
+    "field": "专业",
+    "gpa": "绩点",
+    "schoolName": "河内工业经济学院",
+    "major": "软件工程专业 (GPA 3.56)",
+    "location": "越南河内（毕业年）",
+    "period": "01/05/2021 - 05/06/2024"
+  },
+  "projects": {
+    "title": "项目",
+    "viewProject": "查看项目",
+    "viewCode": "查看代码"
+  },
+  "contact": {
+    "title": "联系我",
+    "name": "姓名",
+    "email": "电子邮件",
+    "subject": "主题",
+    "message": "信息",
+    "send": "发送信息",
+    "required": "此字段为必填项",
+    "validEmail": "请输入有效的电子邮件",
+    "success": "信息发送成功！",
+    "error": "发送信息时出错。请再试一次。",
+    "mobile": "手机",
+    "phoneNumber": "0982743860",
+    "emailAddress": "vanminhtruong95@gmail.com",
+    "githubProject": "GitHub项目",
+    "libraryProject": "图书馆项目",
+    "projectWebsite": "项目网站",
+    "namePlaceholder": "输入您的姓名",
+    "emailPlaceholder": "输入您的电子邮件",
+    "subjectPlaceholder": "输入信息主题",
+    "messagePlaceholder": "输入您的信息"
+  },
+  "footer": {
+    "copyright": "版权所有",
+    "allRightsReserved": "版权所有",
+    "description": "前端开发者，专注于创建用户界面，具有网络应用开发经验。",
+    "copyrightText": "© {year} {name}. 版权所有。"
+  }
+}
