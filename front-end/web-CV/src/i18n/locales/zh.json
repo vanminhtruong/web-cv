@@ -55,14 +55,23 @@
     "title": "工作经验",
     "present": "至今",
     "responsibilities": "职责",
-    "period1": "02/10/2024 - 01/01/2025",
-    "date1": "2024年2月 - 至今",
+    "period1": "01/11/2024 - 01/01/2025",
+    "date1": "2024年11月 - 2025年1月",
     "company1": "CY越南软件开发有限公司",
-    "position1": "VueJS实习生职位",
+    "position1": "前端开发者",
     "department1": "前端开发",
     "responsibility1": "使用VueJS构建用户界面并实现了订单管理、配送状态通知和集成VNPay的在线支付等功能。",
     "responsibility2": "使用Vue Router处理导航并优化应用程序以提升用户体验。",
-    "responsibility3": "根据QA团队的反馈改进用户体验并解决问题。"
+    "responsibility3": "根据QA团队的反馈改进用户体验并解决问题。",
+    "period2": "01/01/2024 - 05/03/2024",
+    "date2": "2024年1月 - 2024年3月",
+    "company2": "个人项目",
+    "position2": "全栈网络开发者",
+    "department2": "图书馆管理系统",
+    "responsibility4": "开发了一个图书馆管理系统作为个人项目。",
+    "responsibility5": "使用MVC架构模式为网站实现了Controller和Model。",
+    "responsibility6": "RESTful API（应用程序编程接口），Eloquent ORM（对象关系映射），MVC。",
+    "responsibility7": "使用的技术：Laravel。"
   },
   "education": {
     "title": "教育背景",
@@ -77,7 +86,13 @@
   "projects": {
     "title": "项目",
     "viewProject": "查看项目",
-    "viewCode": "查看代码"
+    "viewCode": "查看代码",
+    "project1": {
+      "date": "01/11/2024 - 01/01/2025"
+    },
+    "project2": {
+      "date": "01/01/2024 - 05/03/2024"
+    }
   },
   "contact": {
     "title": "联系我",
@@ -106,5 +121,18 @@
     "allRightsReserved": "版权所有",
     "description": "前端开发者，专注于创建用户界面，具有网络应用开发经验。",
     "copyrightText": "© {year} {name}. 版权所有。"
+  },
+  "colors": {
+    "selectTheme": "选择颜色主题",
+    "indigo": "青紫色",
+    "blue": "蓝色",
+    "red": "红色",
+    "green": "绿色",
+    "purple": "紫色",
+    "pink": "粉色",
+    "yellow": "黄色",
+    "teal": "青绿色",
+    "orange": "橙色",
+    "cyan": "青色"
   }
 }

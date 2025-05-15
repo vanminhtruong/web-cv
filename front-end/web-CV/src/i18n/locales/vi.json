@@ -55,14 +55,23 @@
     "title": "Kinh Nghiệm Làm Việc",
     "present": "Hiện Tại",
     "responsibilities": "Trách Nhiệm",
-    "period1": "02/10/2024 - 01/01/2025",
-    "date1": "Tháng 2 năm 2024 - Hiện tại",
+    "period1": "01/11/2024 - 01/01/2025",
+    "date1": "Tháng 11 năm 2024 - Tháng 1 năm 2025",
     "company1": "Công ty TNHH Phát triển Phần mềm CY Việt Nam",
-    "position1": "Vị trí Thực tập sinh VueJS",
+    "position1": "Lập trình viên Frontend",
     "department1": "Phát triển Front End",
     "responsibility1": "Sử dụng VueJS để xây dựng giao diện người dùng và triển khai các tính năng như quản lý đơn hàng, thông báo trạng thái giao hàng và thanh toán trực tuyến tích hợp VNPay.",
     "responsibility2": "Sử dụng Vue Router để xử lý điều hướng và tối ưu hóa ứng dụng cho trải nghiệm người dùng.",
-    "responsibility3": "Cải thiện trải nghiệm người dùng và giải quyết các vấn đề dựa trên phản hồi từ đội QA."
+    "responsibility3": "Cải thiện trải nghiệm người dùng và giải quyết các vấn đề dựa trên phản hồi từ đội QA.",
+    "period2": "01/01/2024 - 05/03/2024",
+    "date2": "Tháng 1 năm 2024 - Tháng 3 năm 2024",
+    "company2": "Dự án cá nhân",
+    "position2": "Lập trình viên Full-stack",
+    "department2": "Hệ thống Quản lý Thư viện",
+    "responsibility4": "Phát triển hệ thống quản lý thư viện như một dự án cá nhân.",
+    "responsibility5": "Triển khai Controller, Model cho website sử dụng mô hình kiến trúc MVC.",
+    "responsibility6": "RESTful API (Giao diện lập trình ứng dụng), Eloquent ORM (Ánh xạ quan hệ đối tượng), MVC.",
+    "responsibility7": "Công nghệ sử dụng: Laravel."
   },
   "education": {
     "title": "Học Vấn",
@@ -77,7 +86,13 @@
   "projects": {
     "title": "Dự Án",
     "viewProject": "Xem Dự Án",
-    "viewCode": "Xem Mã Nguồn"
+    "viewCode": "Xem Mã Nguồn",
+    "project1": {
+      "date": "01/11/2024 - 01/01/2025"
+    },
+    "project2": {
+      "date": "01/01/2024 - 05/03/2024"
+    }
   },
   "contact": {
     "title": "Liên Hệ Tôi",
@@ -106,5 +121,18 @@
     "allRightsReserved": "Tất Cả Các Quyền Được Bảo Lưu",
     "description": "Lập trình viên Frontend chuyên về tạo giao diện người dùng với kinh nghiệm phát triển ứng dụng web.",
     "copyrightText": "© {year} {name}. Tất cả các quyền được bảo lưu."
+  },
+  "colors": {
+    "selectTheme": "Chọn màu giao diện",
+    "indigo": "Chàm",
+    "blue": "Xanh dương",
+    "red": "Đỏ",
+    "green": "Xanh lá",
+    "purple": "Tím",
+    "pink": "Hồng",
+    "yellow": "Vàng",
+    "teal": "Xanh ngọc",
+    "orange": "Cam",
+    "cyan": "Xanh da trời"
   }
 }

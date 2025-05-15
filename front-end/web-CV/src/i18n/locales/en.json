@@ -54,14 +54,23 @@
     "title": "Work Experience",
     "present": "Present",
     "responsibilities": "Responsibilities",
-    "period1": "02/10/2024 - 01/01/2025",
-    "date1": "February 2024 - Present",
+    "period1": "01/11/2024 - 01/01/2025",
+    "date1": "November 2024 - January 2025",
     "company1": "CY Vietnam Software Development Co., Ltd.",
-    "position1": "VueJS Intern Position",
+    "position1": "Frontend Developer",
     "department1": "Front End Development",
     "responsibility1": "Utilized VueJS to build user interfaces and implemented features such as order management, delivery status notifications, and VNPay-integrated online payment.",
     "responsibility2": "Used Vue Router to handle navigation and optimized the application for user experience.",
-    "responsibility3": "Improved user experience and resolved issues based on feedback from the QA team."
+    "responsibility3": "Improved user experience and resolved issues based on feedback from the QA team.",
+    "period2": "01/01/2024 - 05/03/2024",
+    "date2": "January 2024 - March 2024",
+    "company2": "Personal Project",
+    "position2": "Full-stack Web Developer",
+    "department2": "Library Management System",
+    "responsibility4": "Developed a library management system as a personal project.",
+    "responsibility5": "Implementation of Controller, Model for a website using the MVC architectural pattern.",
+    "responsibility6": "RESTful API (Application Programming Interfaces), Eloquent ORM(Object-Relational Mapping), MVC.",
+    "responsibility7": "Technologies used: Laravel."
   },
   "education": {
     "title": "Education",
@@ -76,7 +85,13 @@
   "projects": {
     "title": "Projects",
     "viewProject": "View Project",
-    "viewCode": "View Code"
+    "viewCode": "View Code",
+    "project1": {
+      "date": "01/11/2024 - 01/01/2025"
+    },
+    "project2": {
+      "date": "01/01/2024 - 05/03/2024"
+    }
   },
   "contact": {
     "title": "Contact Me",
@@ -105,5 +120,18 @@
     "allRightsReserved": "All Rights Reserved",
     "description": "Frontend Developer specializing in creating user interfaces with experience in web application development.",
     "copyrightText": " {year} {name}. All rights reserved."
+  },
+  "colors": {
+    "selectTheme": "Select color theme",
+    "indigo": "Indigo",
+    "blue": "Blue",
+    "red": "Red",
+    "green": "Green",
+    "purple": "Purple",
+    "pink": "Pink",
+    "yellow": "Yellow",
+    "teal": "Teal",
+    "orange": "Orange",
+    "cyan": "Cyan"
   }
 }

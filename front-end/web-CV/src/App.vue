@@ -4,10 +4,13 @@ import { ref, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useThemeStore } from './stores/theme'
 import { useProfileStore } from './stores/profile'
+import { useColorStore } from './stores/color'
 import LanguageSwitcher from './components/LanguageSwitcher.vue'
+import ColorSwitcher from './components/ColorSwitcher.vue'
 
 const { t } = useI18n()
 const themeStore = useThemeStore()
+const colorStore = useColorStore()
 const profileStore = useProfileStore()
 const isMobileMenuOpen = ref(false)
 const isScrolled = ref(false)
@@ -25,8 +28,9 @@ onMounted(() => {
     isScrolled.value = window.scrollY > 10
   })
   
-  // Khởi tạo theme
+  // Khởi tạo theme và màu sắc
   themeStore.initTheme()
+  colorStore.initColor()
 })
 </script>
 
@@ -41,7 +45,7 @@ onMounted(() => {
         <div class="flex justify-between items-center">
           <!-- Logo -->
           <div class="flex-shrink-0">
-            <RouterLink to="/" class="text-indigo-600 dark:text-indigo-400 font-bold text-2xl flex items-center" @click="closeMobileMenu">
+            <RouterLink to="/" class="text-theme-primary dark:text-theme-secondary font-bold text-2xl flex items-center" @click="closeMobileMenu">
               <span class="mr-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
                   <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
@@ -53,16 +57,16 @@ onMounted(() => {
           
           <!-- Desktop Navigation -->
           <nav class="hidden md:flex space-x-8">
-            <RouterLink to="/" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 py-2 text-base font-medium transition-colors duration-200">
+            <RouterLink to="/" class="text-gray-700 dark:text-gray-300 hover:text-theme-primary dark:hover:text-theme-secondary py-2 text-base font-medium transition-colors duration-200">
               {{ t('nav.home') }}
             </RouterLink>
-            <RouterLink to="/skills" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 py-2 text-base font-medium transition-colors duration-200">
+            <RouterLink to="/skills" class="text-gray-700 dark:text-gray-300 hover:text-theme-primary dark:hover:text-theme-secondary py-2 text-base font-medium transition-colors duration-200">
               {{ t('nav.skills') }}
             </RouterLink>
-            <RouterLink to="/experience" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 py-2 text-base font-medium transition-colors duration-200">
+            <RouterLink to="/experience" class="text-gray-700 dark:text-gray-300 hover:text-theme-primary dark:hover:text-theme-secondary py-2 text-base font-medium transition-colors duration-200">
               {{ t('nav.experience') }}
             </RouterLink>
-            <RouterLink to="/contact" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 py-2 text-base font-medium transition-colors duration-200">
+            <RouterLink to="/contact" class="text-gray-700 dark:text-gray-300 hover:text-theme-primary dark:hover:text-theme-secondary py-2 text-base font-medium transition-colors duration-200">
               {{ t('nav.contact') }}
             </RouterLink>
           </nav>
@@ -71,6 +75,8 @@ onMounted(() => {
           <div class="hidden md:flex items-center space-x-4">
             <!-- Language Switcher -->
             <LanguageSwitcher />
+            <!-- Color Switcher -->
+            <ColorSwitcher />
             <!-- Theme Toggle Button -->
             <button @click="themeStore.toggleTheme" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300">
               <svg v-if="!themeStore.isDark" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -82,7 +88,7 @@ onMounted(() => {
             </button>
             
             <!-- Download CV Button -->
-            <a href="/TruongVanMinh-CV.pdf" download class="inline-flex items-center px-4 py-2 bg-indigo-600 dark:bg-indigo-700 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 dark:hover:bg-indigo-800 transition-colors duration-300">
+            <a :href="profileStore.cvPath" download class="inline-flex items-center px-4 py-2 bg-theme-primary dark:bg-theme-primary text-white text-sm font-medium rounded-lg hover:bg-theme-accent dark:hover:bg-theme-accent transition-colors duration-300">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
               </svg>
@@ -107,16 +113,16 @@ onMounted(() => {
       <!-- Mobile Navigation Menu -->
       <div v-if="isMobileMenuOpen" class="md:hidden bg-white dark:bg-gray-800 shadow-lg mt-2 py-3 px-4 transition-all duration-300">
         <div class="flex flex-col space-y-3">
-          <RouterLink to="/" @click="closeMobileMenu" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 py-2 text-base font-medium transition-colors duration-200">
+          <RouterLink to="/" @click="closeMobileMenu" class="text-gray-700 dark:text-gray-300 hover:text-theme-primary dark:hover:text-theme-secondary py-2 text-base font-medium transition-colors duration-200">
             {{ t('nav.home') }}
           </RouterLink>
-          <RouterLink to="/skills" @click="closeMobileMenu" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 py-2 text-base font-medium transition-colors duration-200">
+          <RouterLink to="/skills" @click="closeMobileMenu" class="text-gray-700 dark:text-gray-300 hover:text-theme-primary dark:hover:text-theme-secondary py-2 text-base font-medium transition-colors duration-200">
             {{ t('nav.skills') }}
           </RouterLink>
-          <RouterLink to="/experience" @click="closeMobileMenu" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 py-2 text-base font-medium transition-colors duration-200">
+          <RouterLink to="/experience" @click="closeMobileMenu" class="text-gray-700 dark:text-gray-300 hover:text-theme-primary dark:hover:text-theme-secondary py-2 text-base font-medium transition-colors duration-200">
             {{ t('nav.experience') }}
           </RouterLink>
-          <RouterLink to="/contact" @click="closeMobileMenu" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 py-2 text-base font-medium transition-colors duration-200">
+          <RouterLink to="/contact" @click="closeMobileMenu" class="text-gray-700 dark:text-gray-300 hover:text-theme-primary dark:hover:text-theme-secondary py-2 text-base font-medium transition-colors duration-200">
             {{ t('nav.contact') }}
           </RouterLink>
           
@@ -124,7 +130,9 @@ onMounted(() => {
           <div class="flex items-center justify-between">
             <!-- Language Switcher (Mobile) -->
             <LanguageSwitcher />
-            <a href="/TruongVanMinh-CV.pdf" download class="inline-flex items-center px-4 py-2 bg-indigo-600 dark:bg-indigo-700 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 dark:hover:bg-indigo-800 transition-colors duration-300">
+            <!-- Color Switcher (Mobile) -->
+            <ColorSwitcher />
+            <a :href="profileStore.cvPath" download class="inline-flex items-center px-4 py-2 bg-theme-primary dark:bg-theme-primary text-white text-sm font-medium rounded-lg hover:bg-theme-accent dark:hover:bg-theme-accent transition-colors duration-300">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
               </svg>
@@ -155,13 +163,13 @@ onMounted(() => {
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 class="text-xl font-semibold mb-4">{{ profileStore.fullName }}</h3>
+            <h3 class="text-xl font-semibold mb-4 text-theme-secondary">{{ profileStore.fullName }}</h3>
             <p class="text-gray-400 mb-4">{{ t('footer.description') }}</p>
             <p class="text-gray-400">{{ t('footer.copyrightText', {year: profileStore.year, name: profileStore.fullName}) }}</p>
           </div>
           
           <div>
-            <h3 class="text-xl font-semibold mb-4">{{ t('nav.links') }}</h3>
+            <h3 class="text-xl font-semibold mb-4 text-theme-secondary">{{ t('nav.links') }}</h3>
             <ul class="space-y-2">
               <li>
                 <RouterLink to="/" class="text-gray-400 hover:text-white transition-colors duration-200">{{ t('nav.home') }}</RouterLink>
@@ -179,7 +187,7 @@ onMounted(() => {
           </div>
           
           <div>
-            <h3 class="text-xl font-semibold mb-4">{{ t('nav.connect') }}</h3>
+            <h3 class="text-xl font-semibold mb-4 text-theme-secondary">{{ t('nav.connect') }}</h3>
             <div class="flex space-x-4">
               <a :href="profileStore.socialLinks.facebook" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors duration-200">
                 <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
