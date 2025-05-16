@@ -1,4 +1,7 @@
 {
+  "common": {
+    "backToTop": "맨 위로"
+  },
   "app": {
     "title": "개인 이력서",
     "language": "한국어"

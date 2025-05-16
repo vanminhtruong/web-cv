@@ -1,4 +1,7 @@
 {
+  "common": {
+    "backToTop": "返回顶部"
+  },
   "app": {
     "title": "个人简历",
     "language": "中文"

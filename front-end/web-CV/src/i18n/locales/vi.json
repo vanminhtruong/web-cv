@@ -1,4 +1,7 @@
 {
+  "common": {
+    "backToTop": "Lên đầu trang"
+  },
   "app": {
     "title": "Lý Lịch Cá Nhân",
     "language": "Tiếng Việt"

@@ -1,4 +1,7 @@
 {
+  "common": {
+    "backToTop": "Back to top"
+  },
   "app": {
     "title": "Personal CV",
     "language": "English"

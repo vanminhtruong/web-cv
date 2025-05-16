@@ -7,6 +7,7 @@ import { useProfileStore } from './stores/profile'
 import { useColorStore } from './stores/color'
 import LanguageSwitcher from './components/LanguageSwitcher.vue'
 import ColorSwitcher from './components/ColorSwitcher.vue'
+import BackToTop from './components/BackToTop.vue'
 
 const { t } = useI18n()
 const themeStore = useThemeStore()
@@ -36,6 +37,8 @@ onMounted(() => {
 
 <template>
   <div class="min-h-screen bg-gray-50 dark:bg-gray-900 font-sans dark:text-white">
+    <!-- Back to Top Button -->
+    <BackToTop />
     <!-- Header with Navigation -->
     <header :class="[
       'fixed w-full top-0 z-50 transition-all duration-300', 
