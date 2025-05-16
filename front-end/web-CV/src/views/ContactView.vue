@@ -2,6 +2,7 @@
 import { useThemeStore } from '../stores/theme'
 import { useColorStore } from '../stores/color'
 import { useI18n } from 'vue-i18n'
+import LazySection from '../components/LazySection.vue'
 
 const themeStore = useThemeStore()
 const colorStore = useColorStore()
@@ -23,10 +24,11 @@ const { t } = useI18n()
           </div>
           <h2 class="text-3xl font-bold inline-block pb-2 border-b-4 transform transition-all duration-300 hover:scale-105" :style="{ 'border-color': colorStore.currentColor.primary, 'color': colorStore.currentColor.primary }">{{ t('contact.title').toUpperCase() }}</h2>
         </div>
-        
+
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <!-- Contact Information -->
-          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-8 transform hover:-translate-y-1 border-l-4" :style="{ 'border-color': colorStore.currentColor.primary }">
+          <LazySection threshold="0.1" rootMargin="100px">
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-8 transform hover:-translate-y-1 border-l-4" :style="{ 'border-color': colorStore.currentColor.primary }">
             <div class="flex items-center mb-6">
               <div class="h-10 w-10 rounded-lg flex items-center justify-center mr-3" :style="{ 'background-image': `linear-gradient(to right, ${colorStore.currentColor.primary}20, ${colorStore.currentColor.secondary}20)` }">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -35,7 +37,7 @@ const { t } = useI18n()
               </div>
               <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">{{ t('contact.title') }}</h3>
             </div>
-            
+
             <div class="space-y-6 mt-8">
               <div class="bg-gradient-to-br from-white to-indigo-50 dark:from-gray-700 dark:to-gray-600 p-5 rounded-lg shadow-sm border border-indigo-100 dark:border-gray-600 flex items-start space-x-4 transform transition-all duration-300 hover:-translate-y-1">
                 <div class="h-12 w-12 rounded-lg flex items-center justify-center flex-shrink-0 shadow-md" :style="{ 'background-color': colorStore.currentColor.primary }">
@@ -51,7 +53,7 @@ const { t } = useI18n()
                   </p>
                 </div>
               </div>
-              
+
               <div class="bg-gradient-to-br from-white to-indigo-50 dark:from-gray-700 dark:to-gray-600 p-5 rounded-lg shadow-sm border border-indigo-100 dark:border-gray-600 flex items-start space-x-4 transform transition-all duration-300 hover:-translate-y-1">
                 <div class="h-12 w-12 rounded-lg flex items-center justify-center flex-shrink-0 shadow-md" :style="{ 'background-image': `linear-gradient(to right, ${colorStore.currentColor.primary}, ${colorStore.currentColor.secondary})` }">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -65,7 +67,7 @@ const { t } = useI18n()
                   </p>
                 </div>
               </div>
-              
+
               <div class="bg-gradient-to-br from-white to-indigo-50 dark:from-gray-700 dark:to-gray-600 p-5 rounded-lg shadow-sm border border-indigo-100 dark:border-gray-600 flex items-start space-x-4 transform transition-all duration-300 hover:-translate-y-1">
                 <div class="h-12 w-12 rounded-lg flex items-center justify-center flex-shrink-0 shadow-md" :style="{ 'background-image': `linear-gradient(to right, ${colorStore.currentColor.secondary}, ${colorStore.currentColor.primary})` }">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -79,7 +81,7 @@ const { t } = useI18n()
                 </div>
               </div>
             </div>
-            
+
             <!-- Social links & GitHub -->
             <div class="mt-10 bg-white dark:bg-gray-700 p-5 rounded-lg shadow-sm border dark:border-gray-600" :style="{ 'border-color': colorStore.currentColor.secondary, 'border-opacity': '0.3' }">
               <div class="flex items-center mb-4">
@@ -123,10 +125,12 @@ const { t } = useI18n()
                 </a>
               </div>
             </div>
-          </div>
-          
+            </div>
+          </LazySection>
+
           <!-- Contact Form -->
-          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-8 transform hover:-translate-y-1 border-r-4" :style="{ 'border-color': colorStore.currentColor.primary }">
+          <LazySection threshold="0.1" rootMargin="100px">
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-8 transform hover:-translate-y-1 border-r-4" :style="{ 'border-color': colorStore.currentColor.primary }">
             <div class="flex items-center mb-6">
               <div class="h-10 w-10 rounded-lg flex items-center justify-center mr-3" :style="{ 'background-image': `linear-gradient(to right, ${colorStore.currentColor.primary}20, ${colorStore.currentColor.secondary}20)` }">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -135,7 +139,7 @@ const { t } = useI18n()
               </div>
               <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">{{ t('contact.send') }}</h3>
             </div>
-            
+
             <form action="#" method="POST" class="space-y-6">
               <div class="group">
                 <label for="name" class="block text-sm font-medium text-white mb-1 transition-colors duration-200" :style="{ 'color': '#ffffff' }">{{ t('contact.name') }}</label>
@@ -148,7 +152,7 @@ const { t } = useI18n()
                   <input type="text" id="name" name="name" class="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:ring-2 placeholder-gray-400 dark:placeholder-gray-300 transition-all duration-200" :style="{ '--tw-ring-color': colorStore.currentColor.primary, 'border-color': colorStore.currentColor.primary }" :placeholder="t('contact.namePlaceholder')" />
                 </div>
               </div>
-              
+
               <div class="group">
                 <label for="email" class="block text-sm font-medium text-white mb-1 transition-colors duration-200" :style="{ 'color': '#ffffff' }">{{ t('contact.email') }}</label>
                 <div class="relative">
@@ -160,7 +164,7 @@ const { t } = useI18n()
                   <input type="email" id="email" name="email" class="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:ring-2 placeholder-gray-400 dark:placeholder-gray-300 transition-all duration-200" :style="{ '--tw-ring-color': colorStore.currentColor.primary, 'border-color': colorStore.currentColor.primary }" :placeholder="t('contact.emailPlaceholder')" />
                 </div>
               </div>
-              
+
               <div class="group">
                 <label for="subject" class="block text-sm font-medium text-white mb-1 transition-colors duration-200" :style="{ 'color': '#ffffff' }">{{ t('contact.subject') }}</label>
                 <div class="relative">
@@ -172,7 +176,7 @@ const { t } = useI18n()
                   <input type="text" id="subject" name="subject" class="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:ring-2 placeholder-gray-400 dark:placeholder-gray-300 transition-all duration-200" :style="{ '--tw-ring-color': colorStore.currentColor.primary, 'border-color': colorStore.currentColor.primary }" :placeholder="t('contact.subjectPlaceholder')" />
                 </div>
               </div>
-              
+
               <div class="group">
                 <label for="message" class="block text-sm font-medium text-white mb-1 transition-colors duration-200" :style="{ 'color': '#ffffff' }">{{ t('contact.message') }}</label>
                 <div class="relative">
@@ -184,7 +188,7 @@ const { t } = useI18n()
                   <textarea id="message" name="message" rows="5" class="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:ring-2 placeholder-gray-400 dark:placeholder-gray-300 transition-all duration-200" :style="{ '--tw-ring-color': colorStore.currentColor.primary, 'border-color': colorStore.currentColor.primary }" :placeholder="t('contact.messagePlaceholder')"></textarea>
                 </div>
               </div>
-              
+
               <div>
                 <button type="submit" class="w-full text-white font-medium py-3 px-4 rounded-lg shadow-md hover:brightness-90 focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center" :style="{ 'background-color': colorStore.currentColor.primary, '--tw-ring-color': colorStore.currentColor.primary }">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -194,7 +198,8 @@ const { t } = useI18n()
                 </button>
               </div>
             </form>
-          </div>
+            </div>
+          </LazySection>
         </div>
       </div>
     </div>

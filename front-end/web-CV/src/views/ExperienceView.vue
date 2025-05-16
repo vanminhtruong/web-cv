@@ -1,7 +1,8 @@
-<script setup>
+﻿<script setup>
 import { useThemeStore } from '../stores/theme'
 import { useColorStore } from '../stores/color'
 import { useI18n } from 'vue-i18n'
+import LazySection from '../components/LazySection.vue'
 
 const themeStore = useThemeStore()
 const colorStore = useColorStore()
@@ -12,7 +13,7 @@ const { t } = useI18n()
   <div class="min-h-screen py-10 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Experience section -->
-      <div class="mb-16">
+      <LazySection threshold="0.1" rootMargin="100px" class="mb-16">
         <div class="flex items-center mb-10">
           <div class="mr-4 hidden md:block">
             <div class="h-12 w-12 rounded-lg flex items-center justify-center shadow-md" :style="{ 'background-color': colorStore.currentColor.primary }">
@@ -195,7 +196,7 @@ const { t } = useI18n()
             </div>
           </div>
         </div>
-      </div>
+      </LazySection>
 
       <!-- Team Projects section -->
       <div class="mb-16">
@@ -211,8 +212,9 @@ const { t } = useI18n()
         </div>
 
         <!-- Project 1: C-to-C E-commerce Website -->
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden mb-12 transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-          <div class="p-8 relative">
+        <LazySection threshold="0.1" rootMargin="100px">
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden mb-12 transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+            <div class="p-8 relative">
             <div class="absolute top-0 right-0 text-white px-6 py-2 rounded-bl-lg font-semibold text-sm uppercase tracking-wider shadow-md" :style="{ 'background-image': `linear-gradient(to right, ${colorStore.currentColor.primary}, ${colorStore.currentColor.secondary})` }">
               Featured Project
             </div>
@@ -451,11 +453,13 @@ const { t } = useI18n()
               </div>
             </div>
           </div>
-        </div>
+          </div>
+        </LazySection>
 
         <!-- Project 2: Library Management Website -->
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden mb-12 transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-          <div class="p-8 relative">
+        <LazySection threshold="0.1" rootMargin="100px">
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden mb-12 transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+            <div class="p-8 relative">
             <div class="absolute top-0 right-0 text-white px-6 py-2 rounded-bl-lg font-semibold text-sm uppercase tracking-wider shadow-md" :style="{ 'background-image': `linear-gradient(to right, ${colorStore.currentColor.primary}, ${colorStore.currentColor.secondary})` }">
               Solo Project
             </div>
@@ -606,7 +610,8 @@ const { t } = useI18n()
               </div>
             </div>
           </div>
-        </div>
+          </div>
+        </LazySection>
       </div>
     </div>
   </div>

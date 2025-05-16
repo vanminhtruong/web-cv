@@ -3,6 +3,7 @@ import { useThemeStore } from '../stores/theme'
 import { useProfileStore } from '../stores/profile'
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { useI18n } from 'vue-i18n'
+import LazySection from '../components/LazySection.vue'
 
 const themeStore = useThemeStore()
 const profileStore = useProfileStore()
@@ -49,7 +50,7 @@ const typeEffect = () => {
 }
 
 onMounted(() => {
-  // Bắt đầu hiệu ứng khi component được mount
+  // Bắt đầu hiệu ứng typing khi component được mount
   typingTimer = setTimeout(typeEffect, 1000) // Chờ 1 giây trước khi bắt đầu
 })
 
@@ -152,7 +153,7 @@ onBeforeUnmount(() => {
       </div>
 
       <!-- Introduction section -->
-      <div class="mb-16">
+      <LazySection class="mb-16">
         <div class="flex items-center mb-10">
           <div class="mr-4 hidden md:block">
             <div class="h-12 w-12 bg-theme-primary rounded-lg flex items-center justify-center shadow-md">
@@ -168,10 +169,10 @@ onBeforeUnmount(() => {
             {{ t('about.content') }}
           </p>
         </div>
-      </div>
+      </LazySection>
 
       <!-- Objective section -->
-      <div class="mb-16">
+      <LazySection class="mb-16">
         <div class="flex items-center mb-10">
           <div class="mr-4 hidden md:block">
             <div class="h-12 w-12 bg-theme-primary rounded-lg flex items-center justify-center shadow-md">
@@ -183,7 +184,7 @@ onBeforeUnmount(() => {
           <h2 class="text-3xl font-bold text-theme-primary dark:text-theme-secondary inline-block pb-2 border-b-4 border-theme-primary transform transition-all duration-300 hover:scale-105">{{ t('home.objective').toUpperCase() }}</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="rounded-xl shadow-lg p-8 mb-8 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-xl border-r-4 border-theme-accent bg-white dark:bg-gray-800">
+          <LazySection class="rounded-xl shadow-lg p-8 mb-8 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-xl border-r-4 border-theme-accent bg-white dark:bg-gray-800">
             <div class="flex items-center mb-4">
               <div class="h-10 w-10 bg-theme-secondary bg-opacity-20 rounded-lg flex items-center justify-center mr-3">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -200,8 +201,8 @@ onBeforeUnmount(() => {
                 <span class="block text-theme-primary dark:text-theme-secondary">{{ profileStore.fullName }}</span>
               </li>
             </ul>
-          </div>
-          <div class="rounded-xl shadow-lg p-8 mb-8 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-xl border-r-4 border-theme-accent bg-white dark:bg-gray-800">
+          </LazySection>
+          <LazySection class="rounded-xl shadow-lg p-8 mb-8 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-xl border-r-4 border-theme-accent bg-white dark:bg-gray-800">
             <div class="flex items-center mb-4">
               <div class="h-10 w-10 bg-theme-secondary bg-opacity-20 rounded-lg flex items-center justify-center mr-3">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -218,9 +219,9 @@ onBeforeUnmount(() => {
                 <span class="text-lg text-gray-700 dark:text-gray-300">{{ t('home.longTermGoal') }}</span>
               </li>
             </ul>
-          </div>
+          </LazySection>
         </div>
-      </div>
+      </LazySection>
     </div>
   </div>
 </template>
@@ -247,5 +248,18 @@ onBeforeUnmount(() => {
 /* Đảm bảo hiệu ứng tương thích với chế độ tối */
 .dark .typing-cursor {
   color: var(--theme-secondary);
+}
+
+/* Lazy loading animations */
+.lazy-hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.lazy-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 </style>
