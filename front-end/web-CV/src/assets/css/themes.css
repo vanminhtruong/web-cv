@@ -1,67 +1,176 @@
-/* Dark Theme Variations */
-
-/* Áp dụng màu nền cho toàn bộ trang web */
-html.dark {
-  background-color: #1f2937; /* gray-800 - default dark */
-}
+/* Dark Theme Variations - Các biến màu cho từng theme */
 
 /* Black Theme */
-html.dark.theme-black {
-  background-color: #000000 !important;
+.dark.theme-black {
+  --bg-primary: #000000;
+  --bg-secondary: #171717;
+  --bg-tertiary: #262626;
+  --card-bg: #0f0f0f;
+  --card-border: #333333;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --accent-color: #ff4d4d;
 }
 
 /* Navy Theme */
-html.dark.theme-navy {
-  background-color: #312e81 !important; /* indigo-900 */
+.dark.theme-navy {
+  --bg-primary: #312e81; /* indigo-900 */
+  --bg-secondary: #3730a3; /* indigo-800 */
+  --bg-tertiary: #4338ca; /* indigo-700 */
+  --card-bg: #1e1b4b; /* indigo-950 */
+  --card-border: #4f46e5; /* indigo-600 */
+  --text-primary: #ffffff;
+  --text-secondary: #c7d2fe; /* indigo-200 */
+  --accent-color: #818cf8; /* indigo-400 */
 }
 
 /* Charcoal Theme */
-html.dark.theme-charcoal {
-  background-color: #111827 !important; /* gray-900 */
+.dark.theme-charcoal {
+  --bg-primary: #111827; /* gray-900 */
+  --bg-secondary: #1f2937; /* gray-800 */
+  --bg-tertiary: #374151; /* gray-700 */
+  --card-bg: #0f172a; /* gray-950 */
+  --card-border: #4b5563; /* gray-600 */
+  --text-primary: #ffffff;
+  --text-secondary: #e5e7eb; /* gray-200 */
+  --accent-color: #60a5fa; /* blue-400 */
 }
 
 /* Midnight Theme */
-html.dark.theme-midnight {
-  background-color: #1e3a8a !important; /* blue-900 */
+.dark.theme-midnight {
+  --bg-primary: #1e3a8a; /* blue-900 */
+  --bg-secondary: #1e40af; /* blue-800 */
+  --bg-tertiary: #1d4ed8; /* blue-700 */
+  --card-bg: #172554; /* blue-950 */
+  --card-border: #2563eb; /* blue-600 */
+  --text-primary: #ffffff;
+  --text-secondary: #bfdbfe; /* blue-200 */
+  --accent-color: #93c5fd; /* blue-300 */
 }
 
 /* Deep Purple Theme */
-html.dark.theme-deep-purple {
-  background-color: #4c1d95 !important; /* purple-900 */
+.dark.theme-deep-purple {
+  --bg-primary: #4c1d95; /* purple-900 */
+  --bg-secondary: #5b21b6; /* purple-800 */
+  --bg-tertiary: #6d28d9; /* purple-700 */
+  --card-bg: #2e1065; /* purple-950 */
+  --card-border: #7c3aed; /* purple-600 */
+  --text-primary: #ffffff;
+  --text-secondary: #e9d5ff; /* purple-200 */
+  --accent-color: #c084fc; /* purple-400 */
 }
 
-/* Đảm bảo body cũng có màu nền tương tự */
-body {
-  background-color: transparent;
+/* Áp dụng các biến màu cho các phần tử */
+
+/* Nền chính */
+.dark.theme-black .min-h-screen,
+.dark.theme-navy .min-h-screen,
+.dark.theme-charcoal .min-h-screen,
+.dark.theme-midnight .min-h-screen,
+.dark.theme-deep-purple .min-h-screen {
+  background-color: var(--bg-primary) !important;
+  background-image: none !important;
 }
 
-/* Đảm bảo các container chính không ghi đè màu nền */
-.dark .min-h-screen,
-.dark .bg-gray-50,
-.dark .dark\:bg-gray-800,
-.dark .dark\:bg-gray-900 {
-  background-color: transparent !important;
+/* Các phần tử có class dark:bg-gray-900 */
+.dark.theme-black .dark\:bg-gray-900,
+.dark.theme-navy .dark\:bg-gray-900,
+.dark.theme-charcoal .dark\:bg-gray-900,
+.dark.theme-midnight .dark\:bg-gray-900,
+.dark.theme-deep-purple .dark\:bg-gray-900 {
+  background-color: var(--bg-primary) !important;
 }
 
-/* Đảm bảo các gradient không ghi đè màu nền */
-.dark.theme-black .bg-gradient-to-b,
-.dark.theme-navy .bg-gradient-to-b,
-.dark.theme-charcoal .bg-gradient-to-b,
-.dark.theme-midnight .bg-gradient-to-b,
-.dark.theme-deep-purple .bg-gradient-to-b {
-  background: none !important;
+/* Các phần tử có class dark:bg-gray-800 */
+.dark.theme-black .dark\:bg-gray-800,
+.dark.theme-navy .dark\:bg-gray-800,
+.dark.theme-charcoal .dark\:bg-gray-800,
+.dark.theme-midnight .dark\:bg-gray-800,
+.dark.theme-deep-purple .dark\:bg-gray-800 {
+  background-color: var(--bg-secondary) !important;
 }
 
-/* Đảm bảo các phần tử con không bị ảnh hưởng bởi màu nền */
-.dark .dark\:bg-gray-700,
-.dark .dark\:bg-gray-800,
-.dark .dark\:bg-gray-900 {
-  background-color: rgba(0, 0, 0, 0.2) !important;
+/* Các phần tử có class dark:bg-gray-700 */
+.dark.theme-black .dark\:bg-gray-700,
+.dark.theme-navy .dark\:bg-gray-700,
+.dark.theme-charcoal .dark\:bg-gray-700,
+.dark.theme-midnight .dark\:bg-gray-700,
+.dark.theme-deep-purple .dark\:bg-gray-700 {
+  background-color: var(--bg-tertiary) !important;
 }
 
-/* Đảm bảo các phần tử có màu nền riêng vẫn giữ nguyên */
-.dark .dark\:bg-gray-700.preserve-bg,
-.dark .dark\:bg-gray-800.preserve-bg,
-.dark .dark\:bg-gray-900.preserve-bg {
-  background-color: var(--tw-bg-opacity, 1) !important;
+/* Các gradient backgrounds */
+.dark.theme-black .bg-gradient-to-b.dark\:from-gray-800.dark\:to-gray-900,
+.dark.theme-navy .bg-gradient-to-b.dark\:from-gray-800.dark\:to-gray-900,
+.dark.theme-charcoal .bg-gradient-to-b.dark\:from-gray-800.dark\:to-gray-900,
+.dark.theme-midnight .bg-gradient-to-b.dark\:from-gray-800.dark\:to-gray-900,
+.dark.theme-deep-purple .bg-gradient-to-b.dark\:from-gray-800.dark\:to-gray-900 {
+  background-image: none !important;
+  background-color: var(--bg-primary) !important;
+}
+
+/* Các card và container */
+.dark.theme-black .dark\:bg-gray-800.rounded-lg,
+.dark.theme-navy .dark\:bg-gray-800.rounded-lg,
+.dark.theme-charcoal .dark\:bg-gray-800.rounded-lg,
+.dark.theme-midnight .dark\:bg-gray-800.rounded-lg,
+.dark.theme-deep-purple .dark\:bg-gray-800.rounded-lg {
+  background-color: var(--card-bg) !important;
+  border: 1px solid var(--card-border) !important;
+}
+
+/* Các nút và accent elements */
+.dark.theme-black .dark\:bg-blue-600,
+.dark.theme-navy .dark\:bg-blue-600,
+.dark.theme-charcoal .dark\:bg-blue-600,
+.dark.theme-midnight .dark\:bg-blue-600,
+.dark.theme-deep-purple .dark\:bg-blue-600 {
+  background-color: var(--accent-color) !important;
+}
+
+/* Text color */
+.dark.theme-black .dark\:text-white,
+.dark.theme-navy .dark\:text-white,
+.dark.theme-charcoal .dark\:text-white,
+.dark.theme-midnight .dark\:text-white,
+.dark.theme-deep-purple .dark\:text-white {
+  color: var(--text-primary) !important;
+}
+
+.dark.theme-black .dark\:text-gray-300,
+.dark.theme-navy .dark\:text-gray-300,
+.dark.theme-charcoal .dark\:text-gray-300,
+.dark.theme-midnight .dark\:text-gray-300,
+.dark.theme-deep-purple .dark\:text-gray-300 {
+  color: var(--text-secondary) !important;
+}
+
+/* Language Switcher Styles */
+.dark.theme-black .locale-select,
+.dark.theme-navy .locale-select,
+.dark.theme-charcoal .locale-select,
+.dark.theme-midnight .locale-select,
+.dark.theme-deep-purple .locale-select {
+  background-color: var(--bg-secondary) !important;
+  border-color: var(--card-border) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark.theme-black .locale-select:focus,
+.dark.theme-navy .locale-select:focus,
+.dark.theme-charcoal .locale-select:focus,
+.dark.theme-midnight .locale-select:focus,
+.dark.theme-deep-purple .locale-select:focus {
+  border-color: var(--accent-color) !important;
+  box-shadow: 0 0 0 3px var(--accent-color) !important;
+  opacity: 0.7;
+}
+
+.dark.theme-black .locale-select option,
+.dark.theme-navy .locale-select option,
+.dark.theme-charcoal .locale-select option,
+.dark.theme-midnight .locale-select option,
+.dark.theme-deep-purple .locale-select option {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
 }
