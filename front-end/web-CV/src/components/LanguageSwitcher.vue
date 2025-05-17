@@ -9,35 +9,25 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { ref, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-export default {
-  name: 'LanguageSwitcher',
-  setup() {
-    const { locale } = useI18n()
-    const currentLocale = ref(locale.value)
+const { locale } = useI18n()
+const currentLocale = ref(locale.value)
 
-    const changeLocale = () => {
-      locale.value = currentLocale.value
-      localStorage.setItem('locale', currentLocale.value)
-    }
-
-    onMounted(() => {
-      const savedLocale = localStorage.getItem('locale')
-      if (savedLocale) {
-        currentLocale.value = savedLocale
-        locale.value = savedLocale
-      }
-    })
-
-    return {
-      currentLocale,
-      changeLocale
-    }
-  }
+const changeLocale = () => {
+  locale.value = currentLocale.value
+  localStorage.setItem('locale', currentLocale.value)
 }
+
+onMounted(() => {
+  const savedLocale = localStorage.getItem('locale')
+  if (savedLocale) {
+    currentLocale.value = savedLocale
+    locale.value = savedLocale
+  }
+})
 </script>
 
 <style scoped>
