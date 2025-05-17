@@ -2,10 +2,12 @@
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useProfileStore } from '../../../stores/profile'
+import { useColorStore } from '../../../stores/color'
 import { useTypingEffect } from '../composables/useTypingEffect'
 import { useContactInfo } from '../composables/useContactInfo'
 
 const profileStore = useProfileStore()
+const colorStore = useColorStore()
 const { t } = useI18n()
 
 // Hiệu ứng xổ ra từng chữ cho tên
@@ -34,9 +36,9 @@ const secondaryButtons = computed(() => actionButtons.filter(button => !button.i
     <div class="md:w-1/2 transform transition-all duration-300 hover:-translate-y-1">
       <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
         <span class="block">{{ t('home.greeting') }}</span>
-        <span class="block text-theme-primary dark:text-theme-secondary transform transition-all duration-300 hover:scale-105">
+        <span class="block transform transition-all duration-300 hover:scale-105" :style="{ color: colorStore.currentColor.primary }">
           <span class="typing-effect">{{ displayedName }}</span>
-          <span class="typing-cursor">|</span>
+          <span class="typing-cursor" :style="{ color: colorStore.currentColor.primary }">|</span>
         </span>
       </h1>
       <h2 class="text-2xl text-gray-700 dark:text-gray-300 mb-6 flex items-center">
@@ -45,31 +47,38 @@ const secondaryButtons = computed(() => actionButtons.filter(button => !button.i
         </svg>
         <span>{{ t('home.role') }}</span>
       </h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-700 dark:text-gray-300 mb-8 bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border-l-4 border-theme-primary">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-700 dark:text-gray-300 mb-8 bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border-l-4" :style="{ 'border-color': colorStore.currentColor.primary }">
         <div v-for="item in contactItems" :key="item.id" class="flex items-center group">
-          <div class="h-10 w-10 bg-theme-secondary bg-opacity-20 rounded-lg flex items-center justify-center mr-3 group-hover:bg-theme-secondary group-hover:bg-opacity-30 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div :class="{'h-10 w-14': item.id === 'email', 'h-10 w-10': item.id !== 'email'}" class="rounded-lg flex items-center justify-center mr-3 transition-colors group-hover:bg-opacity-50" :style="{ 'background-color': colorStore.currentColor.secondary + '30', '--hover-bg': colorStore.currentColor.secondary + '50' }">
+            <svg v-if="item.id === 'email'" xmlns="http://www.w3.org/2000/svg" style="borer: 1px solid" class="h-6 w-[40px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" :style="{ 'color': colorStore.currentColor.secondary }">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" :style="{ 'color': colorStore.currentColor.secondary }">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="item.svgPath" />
             </svg>
           </div>
           <div>
             <div class="text-sm font-medium text-gray-500">{{ item.label }}</div>
             <div v-if="!item.url" class="font-medium">{{ item.value }}</div>
-            <a v-else :href="item.url" class="font-medium text-theme-primary hover:text-theme-accent transition-colors">github.com/{{ item.value }}</a>
+            <a v-else :href="item.url" class="font-medium transition-colors" :style="{ color: colorStore.currentColor.primary }" :class="{ 'hover:opacity-80': true }">github.com/{{ item.value }}</a>
           </div>
         </div>
       </div>
       <div class="flex flex-wrap gap-3">
         <a v-for="button in primaryButtons" :key="button.id"
            :href="button.href" 
-           class="inline-flex items-center px-6 py-3 bg-theme-primary dark:bg-theme-accent text-white font-medium rounded-lg hover:bg-theme-accent dark:hover:bg-theme-secondary transition-colors duration-300 shadow-md hover:shadow-lg">
+           class="inline-flex items-center px-6 py-3 text-white font-medium rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg" 
+           :style="{ 'background-color': colorStore.currentColor.primary }" 
+           :class="{ 'hover:opacity-90': true }">
           {{ button.label }}
         </a>
         <a v-for="button in secondaryButtons" :key="button.id"
            :href="profileStore.cvPath" 
            download 
-           class="inline-flex items-center px-6 py-3 border-2 border-theme-accent dark:border-theme-secondary text-theme-accent dark:text-theme-secondary font-medium rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-300 shadow-md hover:shadow-lg ml-4">
-          <svg v-if="button.icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+           class="inline-flex items-center px-6 py-3 border-2 font-medium rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg ml-4"
+           :style="{ 'border-color': colorStore.currentColor.secondary, 'color': colorStore.currentColor.secondary }"
+           :class="{ 'hover:bg-gray-50 dark:hover:bg-gray-800': true }">
+          <svg v-if="button.icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" :style="{ 'color': colorStore.currentColor.secondary }">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="button.icon" />
           </svg>
           {{ button.label }}
@@ -78,10 +87,10 @@ const secondaryButtons = computed(() => actionButtons.filter(button => !button.i
     </div>
     <div class="md:w-1/2 flex justify-center transform transition-all duration-500 hover:scale-105">
       <div class="relative w-64 h-64 md:w-80 md:h-80">
-        <div class="absolute inset-0 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-full shadow-lg"></div>
-        <div class="absolute inset-4 bg-gradient-to-tr from-indigo-200 to-purple-200 rounded-full shadow-inner"></div>
+        <div class="absolute inset-0 rounded-full shadow-lg" :style="{ 'background-image': `linear-gradient(to bottom right, ${colorStore.currentColor.primary}20, ${colorStore.currentColor.secondary}20)` }"></div>
+        <div class="absolute inset-4 rounded-full shadow-inner" :style="{ 'background-image': `linear-gradient(to top right, ${colorStore.currentColor.primary}30, ${colorStore.currentColor.secondary}30)` }"></div>
         <!-- Placeholder for profile image -->
-        <div class="absolute inset-8 bg-theme-primary rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-xl">
+        <div class="absolute inset-8 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-xl" :style="{ 'background-color': colorStore.currentColor.primary }">
           TVM
         </div>
       </div>

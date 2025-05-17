@@ -207,3 +207,158 @@
 .dark.theme-deep-purple footer .hover\:text-white:hover {
   color: var(--text-primary) !important;
 }
+
+/* Project Section Styles */
+
+/* Card backgrounds - TeamProjectSection và SoloProjectSection */
+.dark.theme-black .bg-gradient-to-br,
+.dark.theme-navy .bg-gradient-to-br,
+.dark.theme-charcoal .bg-gradient-to-br,
+.dark.theme-midnight .bg-gradient-to-br,
+.dark.theme-deep-purple .bg-gradient-to-br {
+  background-image: none !important;
+  background-color: var(--card-bg) !important;
+}
+
+/* Main project cards */
+.dark.theme-black .bg-white.dark\:bg-gray-800,
+.dark.theme-navy .bg-white.dark\:bg-gray-800,
+.dark.theme-charcoal .bg-white.dark\:bg-gray-800,
+.dark.theme-midnight .bg-white.dark\:bg-gray-800,
+.dark.theme-deep-purple .bg-white.dark\:bg-gray-800 {
+  background-color: var(--bg-secondary) !important;
+}
+
+/* Project icon backgrounds */
+.dark.theme-black .bg-theme-primary,
+.dark.theme-navy .bg-theme-primary,
+.dark.theme-charcoal .bg-theme-primary,
+.dark.theme-midnight .bg-theme-primary,
+.dark.theme-deep-purple .bg-theme-primary,
+.dark.theme-black .bg-theme-secondary,
+.dark.theme-navy .bg-theme-secondary,
+.dark.theme-charcoal .bg-theme-secondary,
+.dark.theme-midnight .bg-theme-secondary,
+.dark.theme-deep-purple .bg-theme-secondary {
+  background-color: var(--accent-color) !important;
+}
+
+/* Project text colors */
+.dark.theme-black .text-gray-600.dark\:text-gray-300,
+.dark.theme-navy .text-gray-600.dark\:text-gray-300,
+.dark.theme-charcoal .text-gray-600.dark\:text-gray-300,
+.dark.theme-midnight .text-gray-600.dark\:text-gray-300,
+.dark.theme-deep-purple .text-gray-600.dark\:text-gray-300,
+.dark.theme-black .text-gray-700.dark\:text-gray-300,
+.dark.theme-navy .text-gray-700.dark\:text-gray-300,
+.dark.theme-charcoal .text-gray-700.dark\:text-gray-300,
+.dark.theme-midnight .text-gray-700.dark\:text-gray-300,
+.dark.theme-deep-purple .text-gray-700.dark\:text-gray-300 {
+  color: var(--text-secondary) !important;
+}
+
+/* Project borders */
+.dark.theme-black .border-indigo-100.dark\:border-gray-600,
+.dark.theme-navy .border-indigo-100.dark\:border-gray-600,
+.dark.theme-charcoal .border-indigo-100.dark\:border-gray-600,
+.dark.theme-midnight .border-indigo-100.dark\:border-gray-600,
+.dark.theme-deep-purple .border-indigo-100.dark\:border-gray-600,
+.dark.theme-black .border-purple-100.dark\:border-gray-600,
+.dark.theme-navy .border-purple-100.dark\:border-gray-600,
+.dark.theme-charcoal .border-purple-100.dark\:border-gray-600,
+.dark.theme-midnight .border-purple-100.dark\:border-gray-600,
+.dark.theme-deep-purple .border-purple-100.dark\:border-gray-600 {
+  border-color: var(--card-border) !important;
+}
+
+/* Project links */
+.dark.theme-black a.text-gray-700.hover\:text-indigo-600,
+.dark.theme-navy a.text-gray-700.hover\:text-indigo-600,
+.dark.theme-charcoal a.text-gray-700.hover\:text-indigo-600,
+.dark.theme-midnight a.text-gray-700.hover\:text-indigo-600,
+.dark.theme-deep-purple a.text-gray-700.hover\:text-indigo-600 {
+  color: var(--text-secondary) !important;
+}
+
+.dark.theme-black a.text-gray-700.hover\:text-indigo-600:hover,
+.dark.theme-navy a.text-gray-700.hover\:text-indigo-600:hover,
+.dark.theme-charcoal a.text-gray-700.hover\:text-indigo-600:hover,
+.dark.theme-midnight a.text-gray-700.hover\:text-indigo-600:hover,
+.dark.theme-deep-purple a.text-gray-700.hover\:text-indigo-600:hover {
+  color: var(--accent-color) !important;
+}
+
+/* Gradient backgrounds */
+.dark.theme-black .from-white.dark\:from-gray-700,
+.dark.theme-navy .from-white.dark\:from-gray-700,
+.dark.theme-charcoal .from-white.dark\:from-gray-700,
+.dark.theme-midnight .from-white.dark\:from-gray-700,
+.dark.theme-deep-purple .from-white.dark\:from-gray-700 {
+  --tw-gradient-from: var(--card-bg) !important;
+}
+
+.dark.theme-black .to-indigo-50.dark\:to-gray-600,
+.dark.theme-navy .to-indigo-50.dark\:to-gray-600,
+.dark.theme-charcoal .to-indigo-50.dark\:to-gray-600,
+.dark.theme-midnight .to-indigo-50.dark\:to-gray-600,
+.dark.theme-deep-purple .to-indigo-50.dark\:to-gray-600,
+.dark.theme-black .to-purple-50.dark\:to-gray-600,
+.dark.theme-navy .to-purple-50.dark\:to-gray-600,
+.dark.theme-charcoal .to-purple-50.dark\:to-gray-600,
+.dark.theme-midnight .to-purple-50.dark\:to-gray-600,
+.dark.theme-deep-purple .to-purple-50.dark\:to-gray-600 {
+  --tw-gradient-to: var(--bg-secondary) !important;
+}
+
+/* HomeView Styles */
+
+/* Border colors for cards */
+.dark.theme-black .border-theme-primary,
+.dark.theme-navy .border-theme-primary,
+.dark.theme-charcoal .border-theme-primary,
+.dark.theme-midnight .border-theme-primary,
+.dark.theme-deep-purple .border-theme-primary {
+  border-color: var(--accent-color) !important;
+}
+
+.dark.theme-black .border-theme-accent,
+.dark.theme-navy .border-theme-accent,
+.dark.theme-charcoal .border-theme-accent,
+.dark.theme-midnight .border-theme-accent,
+.dark.theme-deep-purple .border-theme-accent {
+  border-color: var(--accent-color) !important;
+}
+
+/* Text colors */
+.dark.theme-black .text-theme-primary,
+.dark.theme-navy .text-theme-primary,
+.dark.theme-charcoal .text-theme-primary,
+.dark.theme-midnight .text-theme-primary,
+.dark.theme-deep-purple .text-theme-primary {
+  color: var(--accent-color) !important;
+}
+
+.dark.theme-black .text-theme-secondary,
+.dark.theme-navy .text-theme-secondary,
+.dark.theme-charcoal .text-theme-secondary,
+.dark.theme-midnight .text-theme-secondary,
+.dark.theme-deep-purple .text-theme-secondary {
+  color: var(--accent-color) !important;
+}
+
+/* Background colors */
+.dark.theme-black .bg-theme-primary,
+.dark.theme-navy .bg-theme-primary,
+.dark.theme-charcoal .bg-theme-primary,
+.dark.theme-midnight .bg-theme-primary,
+.dark.theme-deep-purple .bg-theme-primary {
+  background-color: var(--accent-color) !important;
+}
+
+.dark.theme-black .bg-theme-secondary,
+.dark.theme-navy .bg-theme-secondary,
+.dark.theme-charcoal .bg-theme-secondary,
+.dark.theme-midnight .bg-theme-secondary,
+.dark.theme-deep-purple .bg-theme-secondary {
+  background-color: var(--accent-color) !important;
+}

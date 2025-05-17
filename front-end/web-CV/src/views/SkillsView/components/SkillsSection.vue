@@ -11,7 +11,7 @@ const { t } = useI18n()
   <LazySection class="mb-16 p-4">
     <div class="flex items-center mb-10">
       <div class="mr-4 hidden md:block">
-        <div class="h-12 w-12 bg-theme-primary rounded-lg flex items-center justify-center shadow-md">
+        <div class="h-12 w-12 rounded-lg flex items-center justify-center shadow-md" :style="{ 'background-color': colorStore.currentColor.primary }">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
           </svg>
