@@ -32,9 +32,9 @@ const secondaryButtons = computed(() => actionButtons.filter(button => !button.i
 </script>
 
 <template>
-  <div class="flex flex-col md:flex-row items-center justify-between mb-16 gap-8">
-    <div class="md:w-1/2 transform transition-all duration-300 hover:-translate-y-1">
-      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+  <div class="wrapper flex flex-col lg:flex-row items-center justify-between mb-16 gap-4 lg:gap-8">
+    <div class="lg:w-1/2 transform transition-all duration-300 hover:-translate-y-1">
+      <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
         <span class="block">{{ t('home.greeting') }}</span>
         <span class="block transform transition-all duration-300 hover:scale-105" :style="{ color: colorStore.currentColor.primary }">
           <span class="typing-effect">{{ displayedName }}</span>
@@ -47,10 +47,10 @@ const secondaryButtons = computed(() => actionButtons.filter(button => !button.i
         </svg>
         <span>{{ t('home.role') }}</span>
       </h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-700 dark:text-gray-300 mb-8 bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border-l-4" :style="{ 'border-color': colorStore.currentColor.primary }">
-        <div v-for="item in contactItems" :key="item.id" class="flex items-center group">
-          <div :class="{'h-10 w-14': item.id === 'email', 'h-10 w-10': item.id !== 'email'}" class="rounded-lg flex items-center justify-center mr-3 transition-colors group-hover:bg-opacity-50" :style="{ 'background-color': colorStore.currentColor.secondary + '30', '--hover-bg': colorStore.currentColor.secondary + '50' }">
-            <svg v-if="item.id === 'email'" xmlns="http://www.w3.org/2000/svg" style="borer: 1px solid" class="h-6 w-[40px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" :style="{ 'color': colorStore.currentColor.secondary }">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-700 dark:text-gray-300 mb-8 bg-white dark:bg-gray-800 p-4 lg:p-6 rounded-xl shadow-md border-l-4 groups" :style="{ 'border-color': colorStore.currentColor.primary }">
+        <div v-for="item in contactItems" :key="item.id" class="flex items-center group"> 
+          <div :class="{'h-10 w-10 sm:w-12 md:w-14 lg:w-14 email-icon-container': item.id === 'email', 'h-10 w-10': item.id !== 'email'}" class="rounded-lg flex items-center justify-center mr-3 transition-colors group-hover:bg-opacity-50" :style="{ 'background-color': colorStore.currentColor.secondary + '30', '--hover-bg': colorStore.currentColor.secondary + '50' }">
+            <svg v-if="item.id === 'email'" xmlns="http://www.w3.org/2000/svg" class="h-6 w-8 sm:w-9 md:w-10 lg:w-11 xl:w-10 2xl:w-14 email-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" :style="{ 'color': colorStore.currentColor.secondary }">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
             <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" :style="{ 'color': colorStore.currentColor.secondary }">
@@ -85,8 +85,8 @@ const secondaryButtons = computed(() => actionButtons.filter(button => !button.i
         </a>
       </div>
     </div>
-    <div class="md:w-1/2 flex justify-center transform transition-all duration-500 hover:scale-105">
-      <div class="relative w-64 h-64 md:w-80 md:h-80">
+    <div class="avatar lg:w-1/2 flex justify-center transform transition-all duration-500 hover:scale-105 mt-8 lg:mt-0">
+      <div class="relative w-64 h-64 lg:w-80 lg:h-80">
         <div class="absolute inset-0 rounded-full shadow-lg" :style="{ 'background-image': `linear-gradient(to bottom right, ${colorStore.currentColor.primary}20, ${colorStore.currentColor.secondary}20)` }"></div>
         <div class="absolute inset-4 rounded-full shadow-inner" :style="{ 'background-image': `linear-gradient(to top right, ${colorStore.currentColor.primary}30, ${colorStore.currentColor.secondary}30)` }"></div>
         <!-- Placeholder for profile image -->
@@ -99,6 +99,25 @@ const secondaryButtons = computed(() => actionButtons.filter(button => !button.i
 </template>
 
 <style scoped>
+@media (min-width: 768px) and (max-width: 1270px) {
+  .email-icon-container {
+    width: 40px;
+  }
+  .wrapper{
+    display: block;
+  }
+
+  .groups{
+    width: 100%;
+  }
+
+  .avatar{
+    margin: 0 auto;
+    margin-top: 25px;
+  }
+
+}
+
 .typing-cursor {
   display: inline-block;
   width: 3px;
