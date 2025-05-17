@@ -174,3 +174,36 @@
   background-color: var(--bg-secondary) !important;
   color: var(--text-primary) !important;
 }
+
+/* Footer Styles */
+.dark.theme-black footer.bg-gray-800,
+.dark.theme-navy footer.bg-gray-800,
+.dark.theme-charcoal footer.bg-gray-800,
+.dark.theme-midnight footer.bg-gray-800,
+.dark.theme-deep-purple footer.bg-gray-800 {
+  background-color: var(--bg-secondary) !important;
+}
+
+.dark.theme-black footer .text-gray-400,
+.dark.theme-navy footer .text-gray-400,
+.dark.theme-charcoal footer .text-gray-400,
+.dark.theme-midnight footer .text-gray-400,
+.dark.theme-deep-purple footer .text-gray-400 {
+  color: var(--text-secondary) !important;
+}
+
+.dark.theme-black footer .text-theme-secondary,
+.dark.theme-navy footer .text-theme-secondary,
+.dark.theme-charcoal footer .text-theme-secondary,
+.dark.theme-midnight footer .text-theme-secondary,
+.dark.theme-deep-purple footer .text-theme-secondary {
+  color: var(--accent-color) !important;
+}
+
+.dark.theme-black footer .hover\:text-white:hover,
+.dark.theme-navy footer .hover\:text-white:hover,
+.dark.theme-charcoal footer .hover\:text-white:hover,
+.dark.theme-midnight footer .hover\:text-white:hover,
+.dark.theme-deep-purple footer .hover\:text-white:hover {
+  color: var(--text-primary) !important;
+}
