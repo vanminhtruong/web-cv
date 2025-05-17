@@ -1,0 +1,67 @@
+/* Dark Theme Variations */
+
+/* Áp dụng màu nền cho toàn bộ trang web */
+html.dark {
+  background-color: #1f2937; /* gray-800 - default dark */
+}
+
+/* Black Theme */
+html.dark.theme-black {
+  background-color: #000000 !important;
+}
+
+/* Navy Theme */
+html.dark.theme-navy {
+  background-color: #312e81 !important; /* indigo-900 */
+}
+
+/* Charcoal Theme */
+html.dark.theme-charcoal {
+  background-color: #111827 !important; /* gray-900 */
+}
+
+/* Midnight Theme */
+html.dark.theme-midnight {
+  background-color: #1e3a8a !important; /* blue-900 */
+}
+
+/* Deep Purple Theme */
+html.dark.theme-deep-purple {
+  background-color: #4c1d95 !important; /* purple-900 */
+}
+
+/* Đảm bảo body cũng có màu nền tương tự */
+body {
+  background-color: transparent;
+}
+
+/* Đảm bảo các container chính không ghi đè màu nền */
+.dark .min-h-screen,
+.dark .bg-gray-50,
+.dark .dark\:bg-gray-800,
+.dark .dark\:bg-gray-900 {
+  background-color: transparent !important;
+}
+
+/* Đảm bảo các gradient không ghi đè màu nền */
+.dark.theme-black .bg-gradient-to-b,
+.dark.theme-navy .bg-gradient-to-b,
+.dark.theme-charcoal .bg-gradient-to-b,
+.dark.theme-midnight .bg-gradient-to-b,
+.dark.theme-deep-purple .bg-gradient-to-b {
+  background: none !important;
+}
+
+/* Đảm bảo các phần tử con không bị ảnh hưởng bởi màu nền */
+.dark .dark\:bg-gray-700,
+.dark .dark\:bg-gray-800,
+.dark .dark\:bg-gray-900 {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Đảm bảo các phần tử có màu nền riêng vẫn giữ nguyên */
+.dark .dark\:bg-gray-700.preserve-bg,
+.dark .dark\:bg-gray-800.preserve-bg,
+.dark .dark\:bg-gray-900.preserve-bg {
+  background-color: var(--tw-bg-opacity, 1) !important;
+}

@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-50 dark:bg-gray-900 font-sans dark:text-white">
+  <div class="min-h-screen bg-gray-50 font-sans dark:text-white">
     <BackToTop />
     <Header />
     <main class="pt-20">
