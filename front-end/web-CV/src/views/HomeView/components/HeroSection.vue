@@ -1,62 +1,32 @@
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useProfileStore } from '../../../stores/profile'
+import { useTypingEffect } from '../composables/useTypingEffect'
+import { useContactInfo } from '../composables/useContactInfo'
 
 const profileStore = useProfileStore()
 const { t } = useI18n()
 
 // Hiệu ứng xổ ra từng chữ cho tên
 const fullName = "Trương Văn Minh" // Giữ nguyên tên này vì đây là tên riêng
-const displayedName = ref('')
-const isDeleting = ref(false)
-const loopNum = ref(0)
-const typingSpeed = ref(150) // Tốc độ gõ (ms)
-const deletingSpeed = ref(100) // Tốc độ xóa (ms)
-const delayAfterComplete = 2000 // Thời gian chờ sau khi hiển thị đầy đủ (ms)
-const delayAfterDelete = 500 // Thời gian chờ sau khi xóa hết (ms)
 
-let typingTimer = null
-
-const typeEffect = () => {
-  const current = loopNum.value % 1 // Chỉ có 1 tên nên luôn là 0
-  const fullText = fullName
-
-  if (isDeleting.value) {
-    // Đang xóa
-    displayedName.value = fullText.substring(0, displayedName.value.length - 1)
-    typingSpeed.value = deletingSpeed.value
-  } else {
-    // Đang gõ
-    displayedName.value = fullText.substring(0, displayedName.value.length + 1)
-  }
-
-  // Xử lý khi hoàn thành gõ hoặc xóa
-  if (!isDeleting.value && displayedName.value === fullText) {
-    // Đã gõ xong, chờ một lúc rồi bắt đầu xóa
-    typingSpeed.value = delayAfterComplete
-    isDeleting.value = true
-  } else if (isDeleting.value && displayedName.value === '') {
-    // Đã xóa xong, chuyển sang vòng lặp tiếp theo
-    isDeleting.value = false
-    loopNum.value++
-    typingSpeed.value = delayAfterDelete
-  }
-
-  typingTimer = setTimeout(typeEffect, typingSpeed.value)
-}
-
-onMounted(() => {
-  // Bắt đầu hiệu ứng typing khi component được mount
-  typingTimer = setTimeout(typeEffect, 1000) // Chờ 1 giây trước khi bắt đầu
+// Sử dụng composable cho hiệu ứng đánh máy
+const { displayedText: displayedName } = useTypingEffect(fullName, {
+  typingSpeed: 150,        // Tốc độ gõ (ms)
+  deletingSpeed: 100,      // Tốc độ xóa (ms)
+  delayAfterComplete: 2000, // Thời gian chờ sau khi hiển thị đầy đủ (ms)
+  delayAfterDelete: 500,   // Thời gian chờ sau khi xóa hết (ms)
+  startDelay: 1000,        // Chờ 1 giây trước khi bắt đầu
+  loop: true               // Lặp lại hiệu ứng
 })
 
-onBeforeUnmount(() => {
-  // Xóa timer khi component bị unmount để tránh memory leak
-  if (typingTimer) {
-    clearTimeout(typingTimer)
-  }
-})
+// Sử dụng composable cho thông tin liên hệ
+const { contactItems, actionButtons } = useContactInfo()
+
+// Tạo computed properties để lọc các nút hành động
+const primaryButtons = computed(() => actionButtons.filter(button => button.isPrimary))
+const secondaryButtons = computed(() => actionButtons.filter(button => !button.isPrimary))
 </script>
 
 <template>
@@ -76,61 +46,33 @@ onBeforeUnmount(() => {
         <span>{{ t('home.role') }}</span>
       </h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-700 dark:text-gray-300 mb-8 bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border-l-4 border-theme-primary">
-        <div class="flex items-center group">
+        <div v-for="item in contactItems" :key="item.id" class="flex items-center group">
           <div class="h-10 w-10 bg-theme-secondary bg-opacity-20 rounded-lg flex items-center justify-center mr-3 group-hover:bg-theme-secondary group-hover:bg-opacity-30 transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="item.svgPath" />
             </svg>
           </div>
           <div>
-            <div class="text-sm font-medium text-gray-500">{{ t('about.phone') }}</div>
-            <div class="font-medium">0982743860</div>
-          </div>
-        </div>
-        <div class="flex items-center group">
-          <div class="h-10 w-10 bg-theme-secondary bg-opacity-20 rounded-lg flex items-center justify-center mr-3 group-hover:bg-theme-secondary group-hover:bg-opacity-30 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-          </div>
-          <div>
-            <div class="text-sm font-medium text-gray-500">{{ t('about.email') }}</div>
-            <div class="font-medium">vanminhtruong95@gmail.com</div>
-          </div>
-        </div>
-        <div class="flex items-center group">
-          <div class="h-10 w-10 bg-theme-secondary bg-opacity-20 rounded-lg flex items-center justify-center mr-3 group-hover:bg-theme-secondary group-hover:bg-opacity-30 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
-          </div>
-          <div>
-            <div class="text-sm font-medium text-gray-500">GitHub</div>
-            <a href="https://github.com/vanminhtruong/Team03-cy.git" class="font-medium text-theme-primary hover:text-theme-accent transition-colors">github.com/vanminhtruong</a>
-          </div>
-        </div>
-        <div class="flex items-center group">
-          <div class="h-10 w-10 bg-theme-secondary bg-opacity-20 rounded-lg flex items-center justify-center mr-3 group-hover:bg-theme-secondary group-hover:bg-opacity-30 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-          </div>
-          <div>
-            <div class="text-sm font-medium text-gray-500">{{ t('about.address') }}</div>
-            <div class="font-medium">{{ t('about.addressValue') }}</div>
+            <div class="text-sm font-medium text-gray-500">{{ item.label }}</div>
+            <div v-if="!item.url" class="font-medium">{{ item.value }}</div>
+            <a v-else :href="item.url" class="font-medium text-theme-primary hover:text-theme-accent transition-colors">github.com/{{ item.value }}</a>
           </div>
         </div>
       </div>
       <div class="flex flex-wrap gap-3">
-        <a href="#contact" class="inline-flex items-center px-6 py-3 bg-theme-primary dark:bg-theme-accent text-white font-medium rounded-lg hover:bg-theme-accent dark:hover:bg-theme-secondary transition-colors duration-300 shadow-md hover:shadow-lg">
-          {{ t('home.contactMe') }}
+        <a v-for="button in primaryButtons" :key="button.id"
+           :href="button.href" 
+           class="inline-flex items-center px-6 py-3 bg-theme-primary dark:bg-theme-accent text-white font-medium rounded-lg hover:bg-theme-accent dark:hover:bg-theme-secondary transition-colors duration-300 shadow-md hover:shadow-lg">
+          {{ button.label }}
         </a>
-        <a :href="profileStore.cvPath" download class="inline-flex items-center px-6 py-3 border-2 border-theme-accent dark:border-theme-secondary text-theme-accent dark:text-theme-secondary font-medium rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-300 shadow-md hover:shadow-lg ml-4">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+        <a v-for="button in secondaryButtons" :key="button.id"
+           :href="profileStore.cvPath" 
+           download 
+           class="inline-flex items-center px-6 py-3 border-2 border-theme-accent dark:border-theme-secondary text-theme-accent dark:text-theme-secondary font-medium rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-300 shadow-md hover:shadow-lg ml-4">
+          <svg v-if="button.icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="button.icon" />
           </svg>
-          {{ t('home.downloadCV') }}
+          {{ button.label }}
         </a>
       </div>
     </div>
