@@ -8,7 +8,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <LazySection class="mb-16">
+  <LazySection class="mb-16 p-4">
     <div class="flex items-center mb-10">
       <div class="mr-4 hidden md:block">
         <div class="h-12 w-12 bg-theme-primary rounded-lg flex items-center justify-center shadow-md">
@@ -23,7 +23,7 @@ const { t } = useI18n()
     <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-8 mb-8 transform hover:-translate-y-1 border-l-4" :style="{ 'border-color': colorStore.currentColor.primary }">
       <div class="flex flex-col md:flex-row justify-between items-start mb-6">
         <div class="flex items-start">
-          <div class="h-12 w-12 rounded-lg flex items-center justify-center mr-4 flex-shrink-0" :style="{ 'background-color': colorStore.currentColor.secondary + '33' }">
+          <div class="h-12 w-12 rounded-lg flex items-center justify-center mr-4 flex-shrink-0" :style="{ 'background-color': colorStore.currentColor.primary }">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path d="M12 14l9-5-9-5-9 5 9 5z" />
               <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
@@ -44,9 +44,9 @@ const { t } = useI18n()
         </div>
       </div>
       
-      <div class="ml-16 mt-6 bg-white dark:bg-gray-700 p-5 rounded-lg shadow-sm border dark:border-gray-600" :style="{ 'border-color': colorStore.currentColor.secondary + '33' }">
+      <div class="ml-16 mt-6 bg-white dark:bg-gray-700 p-5 rounded-lg shadow-sm border dark:border-gray-600" :style="{ 'border-color': colorStore.currentColor.secondary }">
         <div class="flex items-center mb-4">
-          <div class="h-8 w-8 rounded-lg flex items-center justify-center mr-3" :style="{ 'background-color': colorStore.currentColor.secondary + '33' }">
+          <div class="h-8 w-8 rounded-lg flex items-center justify-center mr-3" :style="{ 'background-color': colorStore.currentColor.primary }">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
             </svg>
@@ -55,19 +55,19 @@ const { t } = useI18n()
         </div>
         <ul class="ml-11 space-y-2">
           <li class="flex items-start">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 flex-shrink-0 mt-0.5" :style="{ 'color': colorStore.currentColor.secondary }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 flex-shrink-0 mt-0.5" :style="{ 'color': colorStore.currentColor.primary }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
             </svg>
             <span>{{ t('skills.course1') }}</span>
           </li>
           <li class="flex items-start">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 flex-shrink-0 mt-0.5" :style="{ 'color': colorStore.currentColor.secondary }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 flex-shrink-0 mt-0.5" :style="{ 'color': colorStore.currentColor.primary }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
             </svg>
             <span>{{ t('skills.course2') }}</span>
           </li>
           <li class="flex items-start">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 flex-shrink-0 mt-0.5" :style="{ 'color': colorStore.currentColor.secondary }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 flex-shrink-0 mt-0.5" :style="{ 'color': colorStore.currentColor.primary }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
             </svg>
             <span>{{ t('skills.course3') }}</span>

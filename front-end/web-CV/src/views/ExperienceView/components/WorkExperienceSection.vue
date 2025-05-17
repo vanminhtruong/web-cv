@@ -28,7 +28,6 @@ const { t } = useI18n()
       <div class="space-y-12">
         <!-- Experience 1 -->
         <div class="relative flex flex-col md:flex-row items-start md:justify-between group pt-14 md:pt-0">
-          <!-- Ngày tháng mobile (chỉ hiển thị trên mobile) -->
           <div class="block md:hidden w-full mb-8 px-4 absolute top-0 left-0 right-0 z-20">
             <div class="text-white font-medium text-sm uppercase tracking-wider px-4 py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 inline-flex items-center" :style="{ 'background-image': `linear-gradient(to right, ${colorStore.currentColor.primary}, ${colorStore.currentColor.secondary})` }">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">

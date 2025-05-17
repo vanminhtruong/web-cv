@@ -6,7 +6,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <LazySection class="mb-16">
+  <LazySection class="mb-16 p-4">
     <div class="flex items-center mb-10">
       <div class="mr-4 hidden md:block">
         <div class="h-12 w-12 bg-theme-primary rounded-lg flex items-center justify-center shadow-md">
