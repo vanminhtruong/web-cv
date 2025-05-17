@@ -25,27 +25,21 @@ export function useTypingEffect(text, options = {}) {
   
   let typingTimer = null
 
-  // Hàm tạo hiệu ứng đánh máy
   const typeEffect = () => {
     const fullText = text
 
     if (isDeleting.value) {
-      // Đang xóa
       displayedText.value = fullText.substring(0, displayedText.value.length - 1)
       currentSpeed.value = deletingSpeed
     } else {
-      // Đang gõ
       displayedText.value = fullText.substring(0, displayedText.value.length + 1)
       currentSpeed.value = typingSpeed
     }
 
-    // Xử lý khi hoàn thành gõ hoặc xóa
     if (!isDeleting.value && displayedText.value === fullText) {
-      // Đã gõ xong, chờ một lúc rồi bắt đầu xóa
       currentSpeed.value = delayAfterComplete
       isDeleting.value = true
     } else if (isDeleting.value && displayedText.value === '') {
-      // Đã xóa xong, chuyển sang vòng lặp tiếp theo
       isDeleting.value = false
       if (loop) {
         loopNum.value++
@@ -53,7 +47,6 @@ export function useTypingEffect(text, options = {}) {
       currentSpeed.value = delayAfterDelete
     }
 
-    // Nếu không lặp lại và đã hoàn thành một chu kỳ, dừng lại
     if (!loop && isDeleting.value && displayedText.value === '') {
       return
     }
@@ -61,7 +54,6 @@ export function useTypingEffect(text, options = {}) {
     typingTimer = setTimeout(typeEffect, currentSpeed.value)
   }
 
-  // Bắt đầu hiệu ứng
   const startTyping = () => {
     if (typingTimer) {
       clearTimeout(typingTimer)
@@ -69,7 +61,6 @@ export function useTypingEffect(text, options = {}) {
     typingTimer = setTimeout(typeEffect, startDelay)
   }
 
-  // Dừng hiệu ứng
   const stopTyping = () => {
     if (typingTimer) {
       clearTimeout(typingTimer)
@@ -77,12 +68,10 @@ export function useTypingEffect(text, options = {}) {
     }
   }
 
-  // Khởi động hiệu ứng khi component được mount
   onMounted(() => {
     startTyping()
   })
 
-  // Xóa timer khi component bị unmount để tránh memory leak
   onBeforeUnmount(() => {
     stopTyping()
   })
