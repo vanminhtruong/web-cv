@@ -36,7 +36,7 @@ const colorStore = useColorStore()
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" :style="{ 'color': colorStore.currentColor.secondary }">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
             </svg>
-            <span class="block" :style="{ 'color': colorStore.currentColor.primary }">{{ t('home.shortTermGoal') }}</span>
+            <span class="block text-gray-700 dark:text-gray-300">{{ t('home.shortTermGoal') }}</span>
           </li>
         </ul>
       </LazySection>
