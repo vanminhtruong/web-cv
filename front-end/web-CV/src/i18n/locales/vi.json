@@ -20,7 +20,7 @@
   },
   "home": {
     "greeting": "Xin chào, tôi là",
-    "role": "Lập trình viên Web",
+    "role": "Thực tập sinh ReactJS",
     "objective": "Mục tiêu",
     "shortTermTitle": "Mục tiêu ngắn hạn",
     "longTermTitle": "Mục tiêu dài hạn",
@@ -28,7 +28,8 @@
     "downloadCV": "Tải CV",
     "contactMe": "Liên Hệ Tôi",
     "shortTermGoal": "Trở thành một nhà phát triển Full Stack Web cấp độ junior trong năm tới.",
-    "longTermGoal": "Thăng tiến lên vị trí nhà phát triển Full Stack Web cấp độ senior trong vòng năm năm tới."
+    "longTermGoal": "Thăng tiến lên vị trí nhà phát triển Full Stack Web cấp độ senior trong vòng năm năm tới.",
+    "avatar": "TVM"
   },
   "about": {
     "title": "Về Tôi",
@@ -50,6 +51,7 @@
     "languages": "Ngôn Ngữ Lập Trình",
     "frameworks": "Framework & Thư Viện",
     "tools": "Công Cụ & Công Nghệ",
+    "aiTools": "Công Cụ AI",
     "course1": "Lập trình Hướng đối tượng (A)",
     "course2": "Cấu trúc dữ liệu và Giải thuật (A-)",
     "course3": "Cơ sở dữ liệu Quan hệ (A)"

@@ -35,7 +35,7 @@ const secondaryButtons = computed(() => actionButtons.filter(button => !button.i
         <div class="absolute inset-4 rounded-full shadow-inner" :style="{ 'background-image': `linear-gradient(to top right, ${colorStore.currentColor.primary}30, ${colorStore.currentColor.secondary}30)` }"></div>
         <!-- Placeholder for profile image -->
         <div class="absolute inset-8 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-xl" :style="{ 'background-color': colorStore.currentColor.primary }">
-          TVM
+          {{ t('home.avatar') }}
         </div>
       </div>
     </div>

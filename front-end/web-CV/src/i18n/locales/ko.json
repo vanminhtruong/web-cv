@@ -20,7 +20,7 @@
   },
   "home": {
     "greeting": "안녕하세요, 저는",
-    "role": "웹 개발자",
+    "role": "ReactJS 인턴",
     "objective": "목표",
     "shortTermTitle": "단기 목표",
     "longTermTitle": "장기 목표",
@@ -29,7 +29,8 @@
     "contactMe": "연락하기",
     "shortTermGoal": "내년 안에 주니어 풀스택 웹 개발자가 되는 것",
     "longTermGoal": "향후 5년 내에 시니어 풀스택 웹 개발자 역할로 발전하는 것",
-    "aboutMe": "About Me"
+    "aboutMe": "About Me",
+    "avatar": "TVM"
   },
   "about": {
     "title": "소개",
@@ -51,6 +52,7 @@
     "languages": "프로그래밍 언어",
     "frameworks": "프레임워크 및 라이브러리",
     "tools": "도구 및 기술",
+    "aiTools": "AI 도구",
     "course1": "객체 지향 프로그래밍 (A)",
     "course2": "데이터 구조 및 알고리즘 (A-)",
     "course3": "관계형 데이터베이스 (A)"

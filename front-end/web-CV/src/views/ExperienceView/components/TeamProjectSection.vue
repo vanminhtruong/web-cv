@@ -14,7 +14,7 @@ const { t } = useI18n()
         <div class="absolute top-0 right-0 text-white px-6 py-2 rounded-bl-lg font-semibold text-sm uppercase tracking-wider shadow-md" :style="{ 'background-image': `linear-gradient(to right, ${colorStore.currentColor.primary}, ${colorStore.currentColor.secondary})` }">
           {{ t('projects.featuredProject') }}
         </div>
-        <div class="flex flex-col lg:flex-row justify-between items-start mb-8 mt-8">
+        <div class="flex flex-col tablet:flex-col lg:flex-col xl:flex-row justify-between items-start mb-8 mt-8">
           <div class="flex items-center">
             <div class="h-10 w-10 rounded-lg flex items-center justify-center mr-4" :style="{ 'background-color': colorStore.currentColor.primary }">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -23,7 +23,7 @@ const { t } = useI18n()
             </div>
             <h3 class="text-2xl font-bold" :style="{ 'color': colorStore.currentColor.primary }">{{ t('projects.project1.title') }}</h3>
           </div>
-          <div class="flex items-center font-medium mt-4 lg:mt-0 px-4 py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 text-white" :style="{ 'background-image': `linear-gradient(to right, ${colorStore.currentColor.primary}, ${colorStore.currentColor.secondary})` }">
+          <div class="flex items-center font-medium mt-4 tablet:mt-4 lg:mt-4 xl:mt-0 px-4 py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 text-white" :style="{ 'background-image': `linear-gradient(to right, ${colorStore.currentColor.primary}, ${colorStore.currentColor.secondary})` }">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
@@ -45,7 +45,7 @@ const { t } = useI18n()
           </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8 mt-6">
+        <div class="grid grid-cols-1 tablet:grid-cols-1 lg:grid-cols-1 xl:grid-cols-3 gap-8 mb-8 mt-6">
           <div class="bg-gradient-to-br from-white dark:from-gray-700 to-indigo-50 dark:to-gray-600 p-5 rounded-lg shadow-sm border border-indigo-100 dark:border-gray-600 transform transition-all duration-300 hover:shadow-md hover:-translate-y-1">
             <div class="flex items-center mb-3">
               <div class="h-8 w-8 rounded-lg flex items-center justify-center mr-3" :style="{ 'background-color': colorStore.currentColor.primary + '20' }">
@@ -170,7 +170,7 @@ const { t } = useI18n()
               <div class="flex items-center mb-2">
                 <span class="px-2 py-1 text-xs font-medium rounded mr-2" :style="{ 'background-color': colorStore.currentColor.primary + '20', 'color': colorStore.currentColor.primary }">{{ t('projects.userFeatures') }}</span>
               </div>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="grid grid-cols-1 tablet:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4">
                 <ul class="space-y-2">
                   <li class="flex items-start">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 flex-shrink-0 mt-0.5" :style="{ 'color': colorStore.currentColor.secondary }" fill="none" viewBox="0 0 24 24" stroke="currentColor">

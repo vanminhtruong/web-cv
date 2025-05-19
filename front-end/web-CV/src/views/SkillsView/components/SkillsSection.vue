@@ -139,7 +139,7 @@ const { t } = useI18n()
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h3 class="text-xl font-semibold text-gray-900 dark:text-white">AI Tools</h3>
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white">{{ t('skills.aiTools') }}</h3>
             </div>
             <div class="flex flex-wrap gap-2 ml-13">
               <span class="px-4 py-2 bg-gradient-to-r from-pink-100 to-rose-100 dark:from-pink-900/30 dark:to-rose-900/30 text-rose-800 dark:text-rose-300 rounded-lg text-sm font-medium border border-rose-200 dark:border-rose-800 shadow-sm hover:shadow transition-all duration-300 hover:-translate-y-1 flex items-center">

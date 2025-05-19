@@ -20,7 +20,7 @@
   },
   "home": {
     "greeting": "你好，我是",
-    "role": "网页开发者",
+    "role": "ReactJS 实习生",
     "objective": "目标",
     "shortTermTitle": "短期目标",
     "longTermTitle": "长期目标",
@@ -28,7 +28,8 @@
     "downloadCV": "下载简历",
     "contactMe": "联系我",
     "shortTermGoal": "在明年内成为初级全栈网络开发人员",
-    "longTermGoal": "在未来五年内晋升为高级全栈网络开发人员角色"
+    "longTermGoal": "在未来五年内晋升为高级全栈网络开发人员角色",
+    "avatar": "TVM"
   },
   "about": {
     "title": "关于我",
@@ -50,6 +51,7 @@
     "languages": "编程语言",
     "frameworks": "框架和库",
     "tools": "工具和技术",
+    "aiTools": "AI工具",
     "course1": "面向对象编程 (A)",
     "course2": "数据结构与算法 (A-)",
     "course3": "关系型数据库 (A)"

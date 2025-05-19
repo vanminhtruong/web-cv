@@ -20,14 +20,15 @@
   },
   "home": {
     "greeting": "Hello, I'm",
-    "role": "Web Developer",
+    "role": "Intern ReactJS",
     "objective": "Objective",
     "shortTermTitle": "Short-term Goal",
     "longTermTitle": "Long-term Goal",
     "shortTermGoal": "To become a junior Full Stack Web Developer within the next year.",
     "longTermGoal": "To advance to a senior Full Stack Web Developer role within the next five years.",
     "downloadCV": "Download CV",
-    "contactMe": "Contact Me"
+    "contactMe": "Contact Me",
+    "avatar": "TVM"
   },
   "about": {
     "title": "About Me",
@@ -49,6 +50,7 @@
     "languages": "Programming Languages",
     "frameworks": "Frameworks & Libraries",
     "tools": "Tools & Technologies",
+    "aiTools": "AI Tools",
     "course1": "Object-Oriented Programming (A)",
     "course2": "Data Structures and Algorithms (A-)",
     "course3": "Relational Database (A)"
