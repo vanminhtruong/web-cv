@@ -55,8 +55,8 @@ const secondaryButtons = computed(() => actionButtons.filter(button => !button.i
       </h2>
       <div class="grid grid-cols-1 xl:w-[630px] sm:grid-cols-2 gap-4 text-gray-700 dark:text-gray-300 mb-8 bg-white dark:bg-gray-800 p-4 lg:p-6 rounded-xl shadow-md border-l-4 groups" :style="{ 'border-color': colorStore.currentColor.primary }">
         <div v-for="item in contactItems" :key="item.id" class="flex items-center group">  
-          <div :class="{'h-10 w-10 sm:w-12 md:w-14 lg:w-10 email-icon-container': item.id === 'email', 'h-10 w-10': item.id !== 'email'}" class="rounded-lg flex items-center justify-center mr-3 transition-colors group-hover:bg-opacity-50" :style="{ 'background-color': colorStore.currentColor.secondary + '30', '--hover-bg': colorStore.currentColor.secondary + '50' }">
-            <svg v-if="item.id === 'email'" xmlns="http://www.w3.org/2000/svg" class="h-6 w-8 sm:w-9 md:w-10 lg:w-11 xl:w-10 2xl:w-14 email-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" :style="{ 'color': colorStore.currentColor.secondary }">
+          <div class="h-10 w-10 rounded-lg flex items-center justify-center mr-3 transition-colors group-hover:bg-opacity-50" :style="{ 'background-color': colorStore.currentColor.secondary + '30', '--hover-bg': colorStore.currentColor.secondary + '50' }">
+            <svg v-if="item.id === 'email'" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" :style="{ 'color': colorStore.currentColor.secondary }">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg> 
             <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" :style="{ 'color': colorStore.currentColor.secondary }">
@@ -96,9 +96,6 @@ const secondaryButtons = computed(() => actionButtons.filter(button => !button.i
 
 <style scoped>
 @media (min-width: 768px) and (max-width: 1270px) {
-  .email-icon-container {
-    width: 40px;
-  }
   .wrapper{
     display: block;
   }
