@@ -63,7 +63,6 @@ const { t } = useI18n()
         </div>
       </div>
 
-      <!-- Social links & GitHub -->
       <div class="mt-10 bg-white dark:bg-gray-700 p-5 rounded-lg shadow-sm border dark:border-gray-600" :style="{ 'border-color': colorStore.currentColor.secondary }">
         <div class="flex items-center mb-4">
           <div class="h-8 w-8 rounded-lg flex items-center justify-center mr-3" :style="{ 'background-color': colorStore.currentColor.primary }">

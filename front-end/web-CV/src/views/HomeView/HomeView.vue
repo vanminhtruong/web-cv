@@ -18,7 +18,6 @@ const themeStore = useThemeStore()
 </template>
 
 <style scoped>
-/* Lazy loading animations */
 .lazy-hidden {
   opacity: 0;
   transform: translateY(30px);

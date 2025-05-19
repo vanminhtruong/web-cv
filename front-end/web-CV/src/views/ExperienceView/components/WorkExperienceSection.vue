@@ -21,12 +21,8 @@ const { t } = useI18n()
     </div>
 
     <div class="relative">
-      <!-- Timeline bar -->
       <div class="absolute left-0 md:left-1/2 h-full w-1 transform md:translate-x-[-50%] rounded-full" :style="{ 'background-image': `linear-gradient(to bottom, ${colorStore.currentColor.primary}, ${colorStore.currentColor.secondary})` }"></div>
-
-      <!-- Timeline items -->
       <div class="space-y-12">
-        <!-- Experience 1 -->
         <div class="relative flex flex-col md:flex-row items-start md:justify-between group pt-14 md:pt-0">
           <div class="block md:hidden w-full mb-8 px-4 absolute top-0 left-0 right-0 z-20">
             <div class="text-white font-medium text-sm uppercase tracking-wider px-4 py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 inline-flex items-center" :style="{ 'background-image': `linear-gradient(to right, ${colorStore.currentColor.primary}, ${colorStore.currentColor.secondary})` }">
@@ -110,7 +106,6 @@ const { t } = useI18n()
           </div>
         </div>
 
-        <!-- Experience 2 -->
         <div class="relative flex flex-col md:flex-row items-start md:justify-between group pt-14 md:pt-0">
           <!-- Ngày tháng mobile (chỉ hiển thị trên mobile) -->
           <div class="block md:hidden w-full mb-8 px-4 absolute top-0 left-0 right-0 z-20">

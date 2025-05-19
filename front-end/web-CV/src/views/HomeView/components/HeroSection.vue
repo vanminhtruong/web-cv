@@ -10,23 +10,19 @@ const profileStore = useProfileStore()
 const colorStore = useColorStore()
 const { t } = useI18n()
 
-// Hiệu ứng xổ ra từng chữ cho tên
-const fullName = "Trương Văn Minh" // Giữ nguyên tên này vì đây là tên riêng
+const fullName = "Trương Văn Minh" 
 
-// Sử dụng composable cho hiệu ứng đánh máy
 const { displayedText: displayedName } = useTypingEffect(fullName, {
-  typingSpeed: 150,        // Tốc độ gõ (ms)
-  deletingSpeed: 100,      // Tốc độ xóa (ms)
-  delayAfterComplete: 2000, // Thời gian chờ sau khi hiển thị đầy đủ (ms)
-  delayAfterDelete: 500,   // Thời gian chờ sau khi xóa hết (ms)
-  startDelay: 1000,        // Chờ 1 giây trước khi bắt đầu
-  loop: true               // Lặp lại hiệu ứng
+  typingSpeed: 150,        
+  deletingSpeed: 100,      
+  delayAfterComplete: 2000, 
+  delayAfterDelete: 500,   
+  startDelay: 1000,        
+  loop: true              
 })
 
-// Sử dụng composable cho thông tin liên hệ
 const { contactItems, actionButtons } = useContactInfo()
 
-// Tạo computed properties để lọc các nút hành động
 const primaryButtons = computed(() => actionButtons.filter(button => button.isPrimary))
 const secondaryButtons = computed(() => actionButtons.filter(button => !button.isPrimary))
 </script>
@@ -136,7 +132,6 @@ const secondaryButtons = computed(() => actionButtons.filter(button => !button.i
   font-weight: bold;
 }
 
-/* Đảm bảo hiệu ứng tương thích với chế độ tối */
 .dark .typing-cursor {
   color: var(--theme-secondary);
 }
