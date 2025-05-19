@@ -2,7 +2,7 @@
   <div class="color-switcher">
     <div class="relative">
       <button 
-        @click="isOpen = !isOpen" 
+        @click.stop="toggleColorMenu" 
         class="color-button flex items-center justify-center p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300"
         :style="{ backgroundColor: currentColor.primary }"
       >
@@ -20,11 +20,11 @@
             <button 
               v-for="color in colorStore.colors" 
               :key="color.id"
-              @click="selectColor(color.id)"
+              @click.stop="selectColor(color.id)"
               class="color-option w-7 h-7 rounded-full border-2 transition-all duration-200"
               :class="{ 'border-gray-400 dark:border-gray-300 scale-110': color.id === colorStore.currentColorId }"
               :style="{ backgroundColor: color.primary }"
-              :title="color.name"
+              :title="t('colors.' + color.name.toLowerCase())"
             ></button>
           </div>
         </div>
@@ -45,6 +45,10 @@ export default {
     const colorStore = useColorStore()
     const isOpen = ref(false)
     const currentColor = ref(colorStore.currentColor)
+
+    const toggleColorMenu = () => {
+      isOpen.value = !isOpen.value
+    }
 
     const selectColor = (colorId) => {
       colorStore.setColor(colorId)
@@ -72,6 +76,7 @@ export default {
       colorStore,
       isOpen,
       currentColor,
+      toggleColorMenu,
       selectColor
     }
   }
