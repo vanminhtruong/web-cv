@@ -10,7 +10,7 @@ export default {
         'sm': '640px',
         'md': '768px',
         'tablet': {'min': '768px', 'max': '1270px'},
-        // 'lg': '1028px',
+        'lg': '1028px',
         'xl': '1280px',
         '2xl': '1536px',
       },
