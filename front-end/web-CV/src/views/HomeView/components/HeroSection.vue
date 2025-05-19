@@ -28,8 +28,18 @@ const secondaryButtons = computed(() => actionButtons.filter(button => !button.i
 </script>
 
 <template>
-  <div class="wrapper flex flex-col lg:flex-col xl:flex-row  items-center justify-between mb-16 gap-4 lg:gap-8">
-    <div class="tablet:w-full lg:w-full xl:w-1/2 p-4 transform transition-all duration-300 hover:-translate-y-1">
+  <div class="wrapper flex flex-col lg:flex-col xl:flex-row items-center justify-between mb-16 gap-4 lg:gap-8">
+    <div class="avatar xl:w-1/3 flex justify-center transform transition-all duration-500 hover:scale-105 mt-8 lg:mt-0">
+      <div class="relative w-64 h-64 lg:w-80 lg:h-80">
+        <div class="absolute inset-0 rounded-full shadow-lg" :style="{ 'background-image': `linear-gradient(to bottom right, ${colorStore.currentColor.primary}20, ${colorStore.currentColor.secondary}20)` }"></div>
+        <div class="absolute inset-4 rounded-full shadow-inner" :style="{ 'background-image': `linear-gradient(to top right, ${colorStore.currentColor.primary}30, ${colorStore.currentColor.secondary}30)` }"></div>
+        <!-- Placeholder for profile image -->
+        <div class="absolute inset-8 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-xl" :style="{ 'background-color': colorStore.currentColor.primary }">
+          TVM
+        </div>
+      </div>
+    </div>
+    <div class="tablet:w-full lg:w-full xl:w-2/3 p-4 transform transition-all duration-300 hover:-translate-y-1">
       <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
         <span class="block">{{ t('home.greeting') }}</span>
         <span class="block transform transition-all duration-300 hover:scale-105" :style="{ color: colorStore.currentColor.primary }">
@@ -81,16 +91,6 @@ const secondaryButtons = computed(() => actionButtons.filter(button => !button.i
         </a>
       </div>
     </div>
-    <div class="avatar lg:w-1/2 flex justify-center transform transition-all duration-500 hover:scale-105 mt-8 lg:mt-0">
-      <div class="relative w-64 h-64 lg:w-80 lg:h-80">
-        <div class="absolute inset-0 rounded-full shadow-lg" :style="{ 'background-image': `linear-gradient(to bottom right, ${colorStore.currentColor.primary}20, ${colorStore.currentColor.secondary}20)` }"></div>
-        <div class="absolute inset-4 rounded-full shadow-inner" :style="{ 'background-image': `linear-gradient(to top right, ${colorStore.currentColor.primary}30, ${colorStore.currentColor.secondary}30)` }"></div>
-        <!-- Placeholder for profile image -->
-        <div class="absolute inset-8 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-xl" :style="{ 'background-color': colorStore.currentColor.primary }">
-          TVM
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -110,6 +110,7 @@ const secondaryButtons = computed(() => actionButtons.filter(button => !button.i
   .avatar{
     margin: 0 auto;
     margin-top: 25px;
+    order: 2;
   }
 
 }
