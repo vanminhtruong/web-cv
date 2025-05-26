@@ -45,10 +45,10 @@
   },
   "skills": {
     "title": "My Skills",
-    "technical": "Technical Skills",
+    "backEnd": "Back End",
     "soft": "Soft Skills",
     "languages": "Programming Languages",
-    "frameworks": "Frameworks & Libraries",
+    "frontEnd": "Front End",
     "tools": "Tools & Technologies",
     "aiTools": "AI Tools",
     "course1": "Object-Oriented Programming (A)",

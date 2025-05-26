@@ -46,10 +46,10 @@
   },
   "skills": {
     "title": "Kỹ Năng Của Tôi",
-    "technical": "Kỹ Năng Kỹ Thuật",
+    "backEnd": "Back End",
     "soft": "Kỹ Năng Mềm",
     "languages": "Ngôn Ngữ Lập Trình",
-    "frameworks": "Framework & Thư Viện",
+    "frontEnd": "Front End",
     "tools": "Công Cụ & Công Nghệ",
     "aiTools": "Công Cụ AI",
     "course1": "Lập trình Hướng đối tượng (A)",

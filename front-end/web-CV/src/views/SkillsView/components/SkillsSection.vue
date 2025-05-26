@@ -30,7 +30,7 @@ const { t } = useI18n()
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
                 </svg>
               </div>
-              <h3 class="text-xl font-semibold" :style="{ 'color': colorStore.currentColor.primary }">{{ t('skills.frameworks') }}</h3>
+              <h3 class="text-xl font-semibold" :style="{ 'color': colorStore.currentColor.primary }">{{ t('skills.frontEnd') }}</h3>
             </div>
             <div class="flex flex-wrap gap-2 ml-13">
               <span class="px-4 py-2 bg-gradient-to-r from-blue-100 to-indigo-100 dark:from-blue-900/30 dark:to-indigo-900/30 text-indigo-800 dark:text-indigo-300 rounded-lg text-sm font-medium border border-indigo-200 shadow-sm hover:shadow transition-all duration-300 hover:-translate-y-1 flex items-center">
@@ -67,7 +67,7 @@ const { t } = useI18n()
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
                 </svg>
               </div>
-              <h3 class="text-xl font-semibold" :style="{ 'color': colorStore.currentColor.primary }">{{ t('skills.technical') }}</h3>
+              <h3 class="text-xl font-semibold" :style="{ 'color': colorStore.currentColor.primary }">{{ t('skills.backEnd') }}</h3>
             </div>
             <div class="flex flex-wrap gap-2 ml-13">
               <span class="px-4 py-2 bg-gradient-to-r from-green-100 to-emerald-100 dark:from-green-900/30 dark:to-emerald-900/30 text-emerald-800 dark:text-emerald-300 rounded-lg text-sm font-medium border border-emerald-200 dark:border-emerald-800 shadow-sm hover:shadow transition-all duration-300 hover:-translate-y-1 flex items-center">

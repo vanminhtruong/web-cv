@@ -47,10 +47,10 @@
   },
   "skills": {
     "title": "기술",
-    "technical": "기술적 역량",
+    "backEnd": "Back End",
     "soft": "소프트 스킬",
     "languages": "프로그래밍 언어",
-    "frameworks": "프레임워크 및 라이브러리",
+    "frontEnd": "Front End",
     "tools": "도구 및 기술",
     "aiTools": "AI 도구",
     "course1": "객체 지향 프로그래밍 (A)",

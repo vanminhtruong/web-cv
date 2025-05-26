@@ -23,7 +23,6 @@ const { displayedText: displayedName } = useTypingEffect(fullName, {
 
 const { contactItems, actionButtons } = useContactInfo()
 
-// Cập nhật đường dẫn CV cho nút download
 const updatedActionButtons = computed(() => {
   return actionButtons.map(button => {
     if (button.id === 'download-cv') {

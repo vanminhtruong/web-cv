@@ -46,10 +46,10 @@
   },
   "skills": {
     "title": "我的技能",
-    "technical": "技术技能",
+    "backEnd": "Back End",
     "soft": "软技能",
     "languages": "编程语言",
-    "frameworks": "框架和库",
+    "frontEnd": "Front End",
     "tools": "工具和技术",
     "aiTools": "AI工具",
     "course1": "面向对象编程 (A)",
