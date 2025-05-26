@@ -23,8 +23,18 @@ const { displayedText: displayedName } = useTypingEffect(fullName, {
 
 const { contactItems, actionButtons } = useContactInfo()
 
-const primaryButtons = computed(() => actionButtons.filter(button => button.isPrimary))
-const secondaryButtons = computed(() => actionButtons.filter(button => !button.isPrimary))
+// Cập nhật đường dẫn CV cho nút download
+const updatedActionButtons = computed(() => {
+  return actionButtons.map(button => {
+    if (button.id === 'download-cv') {
+      return { ...button, href: profileStore.cvPath }
+    }
+    return button
+  })
+})
+
+const primaryButtons = computed(() => updatedActionButtons.value.filter(button => button.isPrimary))
+const secondaryButtons = computed(() => updatedActionButtons.value.filter(button => !button.isPrimary))
 </script>
 
 <template>
@@ -79,7 +89,7 @@ const secondaryButtons = computed(() => actionButtons.filter(button => !button.i
           {{ button.label }}
         </a>
         <a v-for="button in secondaryButtons" :key="button.id"
-           :href="profileStore.cvPath" 
+           :href="button.href" 
            download 
            class="inline-flex items-center px-6 py-3 border-2 font-medium rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg ml-4"
            :style="{ 'border-color': colorStore.currentColor.secondary, 'color': colorStore.currentColor.secondary }"
