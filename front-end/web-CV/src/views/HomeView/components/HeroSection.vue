@@ -37,7 +37,7 @@ const secondaryButtons = computed(() => actionButtons.filter(button => !button.i
         <div class="absolute inset-8 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-xl" :style="{ 'background-color': colorStore.currentColor.primary }">
           {{ t('home.avatar') }}
         </div>
-      </div>
+      </div>  
     </div>
     <div class="tablet:w-full lg:w-full xl:w-2/3 p-4 transform transition-all duration-300 hover:-translate-y-1">
       <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
