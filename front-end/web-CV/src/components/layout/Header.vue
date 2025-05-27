@@ -19,16 +19,16 @@
         
         <!-- Desktop Navigation -->
         <nav class="hidden xl:flex xl:space-x-6">
-          <RouterLink to="/" class="text-gray-700 dark:text-gray-300 py-2 text-sm tablet:text-base font-medium transition-colors duration-200" :class="{ 'hover:text-theme-primary': true }" :style="{ '--theme-primary': colorStore.currentColor.primary }">
+          <RouterLink to="/" class="text-gray-700 dark:text-gray-300 py-2 text-sm tablet:text-base font-medium transition-colors duration-200 nav-link" :style="{ '--hover-color': colorStore.currentColor.primary }" @mouseenter="e => e.target.style.color = colorStore.currentColor.primary" @mouseleave="e => e.target.style.color = ''">
             {{ t('nav.home') }}
           </RouterLink>
-          <RouterLink to="/skills" class="text-gray-700 dark:text-gray-300 py-2 text-sm tablet:text-base font-medium transition-colors duration-200" :class="{ 'hover:text-theme-primary': true }" :style="{ '--theme-primary': colorStore.currentColor.primary }">
+          <RouterLink to="/skills" class="text-gray-700 dark:text-gray-300 py-2 text-sm tablet:text-base font-medium transition-colors duration-200 nav-link" :style="{ '--hover-color': colorStore.currentColor.primary }" @mouseenter="e => e.target.style.color = colorStore.currentColor.primary" @mouseleave="e => e.target.style.color = ''">
             {{ t('nav.skills') }}
           </RouterLink>
-          <RouterLink to="/experience" class="text-gray-700 dark:text-gray-300 py-2 text-sm tablet:text-base font-medium transition-colors duration-200" :class="{ 'hover:text-theme-primary': true }" :style="{ '--theme-primary': colorStore.currentColor.primary }">
+          <RouterLink to="/experience" class="text-gray-700 dark:text-gray-300 py-2 text-sm tablet:text-base font-medium transition-colors duration-200 nav-link" :style="{ '--hover-color': colorStore.currentColor.primary }" @mouseenter="e => e.target.style.color = colorStore.currentColor.primary" @mouseleave="e => e.target.style.color = ''">
             {{ t('nav.experience') }}
           </RouterLink>
-          <RouterLink to="/contact" class="text-gray-700 dark:text-gray-300 py-2 text-sm tablet:text-base font-medium transition-colors duration-200" :class="{ 'hover:text-theme-primary': true }" :style="{ '--theme-primary': colorStore.currentColor.primary }">
+          <RouterLink to="/contact" class="text-gray-700 dark:text-gray-300 py-2 text-sm tablet:text-base font-medium transition-colors duration-200 nav-link" :style="{ '--hover-color': colorStore.currentColor.primary }" @mouseenter="e => e.target.style.color = colorStore.currentColor.primary" @mouseleave="e => e.target.style.color = ''">
             {{ t('nav.contact') }}
           </RouterLink>
         </nav>
@@ -43,7 +43,7 @@
         
         <!-- Mobile menu button -->
         <div class="xl:hidden">
-          <button type="button" @click="toggleMobileMenu" class="text-gray-600 transition-colors duration-200" :class="{ 'hover:text-theme-primary': true }" :style="{ '--theme-primary': colorStore.currentColor.primary }" >
+          <button type="button" @click="toggleMobileMenu" class="text-gray-600 transition-colors duration-200 nav-link" >
             <svg v-if="!isMobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
@@ -58,16 +58,16 @@
     <!-- Mobile Navigation Menu -->
     <div v-if="isMobileMenuOpen" class="xl:hidden bg-white dark:bg-gray-800 shadow-lg mt-2 py-3 px-4 transition-all duration-300">
       <div class="flex flex-col space-y-3">
-        <RouterLink to="/" @click="closeMobileMenu" class="text-gray-700 dark:text-gray-300 py-2 text-base font-medium transition-colors duration-200" :class="{ 'hover:text-theme-primary': true }" :style="{ '--theme-primary': colorStore.currentColor.primary, '--theme-secondary': colorStore.currentColor.secondary }">
+        <RouterLink to="/" @click="closeMobileMenu" class="text-gray-700 dark:text-gray-300 py-2 text-base font-medium transition-colors duration-200 nav-link" :style="{ '--hover-color': colorStore.currentColor.primary }" @mouseenter="e => e.target.style.color = colorStore.currentColor.primary" @mouseleave="e => e.target.style.color = ''">
           {{ t('nav.home') }}
         </RouterLink>
-        <RouterLink to="/skills" @click="closeMobileMenu" class="text-gray-700 dark:text-gray-300 py-2 text-base font-medium transition-colors duration-200" :class="{ 'hover:text-theme-primary': true }" :style="{ '--theme-primary': colorStore.currentColor.primary, '--theme-secondary': colorStore.currentColor.secondary }">
+        <RouterLink to="/skills" @click="closeMobileMenu" class="text-gray-700 dark:text-gray-300 py-2 text-base font-medium transition-colors duration-200 nav-link" :style="{ '--hover-color': colorStore.currentColor.primary }" @mouseenter="e => e.target.style.color = colorStore.currentColor.primary" @mouseleave="e => e.target.style.color = ''">
           {{ t('nav.skills') }}
         </RouterLink>
-        <RouterLink to="/experience" @click="closeMobileMenu" class="text-gray-700 dark:text-gray-300 py-2 text-base font-medium transition-colors duration-200" :class="{ 'hover:text-theme-primary': true }" :style="{ '--theme-primary': colorStore.currentColor.primary, '--theme-secondary': colorStore.currentColor.secondary }">
+        <RouterLink to="/experience" @click="closeMobileMenu" class="text-gray-700 dark:text-gray-300 py-2 text-base font-medium transition-colors duration-200 nav-link" :style="{ '--hover-color': colorStore.currentColor.primary }" @mouseenter="e => e.target.style.color = colorStore.currentColor.primary" @mouseleave="e => e.target.style.color = ''">
           {{ t('nav.experience') }}
         </RouterLink>
-        <RouterLink to="/contact" @click="closeMobileMenu" class="text-gray-700 dark:text-gray-300 py-2 text-base font-medium transition-colors duration-200" :class="{ 'hover:text-theme-primary': true }" :style="{ '--theme-primary': colorStore.currentColor.primary, '--theme-secondary': colorStore.currentColor.secondary }">
+        <RouterLink to="/contact" @click="closeMobileMenu" class="text-gray-700 dark:text-gray-300 py-2 text-base font-medium transition-colors duration-200 nav-link" :style="{ '--hover-color': colorStore.currentColor.primary }" @mouseenter="e => e.target.style.color = colorStore.currentColor.primary" @mouseleave="e => e.target.style.color = ''">
           {{ t('nav.contact') }}
         </RouterLink>
         
@@ -117,3 +117,28 @@ onMounted(() => {
   })
 })
 </script>
+
+<style scoped>
+.router-link-active {
+  color: v-bind('colorStore.currentColor.primary');
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: v-bind('colorStore.currentColor.primary');
+  transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+</style>

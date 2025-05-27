@@ -1,24 +1,69 @@
 <template>
   <div class="language-switcher">
-    <select v-model="currentLocale" @change="changeLocale" class="locale-select">
-      <option value="en">English</option>
-      <option value="ko">한국어</option>
-      <option value="vi">Tiếng Việt</option>
-      <option value="zh">中文</option>
-    </select>
+    <div class="custom-select" @click="toggleDropdown" ref="selectContainer">
+      <div class="selected-option">
+        <span v-if="currentLocale === 'en'">English</span>
+        <span v-else-if="currentLocale === 'ko'">한국어</span>
+        <span v-else-if="currentLocale === 'vi'">Tiếng Việt</span>
+        <span v-else-if="currentLocale === 'zh'">中文</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+      </div>
+      <ul class="options-list" v-show="isOpen">
+        <li 
+          @click="selectOption('en')" 
+          :class="{'active': currentLocale === 'en'}"
+          :style="{'--hover-bg-color': colorStore.currentColor.primary + '33', '--active-bg-color': colorStore.currentColor.primary}"
+        >English</li>
+        <li 
+          @click="selectOption('ko')" 
+          :class="{'active': currentLocale === 'ko'}"
+          :style="{'--hover-bg-color': colorStore.currentColor.primary + '33', '--active-bg-color': colorStore.currentColor.primary}"
+        >한국어</li>
+        <li 
+          @click="selectOption('vi')" 
+          :class="{'active': currentLocale === 'vi'}"
+          :style="{'--hover-bg-color': colorStore.currentColor.primary + '33', '--active-bg-color': colorStore.currentColor.primary}"
+        >Tiếng Việt</li>
+        <li 
+          @click="selectOption('zh')" 
+          :class="{'active': currentLocale === 'zh'}"
+          :style="{'--hover-bg-color': colorStore.currentColor.primary + '33', '--active-bg-color': colorStore.currentColor.primary}"
+        >中文</li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useColorStore } from '../stores/color'
+import { useThemeStore } from '../stores/theme'
 
+const colorStore = useColorStore()
+const themeStore = useThemeStore()
 const { locale } = useI18n()
 const currentLocale = ref(locale.value)
+const isOpen = ref(false)
+const selectContainer = ref(null)
 
-const changeLocale = () => {
-  locale.value = currentLocale.value
-  localStorage.setItem('locale', currentLocale.value)
+const toggleDropdown = () => {
+  isOpen.value = !isOpen.value
+}
+
+const selectOption = (value) => {
+  currentLocale.value = value
+  locale.value = value
+  localStorage.setItem('locale', value)
+  isOpen.value = false
+}
+
+const handleClickOutside = (event) => {
+  if (selectContainer.value && !selectContainer.value.contains(event.target)) {
+    isOpen.value = false
+  }
 }
 
 onMounted(() => {
@@ -27,34 +72,82 @@ onMounted(() => {
     currentLocale.value = savedLocale
     locale.value = savedLocale
   }
+  
+  document.addEventListener('click', handleClickOutside)
+})
+
+onUnmounted(() => {
+  document.removeEventListener('click', handleClickOutside)
 })
 </script>
 
 <style scoped>
 .language-switcher {
   margin: 0 1rem;
+  position: relative;
 }
 
-.locale-select {
+.custom-select {
+  position: relative;
+  user-select: none;
+  min-width: 100px;
+}
+
+.selected-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 0.5rem;
   border-radius: 4px;
   border: 1px solid #ccc;
-  background-color: #fff;
+  background-color: #f1f5f9;
+  color: #334155;
   font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-/* Dark mode styles */
-.dark .locale-select {
-  background-color: #374151;
-  border-color: #4B5563;
-  color: #E5E7EB;
+.options-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 0.25rem;
+  padding: 0;
+  list-style: none;
+  background-color: #ffffff;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  z-index: 50;
+  max-height: 200px;
+  overflow-y: auto;
 }
 
-.locale-select:focus {
-  outline: none;
-  border-color: transparent;
-  box-shadow: none;
+.options-list li {
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.options-list li:hover {
+  background-color: var(--hover-bg-color);
+}
+
+.options-list li.active {
+  background-color: var(--active-bg-color);
+  color: white;
+}
+
+/* Dark mode styles */
+.dark .selected-option {
+  background-color: var(--bg-secondary, #1e293b);
+  border-color: var(--card-border, #475569);
+  color: var(--text-primary, #f8fafc);
+}
+
+.dark .options-list {
+  background-color: var(--bg-primary, #0f172a);
+  border-color: var(--card-border, #4B5563);
+  color: var(--text-primary, #E5E7EB);
 }
 </style>

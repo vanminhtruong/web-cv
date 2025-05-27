@@ -2,7 +2,6 @@ import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useColorStore = defineStore('color', () => {
-  // Danh sách 10 màu sắc
   const colors = [
     { id: 'indigo', name: 'Indigo', primary: '#6366f1', secondary: '#818cf8', accent: '#4f46e5' },
     { id: 'blue', name: 'Blue', primary: '#3b82f6', secondary: '#60a5fa', accent: '#2563eb' },
@@ -16,13 +15,8 @@ export const useColorStore = defineStore('color', () => {
     { id: 'cyan', name: 'Cyan', primary: '#06b6d4', secondary: '#22d3ee', accent: '#0891b2' }
   ]
 
-  // Màu sắc hiện tại (mặc định là indigo)
   const currentColorId = ref(localStorage.getItem('colorTheme') || 'indigo')
-
-  // Lấy thông tin màu hiện tại
   const currentColor = ref(colors.find(color => color.id === currentColorId.value) || colors[0])
-
-  // Hàm thay đổi màu sắc
   function setColor(colorId) {
     const color = colors.find(c => c.id === colorId)
     if (color) {
@@ -33,7 +27,6 @@ export const useColorStore = defineStore('color', () => {
     }
   }
 
-  // Cập nhật CSS variables
   function updateCssVariables() {
     const root = document.documentElement
     root.style.setProperty('--color-primary', currentColor.value.primary)
@@ -41,7 +34,6 @@ export const useColorStore = defineStore('color', () => {
     root.style.setProperty('--color-accent', currentColor.value.accent)
   }
 
-  // Khởi tạo màu sắc
   function initColor() {
     updateCssVariables()
   }
