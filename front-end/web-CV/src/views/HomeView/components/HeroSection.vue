@@ -57,18 +57,29 @@ const secondaryButtons = computed(() => updatedActionButtons.value.filter(button
         </span>
       </h1>
       <h2 class="text-2xl text-gray-700 dark:text-gray-300 mb-6 flex items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-gray-700 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" :style="{ 'color': colorStore.currentColor.primary }">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-        </svg>
+        <div class="briefcase-container mr-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700 dark:text-white briefcase-animate" fill="none" viewBox="0 0 24 24" stroke="currentColor" :style="{ 'color': colorStore.currentColor.primary }">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </div>
         <span>{{ t('home.role') }}</span>
       </h2>
       <div class="grid grid-cols-1 xl:w-[630px] sm:grid-cols-2 gap-4 text-gray-700 dark:text-gray-300 mb-8 bg-white dark:bg-gray-800 p-4 lg:p-6 rounded-xl shadow-md border-l-4 groups" :style="{ 'border-color': colorStore.currentColor.primary }">
         <div v-for="item in contactItems" :key="item.id" class="flex items-center group">  
-          <div class="h-10 w-10 rounded-lg flex items-center justify-center mr-3 transition-colors group-hover:bg-opacity-50" :style="{ 'background-color': colorStore.currentColor.secondary + '30', '--hover-bg': colorStore.currentColor.secondary + '50' }">
-            <svg v-if="item.id === 'email'" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" :style="{ 'color': colorStore.currentColor.secondary }">
+          <div class="h-10 w-10 rounded-lg flex items-center justify-center mr-3 transition-colors group-hover:bg-opacity-50 icon-container" :style="{ 'background-color': colorStore.currentColor.secondary + '30', '--hover-bg': colorStore.currentColor.secondary + '50' }">
+            <svg v-if="item.id === 'email'" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 email-animate" fill="none" viewBox="0 0 24 24" stroke="currentColor" :style="{ 'color': colorStore.currentColor.secondary }">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg> 
-            <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" :style="{ 'color': colorStore.currentColor.secondary }">
+            <svg v-else-if="item.id === 'phone'" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 phone-animate" fill="none" viewBox="0 0 24 24" stroke="currentColor" :style="{ 'color': colorStore.currentColor.secondary }">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="item.svgPath" />
+            </svg>
+            <svg v-else-if="item.id === 'github'" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 github-animate" fill="none" viewBox="0 0 24 24" stroke="currentColor" :style="{ 'color': colorStore.currentColor.secondary }">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="item.svgPath" />
+            </svg>
+            <svg v-else-if="item.id === 'address'" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 address-animate" fill="none" viewBox="0 0 24 24" stroke="currentColor" :style="{ 'color': colorStore.currentColor.secondary }">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="item.svgPath" />
+            </svg>
+            <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 icon-animate" fill="none" viewBox="0 0 24 24" stroke="currentColor" :style="{ 'color': colorStore.currentColor.secondary }">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="item.svgPath" />
             </svg>
           </div>
@@ -93,7 +104,7 @@ const secondaryButtons = computed(() => updatedActionButtons.value.filter(button
            class="inline-flex items-center px-6 py-3 border-2 font-medium rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg ml-4"
            :style="{ 'border-color': colorStore.currentColor.secondary, 'color': colorStore.currentColor.secondary }"
            :class="{ 'hover:bg-gray-50 dark:hover:bg-gray-800': true }">
-          <svg v-if="button.icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" :style="{ 'color': colorStore.currentColor.secondary }">
+          <svg v-if="button.icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 download-animate" fill="none" viewBox="0 0 24 24" stroke="currentColor" :style="{ 'color': colorStore.currentColor.secondary }">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="button.icon" />
           </svg>
           {{ button.label }}
@@ -104,6 +115,145 @@ const secondaryButtons = computed(() => updatedActionButtons.value.filter(button
 </template>
 
 <style scoped>
+.icon-container {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hiệu ứng chung */
+.icon-animate {
+  animation: pulse 2s infinite;
+}
+
+/* Hiệu ứng cho icon briefcase */
+.briefcase-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+.briefcase-animate {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* Hiệu ứng cho icon email */
+.email-animate {
+  animation: bounce 2s infinite;
+}
+
+/* Hiệu ứng cho icon điện thoại */
+.phone-animate {
+  animation: shake 1.5s infinite;
+}
+
+/* Hiệu ứng cho icon github */
+.github-animate {
+  animation: rotate 3s infinite;
+}
+
+/* Hiệu ứng cho icon địa chỉ */
+.address-animate {
+  animation: pulse-location 2s infinite;
+}
+
+/* Hiệu ứng cho icon tải xuống */
+.download-animate {
+  animation: download-motion 2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Định nghĩa các keyframes */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-6px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(-10deg);
+  }
+  20% {
+    transform: rotate(10deg);
+  }
+  30% {
+    transform: rotate(-10deg);
+  }
+  40% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-location {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 3px currentColor);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes download-motion {
+  0% {
+    transform: translateY(0);
+    filter: drop-shadow(0 0 0px currentColor);
+  }
+  50% {
+    transform: translateY(2px);
+    filter: drop-shadow(0 0 1px currentColor);
+  }
+  100% {
+    transform: translateY(0);
+    filter: drop-shadow(0 0 0px currentColor);
+  }
+}
+
 @media (min-width: 768px) and (max-width: 1270px) {
   .wrapper{
     display: block;
