@@ -73,8 +73,8 @@ const secondaryButtons = computed(() => updatedActionButtons.value.filter(button
             <svg v-else-if="item.id === 'phone'" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 phone-animate" fill="none" viewBox="0 0 24 24" stroke="currentColor" :style="{ 'color': colorStore.currentColor.secondary }">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="item.svgPath" />
             </svg>
-            <svg v-else-if="item.id === 'github'" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 github-animate" fill="none" viewBox="0 0 24 24" stroke="currentColor" :style="{ 'color': colorStore.currentColor.secondary }">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="item.svgPath" />
+            <svg v-else-if="item.id === 'github'" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 github-animate" viewBox="0 0 24 24" fill="currentColor" :style="{ 'color': colorStore.currentColor.secondary }">
+              <path :d="item.svgPath" />
             </svg>
             <svg v-else-if="item.id === 'address'" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 address-animate" fill="none" viewBox="0 0 24 24" stroke="currentColor" :style="{ 'color': colorStore.currentColor.secondary }">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="item.svgPath" />
