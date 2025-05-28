@@ -1,20 +1,13 @@
 import { useI18n } from 'vue-i18n'
 import { computed } from 'vue'
-
-/**
- * Composable cung cấp thông tin liên hệ cho component
- * @returns {Object} - Các thông tin liên hệ
- */
 export function useContactInfo() {
   const { t } = useI18n()
 
-  // Thông tin liên hệ cố định
   const phoneNumber = '0982743860'
   const email = 'vanminhtruong95@gmail.com'
   const githubUrl = 'https://github.com/vanminhtruong/Team03-cy.git'
   const githubUsername = 'vanminhtruong'
 
-  // Các mục thông tin liên hệ - dùng computed để cập nhật khi ngôn ngữ thay đổi
   const contactItems = computed(() => [
     {
       id: 'phone',
@@ -47,7 +40,6 @@ export function useContactInfo() {
     }
   ])
 
-  // Các nút hành động - dùng computed để cập nhật khi ngôn ngữ thay đổi
   const actionButtons = computed(() => [
     {
       id: 'contact',
@@ -59,7 +51,7 @@ export function useContactInfo() {
     {
       id: 'download-cv',
       label: t('home.downloadCV'),
-      href: null, // Sẽ được set từ profileStore
+      href: null, 
       isPrimary: false,
       icon: 'M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4'
     }
