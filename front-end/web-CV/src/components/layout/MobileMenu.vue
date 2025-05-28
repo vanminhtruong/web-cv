@@ -13,7 +13,7 @@
       <RouterLink to="/contact" @click="closeMenu" class="text-gray-700 dark:text-gray-300 py-2 text-base font-medium transition-colors duration-200 nav-link" :style="{ '--hover-color': colorStore.currentColor.primary }" @mouseenter="e => e.target.style.color = colorStore.currentColor.primary" @mouseleave="e => e.target.style.color = ''">
         {{ t('nav.contact') }}
       </RouterLink>
-      <div class="flex flex-wrap gap-3 pt-3 border-t border-gray-200 dark:border-gray-700 mt-3">
+      <div class="flex justify-around gap-3 pt-3 border-t border-gray-200 dark:border-gray-700 mt-3">
         <LanguageSwitcher />
         <ColorSwitcher />
         <ThemeToggle />

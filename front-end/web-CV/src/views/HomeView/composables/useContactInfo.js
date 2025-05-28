@@ -1,4 +1,5 @@
 import { useI18n } from 'vue-i18n'
+import { computed } from 'vue'
 
 /**
  * Composable cung cấp thông tin liên hệ cho component
@@ -13,8 +14,8 @@ export function useContactInfo() {
   const githubUrl = 'https://github.com/vanminhtruong/Team03-cy.git'
   const githubUsername = 'vanminhtruong'
 
-  // Các mục thông tin liên hệ
-  const contactItems = [
+  // Các mục thông tin liên hệ - dùng computed để cập nhật khi ngôn ngữ thay đổi
+  const contactItems = computed(() => [
     {
       id: 'phone',
       icon: 'phone',
@@ -44,10 +45,10 @@ export function useContactInfo() {
       value: t('about.addressValue'),
       svgPath: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z'
     }
-  ]
+  ])
 
-  // Các nút hành động
-  const actionButtons = [
+  // Các nút hành động - dùng computed để cập nhật khi ngôn ngữ thay đổi
+  const actionButtons = computed(() => [
     {
       id: 'contact',
       label: t('home.contactMe'),
@@ -62,7 +63,7 @@ export function useContactInfo() {
       isPrimary: false,
       icon: 'M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4'
     }
-  ]
+  ])
 
   return {
     phoneNumber,

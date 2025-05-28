@@ -24,7 +24,7 @@ const { displayedText: displayedName } = useTypingEffect(fullName, {
 const { contactItems, actionButtons } = useContactInfo()
 
 const updatedActionButtons = computed(() => {
-  return actionButtons.map(button => {
+  return actionButtons.value.map(button => {
     if (button.id === 'download-cv') {
       return { ...button, href: profileStore.cvPath }
     }

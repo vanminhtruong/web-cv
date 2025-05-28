@@ -9,14 +9,11 @@ const colorStore = useColorStore()
 const { t } = useI18n()
 const scrollStore = useScrollStore()
 
-// Add scroll event listener when component is mounted
 onMounted(() => {
   window.addEventListener('scroll', scrollStore.updateScrollPosition)
-  // Initialize position
   scrollStore.updateScrollPosition()
 })
 
-// Clean up the event listener when component is unmounted
 onUnmounted(() => {
   window.removeEventListener('scroll', scrollStore.updateScrollPosition)
 })
