@@ -42,7 +42,6 @@ const secondaryButtons = computed(() => updatedActionButtons.value.filter(button
       <div class="relative w-64 h-64 lg:w-80 lg:h-80">
         <div class="absolute inset-0 rounded-full shadow-lg" :style="{ 'background-image': `linear-gradient(to bottom right, ${colorStore.currentColor.primary}20, ${colorStore.currentColor.secondary}20)` }"></div>
         <div class="absolute inset-4 rounded-full shadow-inner" :style="{ 'background-image': `linear-gradient(to top right, ${colorStore.currentColor.primary}30, ${colorStore.currentColor.secondary}30)` }"></div>
-        <!-- Placeholder for profile image -->
         <div class="absolute inset-8 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-xl" :style="{ 'background-color': colorStore.currentColor.primary }">
           {{ t('home.avatar') }}
         </div>
@@ -66,7 +65,7 @@ const secondaryButtons = computed(() => updatedActionButtons.value.filter(button
       </h2>
       <div class="grid grid-cols-1 xl:w-[630px] sm:grid-cols-2 gap-4 text-gray-700 dark:text-gray-300 mb-8 bg-white dark:bg-gray-800 p-4 lg:p-6 rounded-xl shadow-md border-l-4 groups" :style="{ 'border-color': colorStore.currentColor.primary }">
         <div v-for="item in contactItems" :key="item.id" class="flex items-center group">  
-          <div class="h-10 w-10 rounded-lg flex items-center justify-center mr-3 transition-colors group-hover:bg-opacity-50 icon-container" :style="{ 'background-color': colorStore.currentColor.secondary + '30', '--hover-bg': colorStore.currentColor.secondary + '50' }">
+          <div class="rounded-lg flex items-center justify-center mr-3 transition-colors group-hover:bg-opacity-50 icon-container h-10 w-10" :style="{ 'background-color': colorStore.currentColor.secondary + '30', '--hover-bg': colorStore.currentColor.secondary + '50' }">
             <svg v-if="item.id === 'email'" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 email-animate" fill="none" viewBox="0 0 24 24" stroke="currentColor" :style="{ 'color': colorStore.currentColor.secondary }">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg> 
@@ -83,9 +82,9 @@ const secondaryButtons = computed(() => updatedActionButtons.value.filter(button
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="item.svgPath" />
             </svg>
           </div>
-          <div>
+          <div class="flex-1 min-w-0">
             <div class="text-sm font-medium text-gray-500">{{ item.label }}</div>
-            <div v-if="!item.url" class="font-medium">{{ item.value }}</div>
+            <div v-if="!item.url" class="font-medium truncate">{{ item.value }}</div>
             <a v-else :href="item.url" class="font-medium transition-colors" :style="{ color: colorStore.currentColor.primary }" :class="{ 'hover:opacity-80': true }">github.com/{{ item.value }}</a>
           </div>
         </div>

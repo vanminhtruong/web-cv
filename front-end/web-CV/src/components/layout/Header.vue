@@ -31,7 +31,6 @@
           </RouterLink>
         </nav>
         
-        <!-- Theme Toggle & Download CV Button (Desktop) -->
         <div class="hidden xl:flex items-center xl:space-x-4">
           <LanguageSwitcher />
           <ColorSwitcher />
@@ -39,7 +38,6 @@
           <DownloadButton />
         </div>
         
-        <!-- Mobile menu button -->
         <div class="xl:hidden">
           <button type="button" @click="toggleMobileMenu" class="text-gray-600 hover:text-primary transition-colors duration-200" :style="{ '--hover-color': colorStore.currentColor.primary }" @mouseenter="e => e.target.style.color = colorStore.currentColor.primary" @mouseleave="e => e.target.style.color = ''" >
             <svg v-if="!isMobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -53,7 +51,6 @@
       </div>
     </div>
     
-    <!-- Mobile Navigation Menu -->
     <MobileMenu :is-open="isMobileMenuOpen" @close="closeMobileMenu" />
   </header>
 </template>
