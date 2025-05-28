@@ -142,6 +142,7 @@
     "subject": "Subject",
     "message": "Message",
     "send": "Send Message",
+    "sending": "Sending...",
     "required": "This field is required",
     "validEmail": "Please enter a valid email",
     "success": "Message sent successfully!",
@@ -155,7 +156,16 @@
     "namePlaceholder": "Enter your name",
     "emailPlaceholder": "Enter your email",
     "subjectPlaceholder": "Enter message subject",
-    "messagePlaceholder": "Enter your message"
+    "messagePlaceholder": "Enter your message",
+    "errors": {
+      "nameRequired": "Name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "subjectRequired": "Subject is required",
+      "messageRequired": "Message is required",
+      "messageTooShort": "Message must be at least 10 characters",
+      "formInvalid": "Please fix the errors in the form"
+    }
   },
   "footer": {
     "copyright": "All Rights Reserved",

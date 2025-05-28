@@ -145,6 +145,7 @@
     "subject": "제목",
     "message": "메시지",
     "send": "메시지 보내기",
+    "sending": "전송 중...",
     "required": "이 필드는 필수입니다",
     "validEmail": "유효한 이메일을 입력해주세요",
     "success": "메시지가 성공적으로 전송되었습니다!",
@@ -158,7 +159,16 @@
     "namePlaceholder": "이름을 입력하세요",
     "emailPlaceholder": "이메일을 입력하세요",
     "subjectPlaceholder": "메시지 제목을 입력하세요",
-    "messagePlaceholder": "메시지를 입력하세요"
+    "messagePlaceholder": "메시지를 입력하세요",
+    "errors": {
+      "nameRequired": "이름은 필수입니다",
+      "emailRequired": "이메일은 필수입니다",
+      "emailInvalid": "유효한 이메일 주소를 입력해주세요",
+      "subjectRequired": "제목은 필수입니다",
+      "messageRequired": "메시지는 필수입니다",
+      "messageTooShort": "메시지는 최소 10자 이상이어야 합니다",
+      "formInvalid": "양식의 오류를 수정해주세요"
+    }
   },
   "footer": {
     "copyright": "모든 권리 보유",

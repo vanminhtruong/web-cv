@@ -143,6 +143,7 @@
     "subject": "Chủ Đề",
     "message": "Tin Nhắn",
     "send": "Gửi Tin Nhắn",
+    "sending": "Đang gửi...",
     "required": "Trường này là bắt buộc",
     "validEmail": "Vui lòng nhập email hợp lệ",
     "success": "Tin nhắn đã được gửi thành công!",
@@ -156,7 +157,16 @@
     "namePlaceholder": "Nhập tên của bạn",
     "emailPlaceholder": "Nhập email của bạn",
     "subjectPlaceholder": "Nhập chủ đề tin nhắn",
-    "messagePlaceholder": "Nhập tin nhắn của bạn"
+    "messagePlaceholder": "Nhập tin nhắn của bạn",
+    "errors": {
+      "nameRequired": "Tên là bắt buộc",
+      "emailRequired": "Email là bắt buộc",
+      "emailInvalid": "Vui lòng nhập địa chỉ email hợp lệ",
+      "subjectRequired": "Chủ đề là bắt buộc",
+      "messageRequired": "Tin nhắn là bắt buộc",
+      "messageTooShort": "Tin nhắn phải có ít nhất 10 ký tự",
+      "formInvalid": "Vui lòng sửa các lỗi trong biểu mẫu"
+    }
   },
   "footer": {
     "copyright": "Tất Cả Các Quyền Được Bảo Lưu",

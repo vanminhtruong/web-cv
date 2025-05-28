@@ -144,6 +144,7 @@
     "subject": "主题",
     "message": "信息",
     "send": "发送信息",
+    "sending": "发送中...",
     "required": "此字段为必填项",
     "validEmail": "请输入有效的电子邮件",
     "success": "信息发送成功！",
@@ -157,7 +158,16 @@
     "namePlaceholder": "输入您的姓名",
     "emailPlaceholder": "输入您的电子邮件",
     "subjectPlaceholder": "输入信息主题",
-    "messagePlaceholder": "输入您的信息"
+    "messagePlaceholder": "输入您的信息",
+    "errors": {
+      "nameRequired": "姓名是必填项",
+      "emailRequired": "电子邮件是必填项",
+      "emailInvalid": "请输入有效的电子邮件地址",
+      "subjectRequired": "主题是必填项",
+      "messageRequired": "信息是必填项",
+      "messageTooShort": "信息必须至少有10个字符",
+      "formInvalid": "请修正表单中的错误"
+    }
   },
   "footer": {
     "copyright": "版权所有",
