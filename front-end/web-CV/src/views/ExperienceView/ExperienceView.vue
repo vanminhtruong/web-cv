@@ -13,12 +13,10 @@ const { t } = useI18n()
 <template>
   <div class="min-h-screen py-10 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Experience section -->
       <LazySection threshold="0.1" rootMargin="100px" class="mb-16">
         <WorkExperienceSection />
       </LazySection>
 
-      <!-- Team Projects section -->
       <div class="mb-16">
         <div class="flex items-center mb-10">
           <div class="mr-4 hidden md:block">
@@ -31,10 +29,7 @@ const { t } = useI18n()
           <h2 class="text-3xl font-bold inline-block pb-2 border-b-4 transform transition-all duration-300 hover:scale-105" :style="{ 'color': colorStore.currentColor.primary, 'border-color': colorStore.currentColor.primary }">{{ t('projects.title').toUpperCase() }}</h2>
         </div>
 
-        <!-- Team Project Component -->
         <TeamProjectSection />
-
-        <!-- Solo Project Component -->
         <SoloProjectSection />
       </div>
     </div>

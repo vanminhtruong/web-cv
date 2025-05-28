@@ -6,12 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web CV</title>
     <script>
-      // Ngăn hiệu ứng nhấp nháy khi tải lại trang trong chế độ tối
       (function() {
         const theme = localStorage.getItem('theme');
         if (theme === 'dark') {
           document.documentElement.classList.add('dark');
-          // Thêm style ẩn tạm thời cho body cho đến khi CSS được tải
           document.write('<style>html.dark{background-color:#111827;color:white;}html.dark body{visibility:hidden;}</style>');
           document.addEventListener('DOMContentLoaded', function() {
             document.body.style.visibility = 'visible';

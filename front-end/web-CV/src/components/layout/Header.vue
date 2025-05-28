@@ -5,7 +5,6 @@
   ]">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center">
-        <!-- Logo -->
         <div class="flex-shrink-0">
           <RouterLink to="/" class="font-bold text-2xl flex items-center border-none outline-none" :style="{ 'color': colorStore.currentColor.primary }" @click="closeMobileMenu">
             <span class="mr-2">
@@ -17,7 +16,6 @@
           </RouterLink>
         </div>
         
-        <!-- Desktop Navigation -->
         <nav class="hidden xl:flex xl:space-x-6">
           <RouterLink to="/" class="text-gray-700 dark:text-gray-300 py-2 text-sm tablet:text-base font-medium transition-colors duration-200 nav-link" :style="{ '--hover-color': colorStore.currentColor.primary }" @mouseenter="e => e.target.style.color = colorStore.currentColor.primary" @mouseleave="e => e.target.style.color = ''">
             {{ t('nav.home') }}
@@ -43,7 +41,7 @@
         
         <!-- Mobile menu button -->
         <div class="xl:hidden">
-          <button type="button" @click="toggleMobileMenu" class="text-gray-600 transition-colors duration-200 nav-link" >
+          <button type="button" @click="toggleMobileMenu" class="text-gray-600 hover:text-primary transition-colors duration-200" :style="{ '--hover-color': colorStore.currentColor.primary }" @mouseenter="e => e.target.style.color = colorStore.currentColor.primary" @mouseleave="e => e.target.style.color = ''" >
             <svg v-if="!isMobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
@@ -56,34 +54,7 @@
     </div>
     
     <!-- Mobile Navigation Menu -->
-    <div v-if="isMobileMenuOpen" class="xl:hidden bg-white dark:bg-gray-800 shadow-lg mt-2 py-3 px-4 transition-all duration-300">
-      <div class="flex flex-col space-y-3">
-        <RouterLink to="/" @click="closeMobileMenu" class="text-gray-700 dark:text-gray-300 py-2 text-base font-medium transition-colors duration-200 nav-link" :style="{ '--hover-color': colorStore.currentColor.primary }" @mouseenter="e => e.target.style.color = colorStore.currentColor.primary" @mouseleave="e => e.target.style.color = ''">
-          {{ t('nav.home') }}
-        </RouterLink>
-        <RouterLink to="/skills" @click="closeMobileMenu" class="text-gray-700 dark:text-gray-300 py-2 text-base font-medium transition-colors duration-200 nav-link" :style="{ '--hover-color': colorStore.currentColor.primary }" @mouseenter="e => e.target.style.color = colorStore.currentColor.primary" @mouseleave="e => e.target.style.color = ''">
-          {{ t('nav.skills') }}
-        </RouterLink>
-        <RouterLink to="/experience" @click="closeMobileMenu" class="text-gray-700 dark:text-gray-300 py-2 text-base font-medium transition-colors duration-200 nav-link" :style="{ '--hover-color': colorStore.currentColor.primary }" @mouseenter="e => e.target.style.color = colorStore.currentColor.primary" @mouseleave="e => e.target.style.color = ''">
-          {{ t('nav.experience') }}
-        </RouterLink>
-        <RouterLink to="/contact" @click="closeMobileMenu" class="text-gray-700 dark:text-gray-300 py-2 text-base font-medium transition-colors duration-200 nav-link" :style="{ '--hover-color': colorStore.currentColor.primary }" @mouseenter="e => e.target.style.color = colorStore.currentColor.primary" @mouseleave="e => e.target.style.color = ''">
-          {{ t('nav.contact') }}
-        </RouterLink>
-        
-        <!-- Download CV Button (Mobile) -->
-        <div class="flex items-center justify-between">
-          <!-- Language Switcher (Mobile) -->
-          <LanguageSwitcher />
-          <!-- Color Switcher (Mobile) -->
-          <ColorSwitcher />
-          <DownloadButton />
-          
-          <!-- Theme Toggle Button (Mobile) -->
-          <ThemeToggle />
-        </div>
-      </div>
-    </div>
+    <MobileMenu :is-open="isMobileMenuOpen" @close="closeMobileMenu" />
   </header>
 </template>
 
@@ -96,6 +67,7 @@ import LanguageSwitcher from '../LanguageSwitcher.vue'
 import ColorSwitcher from '../ColorSwitcher.vue'
 import ThemeToggle from './ThemeToggle.vue'
 import DownloadButton from './DownloadButton.vue'
+import MobileMenu from './MobileMenu.vue'
 
 const colorStore = useColorStore()
 
