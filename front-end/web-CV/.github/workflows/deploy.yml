@@ -21,11 +21,11 @@ jobs:
           node-version: '16'
           
       - name: Install dependencies
-        run: cd front-end/web-CV && npm ci
+        run: cd front-end/web-CV ; npm ci
         
       - name: Build
         run: |
-          cd front-end/web-CV && npm run build
+          cd front-end/web-CV ; npm run build
           touch front-end/web-CV/dist/.nojekyll
         
       - name: Deploy to GitHub Pages
