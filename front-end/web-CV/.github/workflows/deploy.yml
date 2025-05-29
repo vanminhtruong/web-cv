@@ -2,14 +2,23 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [ "main" ]
   workflow_dispatch:
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+  
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -21,15 +30,26 @@ jobs:
           node-version: '16'
           
       - name: Install dependencies
-        run: cd front-end/web-CV ; npm ci
+        run: cd front-end/web-CV && npm ci
         
       - name: Build
         run: |
-          cd front-end/web-CV ; npm run build
-          touch front-end/web-CV/dist/.nojekyll
-        
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+          cd front-end/web-CV
+          npm run build
+          touch dist/.nojekyll
+          
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          folder: front-end/web-CV/dist
-          branch: gh-pages
+          path: front-end/web-CV/dist
+          
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
