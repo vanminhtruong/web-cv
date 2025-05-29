@@ -5,25 +5,6 @@
     <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web CV</title>
-    <!-- Script xử lý điều hướng SPA cho GitHub Pages -->
-    <script type="text/javascript">
-      // Xử lý chuyển hướng cho GitHub Pages khi sử dụng SPA
-      (function() {
-        // Không chạy script này khi đang ở trang chủ
-        if (window.location.pathname === '/web-cv/' || 
-            window.location.pathname === '/web-cv' || 
-            window.location.pathname === '/') return;
-            
-        // Lấy tham số từ URL
-        var redirect = sessionStorage.redirect;
-        delete sessionStorage.redirect;
-        
-        // Nếu có tham số chuyển hướng, điều hướng đến đường dẫn đó
-        if (redirect && redirect !== location.href) {
-          history.replaceState(null, null, redirect);
-        }
-      })();
-    </script>
     <script>
       (function() {
         const theme = localStorage.getItem('theme');
