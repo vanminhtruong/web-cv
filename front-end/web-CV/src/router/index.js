@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
+// Base URL sẽ được lấy từ vite.config.js
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
