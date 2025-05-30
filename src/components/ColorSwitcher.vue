@@ -6,9 +6,15 @@
         class="color-button flex items-center justify-center p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300"
         :style="{ backgroundColor: currentColor.primary }"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-        </svg>
+        <div class="relative flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white transition-opacity duration-300" :class="{ 'opacity-100': !isOpen, 'opacity-0': isOpen }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+          </svg>
+
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white absolute transition-opacity duration-300" :class="{ 'opacity-0': !isOpen, 'opacity-100': isOpen }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </div>
       </button>
 
       <div v-if="isOpen" class="color-dropdown absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden z-50">
@@ -34,39 +40,16 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
-import { useColorStore } from '../stores/color'
-import { useI18n } from 'vue-i18n'
+import { useColorSwitcher } from '../composables/useColorSwitcher'
 
-const { t } = useI18n()
-const colorStore = useColorStore()
-const isOpen = ref(false)
-const currentColor = ref(colorStore.currentColor)
-
-const toggleColorMenu = () => {
-  isOpen.value = !isOpen.value
-}
-
-const selectColor = (colorId) => {
-  colorStore.setColor(colorId)
-  currentColor.value = colorStore.currentColor
-  isOpen.value = false
-}
-
-const handleClickOutside = (event) => {
-  const colorSwitcher = document.querySelector('.color-switcher')
-  if (colorSwitcher && !colorSwitcher.contains(event.target)) {
-    isOpen.value = false
-  }
-}
-
-onMounted(() => {
-  document.addEventListener('click', handleClickOutside)
-})
-
-onUnmounted(() => {
-  document.removeEventListener('click', handleClickOutside)
-})
+const {
+  t,
+  colorStore,
+  isOpen,
+  currentColor,
+  toggleColorMenu,
+  selectColor
+} = useColorSwitcher()
 </script>
 
 <style scoped>

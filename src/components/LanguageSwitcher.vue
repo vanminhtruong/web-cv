@@ -6,7 +6,12 @@
         <span v-else-if="currentLocale === 'ko'">한국어</span>
         <span v-else-if="currentLocale === 'vi'">Tiếng Việt</span>
         <span v-else-if="currentLocale === 'zh'">中文</span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+        <!-- Mũi tên với hiệu ứng xoay -->
+        <svg xmlns="http://www.w3.org/2000/svg" 
+             class="h-4 w-4 ml-1 transition-transform duration-300 ease-in-out" 
+             :class="{ 'rotate-180': isOpen }" 
+             viewBox="0 0 20 20" 
+             :fill="colorStore.currentColor.primary">
           <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
         </svg>
       </div>
@@ -37,48 +42,17 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, computed } from 'vue'
-import { useI18n } from 'vue-i18n'
-import { useColorStore } from '../stores/color'
-import { useThemeStore } from '../stores/theme'
+import { useLanguageSwitcher } from '../composables/useLanguageSwitcher'
 
-const colorStore = useColorStore()
-const themeStore = useThemeStore()
-const { locale } = useI18n()
-const currentLocale = ref(locale.value)
-const isOpen = ref(false)
-const selectContainer = ref(null)
-
-const toggleDropdown = () => {
-  isOpen.value = !isOpen.value
-}
-
-const selectOption = (value) => {
-  currentLocale.value = value
-  locale.value = value
-  localStorage.setItem('locale', value)
-  isOpen.value = false
-}
-
-const handleClickOutside = (event) => {
-  if (selectContainer.value && !selectContainer.value.contains(event.target)) {
-    isOpen.value = false
-  }
-}
-
-onMounted(() => {
-  const savedLocale = localStorage.getItem('locale')
-  if (savedLocale) {
-    currentLocale.value = savedLocale
-    locale.value = savedLocale
-  }
-  
-  document.addEventListener('click', handleClickOutside)
-})
-
-onUnmounted(() => {
-  document.removeEventListener('click', handleClickOutside)
-})
+const {
+  colorStore,
+  themeStore,
+  currentLocale,
+  isOpen,
+  selectContainer,
+  toggleDropdown,
+  selectOption
+} = useLanguageSwitcher()
 </script>
 
 <style scoped>
