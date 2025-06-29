@@ -1,0 +1,364 @@
+/* Dark Theme Variations - Các biến màu cho từng theme */
+
+/* Black Theme */
+.dark.theme-black {
+  --bg-primary: #000000;
+  --bg-secondary: #171717;
+  --bg-tertiary: #262626;
+  --card-bg: #0f0f0f;
+  --card-border: #333333;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --accent-color: #ff4d4d;
+}
+
+/* Navy Theme */
+.dark.theme-navy {
+  --bg-primary: #312e81; /* indigo-900 */
+  --bg-secondary: #3730a3; /* indigo-800 */
+  --bg-tertiary: #4338ca; /* indigo-700 */
+  --card-bg: #1e1b4b; /* indigo-950 */
+  --card-border: #4f46e5; /* indigo-600 */
+  --text-primary: #ffffff;
+  --text-secondary: #c7d2fe; /* indigo-200 */
+  --accent-color: #818cf8; /* indigo-400 */
+}
+
+/* Charcoal Theme */
+.dark.theme-charcoal {
+  --bg-primary: #111827; /* gray-900 */
+  --bg-secondary: #1f2937; /* gray-800 */
+  --bg-tertiary: #374151; /* gray-700 */
+  --card-bg: #0f172a; /* gray-950 */
+  --card-border: #4b5563; /* gray-600 */
+  --text-primary: #ffffff;
+  --text-secondary: #e5e7eb; /* gray-200 */
+  --accent-color: #60a5fa; /* blue-400 */
+}
+
+/* Midnight Theme */
+.dark.theme-midnight {
+  --bg-primary: #1e3a8a; /* blue-900 */
+  --bg-secondary: #1e40af; /* blue-800 */
+  --bg-tertiary: #1d4ed8; /* blue-700 */
+  --card-bg: #172554; /* blue-950 */
+  --card-border: #2563eb; /* blue-600 */
+  --text-primary: #ffffff;
+  --text-secondary: #bfdbfe; /* blue-200 */
+  --accent-color: #93c5fd; /* blue-300 */
+}
+
+/* Deep Purple Theme */
+.dark.theme-deep-purple {
+  --bg-primary: #4c1d95; /* purple-900 */
+  --bg-secondary: #5b21b6; /* purple-800 */
+  --bg-tertiary: #6d28d9; /* purple-700 */
+  --card-bg: #2e1065; /* purple-950 */
+  --card-border: #7c3aed; /* purple-600 */
+  --text-primary: #ffffff;
+  --text-secondary: #e9d5ff; /* purple-200 */
+  --accent-color: #c084fc; /* purple-400 */
+}
+
+/* Áp dụng các biến màu cho các phần tử */
+
+/* Nền chính */
+.dark.theme-black .min-h-screen,
+.dark.theme-navy .min-h-screen,
+.dark.theme-charcoal .min-h-screen,
+.dark.theme-midnight .min-h-screen,
+.dark.theme-deep-purple .min-h-screen {
+  background-color: var(--bg-primary) !important;
+  background-image: none !important;
+}
+
+/* Các phần tử có class dark:bg-gray-900 */
+.dark.theme-black .dark\:bg-gray-900,
+.dark.theme-navy .dark\:bg-gray-900,
+.dark.theme-charcoal .dark\:bg-gray-900,
+.dark.theme-midnight .dark\:bg-gray-900,
+.dark.theme-deep-purple .dark\:bg-gray-900 {
+  background-color: var(--bg-primary) !important;
+}
+
+/* Các phần tử có class dark:bg-gray-800 */
+.dark.theme-black .dark\:bg-gray-800,
+.dark.theme-navy .dark\:bg-gray-800,
+.dark.theme-charcoal .dark\:bg-gray-800,
+.dark.theme-midnight .dark\:bg-gray-800,
+.dark.theme-deep-purple .dark\:bg-gray-800 {
+  background-color: var(--bg-secondary) !important;
+}
+
+/* Các phần tử có class dark:bg-gray-700 */
+.dark.theme-black .dark\:bg-gray-700,
+.dark.theme-navy .dark\:bg-gray-700,
+.dark.theme-charcoal .dark\:bg-gray-700,
+.dark.theme-midnight .dark\:bg-gray-700,
+.dark.theme-deep-purple .dark\:bg-gray-700 {
+  background-color: var(--bg-tertiary) !important;
+}
+
+/* Các gradient backgrounds */
+.dark.theme-black .bg-gradient-to-b.dark\:from-gray-800.dark\:to-gray-900,
+.dark.theme-navy .bg-gradient-to-b.dark\:from-gray-800.dark\:to-gray-900,
+.dark.theme-charcoal .bg-gradient-to-b.dark\:from-gray-800.dark\:to-gray-900,
+.dark.theme-midnight .bg-gradient-to-b.dark\:from-gray-800.dark\:to-gray-900,
+.dark.theme-deep-purple .bg-gradient-to-b.dark\:from-gray-800.dark\:to-gray-900 {
+  background-image: none !important;
+  background-color: var(--bg-primary) !important;
+}
+
+/* Các card và container */
+.dark.theme-black .dark\:bg-gray-800.rounded-lg,
+.dark.theme-navy .dark\:bg-gray-800.rounded-lg,
+.dark.theme-charcoal .dark\:bg-gray-800.rounded-lg,
+.dark.theme-midnight .dark\:bg-gray-800.rounded-lg,
+.dark.theme-deep-purple .dark\:bg-gray-800.rounded-lg {
+  background-color: var(--card-bg) !important;
+  border: 1px solid var(--card-border) !important;
+}
+
+/* Các nút và accent elements */
+.dark.theme-black .dark\:bg-blue-600,
+.dark.theme-navy .dark\:bg-blue-600,
+.dark.theme-charcoal .dark\:bg-blue-600,
+.dark.theme-midnight .dark\:bg-blue-600,
+.dark.theme-deep-purple .dark\:bg-blue-600 {
+  background-color: var(--accent-color) !important;
+}
+
+/* Text color */
+.dark.theme-black .dark\:text-white,
+.dark.theme-navy .dark\:text-white,
+.dark.theme-charcoal .dark\:text-white,
+.dark.theme-midnight .dark\:text-white,
+.dark.theme-deep-purple .dark\:text-white {
+  color: var(--text-primary) !important;
+}
+
+.dark.theme-black .dark\:text-gray-300,
+.dark.theme-navy .dark\:text-gray-300,
+.dark.theme-charcoal .dark\:text-gray-300,
+.dark.theme-midnight .dark\:text-gray-300,
+.dark.theme-deep-purple .dark\:text-gray-300 {
+  color: var(--text-secondary) !important;
+}
+
+/* Language Switcher Styles */
+.dark.theme-black .locale-select,
+.dark.theme-navy .locale-select,
+.dark.theme-charcoal .locale-select,
+.dark.theme-midnight .locale-select,
+.dark.theme-deep-purple .locale-select {
+  background-color: var(--bg-secondary) !important;
+  border-color: var(--card-border) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark.theme-black .locale-select:focus,
+.dark.theme-navy .locale-select:focus,
+.dark.theme-charcoal .locale-select:focus,
+.dark.theme-midnight .locale-select:focus,
+.dark.theme-deep-purple .locale-select:focus {
+  border-color: var(--accent-color) !important;
+  box-shadow: 0 0 0 3px var(--accent-color) !important;
+  opacity: 0.7;
+}
+
+.dark.theme-black .locale-select option,
+.dark.theme-navy .locale-select option,
+.dark.theme-charcoal .locale-select option,
+.dark.theme-midnight .locale-select option,
+.dark.theme-deep-purple .locale-select option {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Footer Styles */
+.dark.theme-black footer.bg-gray-800,
+.dark.theme-navy footer.bg-gray-800,
+.dark.theme-charcoal footer.bg-gray-800,
+.dark.theme-midnight footer.bg-gray-800,
+.dark.theme-deep-purple footer.bg-gray-800 {
+  background-color: var(--bg-secondary) !important;
+}
+
+.dark.theme-black footer .text-gray-400,
+.dark.theme-navy footer .text-gray-400,
+.dark.theme-charcoal footer .text-gray-400,
+.dark.theme-midnight footer .text-gray-400,
+.dark.theme-deep-purple footer .text-gray-400 {
+  color: var(--text-secondary) !important;
+}
+
+.dark.theme-black footer .text-theme-secondary,
+.dark.theme-navy footer .text-theme-secondary,
+.dark.theme-charcoal footer .text-theme-secondary,
+.dark.theme-midnight footer .text-theme-secondary,
+.dark.theme-deep-purple footer .text-theme-secondary {
+  color: var(--accent-color) !important;
+}
+
+.dark.theme-black footer .hover\:text-white:hover,
+.dark.theme-navy footer .hover\:text-white:hover,
+.dark.theme-charcoal footer .hover\:text-white:hover,
+.dark.theme-midnight footer .hover\:text-white:hover,
+.dark.theme-deep-purple footer .hover\:text-white:hover {
+  color: var(--text-primary) !important;
+}
+
+/* Project Section Styles */
+
+/* Card backgrounds - TeamProjectSection và SoloProjectSection */
+.dark.theme-black .bg-gradient-to-br,
+.dark.theme-navy .bg-gradient-to-br,
+.dark.theme-charcoal .bg-gradient-to-br,
+.dark.theme-midnight .bg-gradient-to-br,
+.dark.theme-deep-purple .bg-gradient-to-br {
+  background-image: none !important;
+  background-color: var(--card-bg) !important;
+}
+
+/* Main project cards */
+.dark.theme-black .bg-white.dark\:bg-gray-800,
+.dark.theme-navy .bg-white.dark\:bg-gray-800,
+.dark.theme-charcoal .bg-white.dark\:bg-gray-800,
+.dark.theme-midnight .bg-white.dark\:bg-gray-800,
+.dark.theme-deep-purple .bg-white.dark\:bg-gray-800 {
+  background-color: var(--bg-secondary) !important;
+}
+
+/* Project icon backgrounds */
+.dark.theme-black .bg-theme-primary,
+.dark.theme-navy .bg-theme-primary,
+.dark.theme-charcoal .bg-theme-primary,
+.dark.theme-midnight .bg-theme-primary,
+.dark.theme-deep-purple .bg-theme-primary,
+.dark.theme-black .bg-theme-secondary,
+.dark.theme-navy .bg-theme-secondary,
+.dark.theme-charcoal .bg-theme-secondary,
+.dark.theme-midnight .bg-theme-secondary,
+.dark.theme-deep-purple .bg-theme-secondary {
+  background-color: var(--accent-color) !important;
+}
+
+/* Project text colors */
+.dark.theme-black .text-gray-600.dark\:text-gray-300,
+.dark.theme-navy .text-gray-600.dark\:text-gray-300,
+.dark.theme-charcoal .text-gray-600.dark\:text-gray-300,
+.dark.theme-midnight .text-gray-600.dark\:text-gray-300,
+.dark.theme-deep-purple .text-gray-600.dark\:text-gray-300,
+.dark.theme-black .text-gray-700.dark\:text-gray-300,
+.dark.theme-navy .text-gray-700.dark\:text-gray-300,
+.dark.theme-charcoal .text-gray-700.dark\:text-gray-300,
+.dark.theme-midnight .text-gray-700.dark\:text-gray-300,
+.dark.theme-deep-purple .text-gray-700.dark\:text-gray-300 {
+  color: var(--text-secondary) !important;
+}
+
+/* Project borders */
+.dark.theme-black .border-indigo-100.dark\:border-gray-600,
+.dark.theme-navy .border-indigo-100.dark\:border-gray-600,
+.dark.theme-charcoal .border-indigo-100.dark\:border-gray-600,
+.dark.theme-midnight .border-indigo-100.dark\:border-gray-600,
+.dark.theme-deep-purple .border-indigo-100.dark\:border-gray-600,
+.dark.theme-black .border-purple-100.dark\:border-gray-600,
+.dark.theme-navy .border-purple-100.dark\:border-gray-600,
+.dark.theme-charcoal .border-purple-100.dark\:border-gray-600,
+.dark.theme-midnight .border-purple-100.dark\:border-gray-600,
+.dark.theme-deep-purple .border-purple-100.dark\:border-gray-600 {
+  border-color: var(--card-border) !important;
+}
+
+/* Project links */
+.dark.theme-black a.text-gray-700.hover\:text-indigo-600,
+.dark.theme-navy a.text-gray-700.hover\:text-indigo-600,
+.dark.theme-charcoal a.text-gray-700.hover\:text-indigo-600,
+.dark.theme-midnight a.text-gray-700.hover\:text-indigo-600,
+.dark.theme-deep-purple a.text-gray-700.hover\:text-indigo-600 {
+  color: var(--text-secondary) !important;
+}
+
+.dark.theme-black a.text-gray-700.hover\:text-indigo-600:hover,
+.dark.theme-navy a.text-gray-700.hover\:text-indigo-600:hover,
+.dark.theme-charcoal a.text-gray-700.hover\:text-indigo-600:hover,
+.dark.theme-midnight a.text-gray-700.hover\:text-indigo-600:hover,
+.dark.theme-deep-purple a.text-gray-700.hover\:text-indigo-600:hover {
+  color: var(--accent-color) !important;
+}
+
+/* Gradient backgrounds */
+.dark.theme-black .from-white.dark\:from-gray-700,
+.dark.theme-navy .from-white.dark\:from-gray-700,
+.dark.theme-charcoal .from-white.dark\:from-gray-700,
+.dark.theme-midnight .from-white.dark\:from-gray-700,
+.dark.theme-deep-purple .from-white.dark\:from-gray-700 {
+  --tw-gradient-from: var(--card-bg) !important;
+}
+
+.dark.theme-black .to-indigo-50.dark\:to-gray-600,
+.dark.theme-navy .to-indigo-50.dark\:to-gray-600,
+.dark.theme-charcoal .to-indigo-50.dark\:to-gray-600,
+.dark.theme-midnight .to-indigo-50.dark\:to-gray-600,
+.dark.theme-deep-purple .to-indigo-50.dark\:to-gray-600,
+.dark.theme-black .to-purple-50.dark\:to-gray-600,
+.dark.theme-navy .to-purple-50.dark\:to-gray-600,
+.dark.theme-charcoal .to-purple-50.dark\:to-gray-600,
+.dark.theme-midnight .to-purple-50.dark\:to-gray-600,
+.dark.theme-deep-purple .to-purple-50.dark\:to-gray-600 {
+  --tw-gradient-to: var(--bg-secondary) !important;
+}
+
+/* HomeView Styles */
+
+/* Border colors for cards */
+.dark.theme-black .border-theme-primary,
+.dark.theme-navy .border-theme-primary,
+.dark.theme-charcoal .border-theme-primary,
+.dark.theme-midnight .border-theme-primary,
+.dark.theme-deep-purple .border-theme-primary {
+  border-color: var(--accent-color) !important;
+}
+
+.dark.theme-black .border-theme-accent,
+.dark.theme-navy .border-theme-accent,
+.dark.theme-charcoal .border-theme-accent,
+.dark.theme-midnight .border-theme-accent,
+.dark.theme-deep-purple .border-theme-accent {
+  border-color: var(--accent-color) !important;
+}
+
+/* Text colors */
+.dark.theme-black .text-theme-primary,
+.dark.theme-navy .text-theme-primary,
+.dark.theme-charcoal .text-theme-primary,
+.dark.theme-midnight .text-theme-primary,
+.dark.theme-deep-purple .text-theme-primary {
+  color: var(--accent-color) !important;
+}
+
+.dark.theme-black .text-theme-secondary,
+.dark.theme-navy .text-theme-secondary,
+.dark.theme-charcoal .text-theme-secondary,
+.dark.theme-midnight .text-theme-secondary,
+.dark.theme-deep-purple .text-theme-secondary {
+  color: var(--accent-color) !important;
+}
+
+/* Background colors */
+.dark.theme-black .bg-theme-primary,
+.dark.theme-navy .bg-theme-primary,
+.dark.theme-charcoal .bg-theme-primary,
+.dark.theme-midnight .bg-theme-primary,
+.dark.theme-deep-purple .bg-theme-primary {
+  background-color: var(--accent-color) !important;
+}
+
+.dark.theme-black .bg-theme-secondary,
+.dark.theme-navy .bg-theme-secondary,
+.dark.theme-charcoal .bg-theme-secondary,
+.dark.theme-midnight .bg-theme-secondary,
+.dark.theme-deep-purple .bg-theme-secondary {
+  background-color: var(--accent-color) !important;
+}
