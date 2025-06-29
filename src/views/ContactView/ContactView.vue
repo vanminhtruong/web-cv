@@ -24,10 +24,8 @@ const { t } = useI18n()
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 h-full">
-          <div style="border: 2px solid red;">
-            <ContactInfoSection />
-          </div>
-          <div style="border: 2px solid blue;">
+          <ContactInfoSection />
+          <div>
             <ContactFormSection />
           </div>
         </div>
