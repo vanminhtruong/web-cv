@@ -23,9 +23,11 @@ const { t } = useI18n()
           <h2 class="text-3xl font-bold inline-block pb-2 border-b-4 transform transition-all duration-300 hover:scale-105" :style="{ 'border-color': colorStore.currentColor.primary, 'color': colorStore.currentColor.primary }">{{ t('contact.title').toUpperCase() }}</h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 h-full">
-          <ContactInfoSection />
-          <div>
+        <div class="flex flex-col md:flex-row gap-8 h-full">
+          <div class="w-full md:w-1/2">
+            <ContactInfoSection />
+          </div>
+          <div class="w-full md:w-1/2">
             <ContactFormSection />
           </div>
         </div>
