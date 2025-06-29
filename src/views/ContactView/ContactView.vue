@@ -25,7 +25,9 @@ const { t } = useI18n()
 
         <div class="grid grid-cols-1 tablet:grid-cols-1 lg:grid-cols-1 xl:grid-cols-2 gap-8 h-full">
           <ContactInfoSection />
-          <ContactFormSection />
+          <div>
+            <ContactFormSection />
+          </div>
         </div>
       </div>
     </div>
