@@ -27,4 +27,9 @@ export default {
     },
   },
   plugins: [],
+  safelist: [
+    'grid-cols-2',
+    'md:grid-cols-2',
+    'xl:grid-cols-2'
+  ],
 }
