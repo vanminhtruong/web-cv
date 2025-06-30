@@ -21,9 +21,13 @@ const { t } = useI18n()
     </div>
 
     <div class="relative">
-      <div class="absolute left-0 md:left-1/2 h-full w-1 transform md:translate-x-[-50%] rounded-full" :style="{ 'background-image': `linear-gradient(to bottom, ${colorStore.currentColor.primary}, ${colorStore.currentColor.secondary})` }"></div>
+      <div class="absolute -ml-6 md:ml-0 left-0 md:left-1/2 h-full w-1 transform md:translate-x-[-50%] rounded-full" :style="{ 'background-image': `linear-gradient(to bottom, ${colorStore.currentColor.primary}, ${colorStore.currentColor.secondary})` }"></div>
       <div class="space-y-12">
         <div class="relative flex flex-col md:flex-row items-start md:justify-between group pt-14 md:pt-0">
+          <!-- thanh ngang 1 -->
+          <div class="tablet:hidden lg:hidden xl:hidden absolute left-0 md:left-1/2 top-20 md:top-1/2 transform translate-x-[-22px] -translate-y-[-260px] z-10">
+            <div class="h-0.5 w-6" :style="{ 'background': `linear-gradient(to right, ${colorStore.currentColor.primary}, ${colorStore.currentColor.secondary})` }"></div>
+          </div>
           <div class="block md:hidden w-full mb-8 px-4 absolute top-0 left-0 right-0 z-20 flex items-center gap-2">
             <div class="h-8 w-8 rounded-full flex items-center justify-center shadow-lg" :style="{ 'background-image': `linear-gradient(to right, ${colorStore.currentColor.primary}, ${colorStore.currentColor.secondary})` }">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -112,6 +116,10 @@ const { t } = useI18n()
         </div>
 
         <div class="relative flex flex-col md:flex-row items-start md:justify-between group pt-14 md:pt-0">
+          <!-- thanh ngang 2 -->
+          <div class="absolute md:hidden translate-x-[-100px] absolute left-0 md:left-1/2 top-20 md:top-1/2 transform translate-x-[-24px] -translate-y-[-200px] z-10">
+            <div class="h-0.5 w-6" :style="{ 'background': `linear-gradient(to right, ${colorStore.currentColor.primary}, ${colorStore.currentColor.secondary})` }"></div>
+          </div>
           <!-- Ngày tháng mobile (chỉ hiển thị trên mobile) -->
           <div  class="md:hidden w-full mb-8 px-4 absolute top-0 left-0 right-0 z-20">
             <div class="ml-[43px] text-white font-medium text-sm uppercase tracking-wider px-4 py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 inline-flex items-center" :style="{ 'background-image': `linear-gradient(to right, ${colorStore.currentColor.secondary}, ${colorStore.currentColor.primary})` }">
