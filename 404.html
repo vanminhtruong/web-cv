@@ -5,7 +5,7 @@
     <script>
       // Redirect all requests to the root index.html and preserve the path for SPA routing
       var path = window.location.pathname.replace(/^\/web-cv/, '');
-      window.location.replace('/web-cv/' + (path ? ('' + path) : ''));
+      window.location.replace('/web-cv/' + (path ? ('#' + path) : ''));
     </script>
   </head>
   <body></body>
