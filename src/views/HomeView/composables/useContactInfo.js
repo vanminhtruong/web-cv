@@ -8,6 +8,14 @@ export function useContactInfo() {
   const githubUrl = 'https://github.com/vanminhtruong/Team03-cy.git'
   const githubUsername = 'vanminhtruong'
 
+  // Xác định đúng đường dẫn tùy thuộc vào môi trường triển khai
+  const getPdfPath = () => {
+    // Kiểm tra xem có phải đang trên GitHub Pages không (có base path /web-cv/)
+    const isGitHubPages = window.location.href.includes('/web-cv/');
+    // Nếu đang ở GitHub Pages, sử dụng đường dẫn tương đối với base path
+    return isGitHubPages ? '/web-cv/TruongVanMinh-CV.pdf' : '/TruongVanMinh-CV.pdf';
+  }
+
   const contactItems = computed(() => [
     {
       id: 'phone',
@@ -51,7 +59,7 @@ export function useContactInfo() {
     {
       id: 'download-cv',
       label: t('home.downloadCV'),
-      href: './src/assets/file/TruongVanMinh-CV.pdf', 
+      href: getPdfPath(), 
       isPrimary: false,
       icon: 'M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4'
     }
@@ -63,6 +71,7 @@ export function useContactInfo() {
     githubUrl,
     githubUsername,
     contactItems,
-    actionButtons
+    actionButtons,
+    getPdfPath
   }
 }

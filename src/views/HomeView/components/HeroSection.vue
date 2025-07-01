@@ -22,12 +22,12 @@ const { displayedText: displayedName } = useTypingEffect(fullName, {
   loop: true              
 })
 
-const { contactItems, actionButtons } = useContactInfo()
+const { contactItems, actionButtons, getPdfPath } = useContactInfo()
 
 const updatedActionButtons = computed(() => {
   return actionButtons.value.map(button => {
     if (button.id === 'download-cv') {
-      return { ...button, href: profileStore.cvPath }
+      return { ...button, href: getPdfPath() }
     }
     return button
   })
@@ -44,6 +44,14 @@ const openPdfViewer = () => {
 const closePdfViewer = () => {
   isPdfViewerOpen.value = false
 }
+
+// Xác định đúng đường dẫn PDF
+const pdfPath = computed(() => {
+  // Kiểm tra xem có phải đang trên GitHub Pages không (có base path /web-cv/)
+  const isGitHubPages = window.location.href.includes('/web-cv/');
+  // Nếu đang ở GitHub Pages, sử dụng đường dẫn tương đối với base path
+  return isGitHubPages ? '/web-cv/TruongVanMinh-CV.pdf' : '/TruongVanMinh-CV.pdf';
+})
 </script>
 
 <template>
@@ -134,7 +142,7 @@ const closePdfViewer = () => {
   <!-- PDF Viewer Modal -->
   <PDFViewer 
     :is-open="isPdfViewerOpen" 
-    :pdf-url="'./src/assets/file/TruongVanMinh-CV.pdf'" 
+    :pdf-url="pdfPath" 
     :title="t('home.viewCV')"
     @close="closePdfViewer"
   />
