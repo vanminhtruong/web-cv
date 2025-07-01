@@ -1,12 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta http-equiv="refresh" content="0; url=/web-cv/" />
+    <meta charset="utf-8">
+    <title>CV - Truong Van Minh</title>
     <script>
-      // Redirect all requests to the root index.html and preserve the path for SPA routing
-      var path = window.location.pathname.replace(/^\/web-cv/, '');
-      window.location.replace('/web-cv/' + (path ? ('#' + path) : ''));
+      // GitHub Pages không hỗ trợ SPA tốt, nên chúng ta cần redirect trang 404 về trang chính
+      // và để Vue Router xử lý route
+      sessionStorage.redirect = location.href;
     </script>
+    <meta http-equiv="refresh" content="0;URL='/web-cv/'">
   </head>
-  <body></body>
+  <body>
+    <h1>Redirecting...</h1>
+    <p>If you are not redirected automatically, click <a href="/web-cv/">here</a>.</p>
+    <script>
+      // Đặc biệt cho trang Contact, đảm bảo hiển thị trên GitHub Pages
+      if (window.location.href.includes('/contact')) {
+        sessionStorage.setItem('show_contact_info', 'true');
+      }
+    </script>
+  </body>
 </html> 
