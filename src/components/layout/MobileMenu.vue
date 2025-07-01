@@ -60,7 +60,7 @@ function closeMenu() {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: v-bind('colorStore.currentColor.primary');
+  background-color: v-bind("colorStore.currentColor.primary");
   transition: width 0.3s;
 }
 
