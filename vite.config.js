@@ -20,9 +20,18 @@ export default defineConfig({
   },
   build: {
     assetsInlineLimit: 0, // Don't inline any assets
+    minify: false, // Disable minification completely for debugging
     rollupOptions: {
       output: {
-        manualChunks: undefined
+        manualChunks: (id) => {
+          // Split the code into chunks to avoid large files
+          if (id.includes('node_modules')) {
+            if (id.includes('vue-toastification')) {
+              return 'vendor-toast';
+            }
+            return 'vendor';
+          }
+        }
       }
     }
   },

@@ -6,9 +6,9 @@ export const useToastStore = defineStore('toast', () => {
   const toast = useToast()
   const colorStore = useColorStore()
 
-  function showSuccess(message) {
-    toast.success(message, {
-      timeout: 3000,
+  // Common toast options to avoid duplication
+  const getCommonOptions = () => {
+    return {
       position: 'top-right',
       toastClassName: 'custom-toast',
       bodyClassName: 'custom-toast-body',
@@ -27,79 +27,31 @@ export const useToastStore = defineStore('toast', () => {
         '--color-secondary': colorStore.currentColor.secondary,
         '--color-accent': colorStore.currentColor.accent
       }
-    })
+    }
+  }
+
+  function showSuccess(message) {
+    const options = getCommonOptions()
+    options.timeout = 3000
+    toast.success(message, options)
   }
 
   function showError(message) {
-    toast.error(message, {
-      timeout: 4000,
-      position: 'top-right',
-      toastClassName: 'custom-toast',
-      bodyClassName: 'custom-toast-body',
-      closeButton: false,
-      icon: true,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnFocusLoss: true,
-      pauseOnHover: true,
-      draggable: true,
-      draggablePercent: 0.6,
-      showCloseButtonOnHover: false,
-      rtl: false,
-      style: {
-        '--color-primary': colorStore.currentColor.primary,
-        '--color-secondary': colorStore.currentColor.secondary,
-        '--color-accent': colorStore.currentColor.accent
-      }
-    })
+    const options = getCommonOptions()
+    options.timeout = 4000
+    toast.error(message, options)
   }
 
   function showInfo(message) {
-    toast.info(message, {
-      timeout: 3000,
-      position: 'top-right',
-      toastClassName: 'custom-toast',
-      bodyClassName: 'custom-toast-body',
-      closeButton: false,
-      icon: true,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnFocusLoss: true,
-      pauseOnHover: true,
-      draggable: true,
-      draggablePercent: 0.6,
-      showCloseButtonOnHover: false,
-      rtl: false,
-      style: {
-        '--color-primary': colorStore.currentColor.primary,
-        '--color-secondary': colorStore.currentColor.secondary,
-        '--color-accent': colorStore.currentColor.accent
-      }
-    })
+    const options = getCommonOptions()
+    options.timeout = 3000
+    toast.info(message, options)
   }
 
   function showWarning(message) {
-    toast.warning(message, {
-      timeout: 3500,
-      position: 'top-right',
-      toastClassName: 'custom-toast',
-      bodyClassName: 'custom-toast-body',
-      closeButton: false,
-      icon: true,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnFocusLoss: true,
-      pauseOnHover: true,
-      draggable: true,
-      draggablePercent: 0.6,
-      showCloseButtonOnHover: false,
-      rtl: false,
-      style: {
-        '--color-primary': colorStore.currentColor.primary,
-        '--color-secondary': colorStore.currentColor.secondary,
-        '--color-accent': colorStore.currentColor.accent
-      }
-    })
+    const options = getCommonOptions()
+    options.timeout = 3500
+    toast.warning(message, options)
   }
 
   return {
