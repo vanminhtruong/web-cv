@@ -1,10 +1,11 @@
 <script setup>
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useProfileStore } from '../../../stores/profile'
 import { useColorStore } from '../../../stores/color'
 import { useTypingEffect } from '../composables/useTypingEffect'
 import { useContactInfo } from '../composables/useContactInfo'
+import PDFViewer from '../../../components/PDFViewer.vue'
 
 const profileStore = useProfileStore()
 const colorStore = useColorStore()
@@ -34,6 +35,15 @@ const updatedActionButtons = computed(() => {
 
 const primaryButtons = computed(() => updatedActionButtons.value.filter(button => button.isPrimary))
 const secondaryButtons = computed(() => updatedActionButtons.value.filter(button => !button.isPrimary))
+
+// PDF Viewer state
+const isPdfViewerOpen = ref(false)
+const openPdfViewer = () => {
+  isPdfViewerOpen.value = true
+}
+const closePdfViewer = () => {
+  isPdfViewerOpen.value = false
+}
 </script>
 
 <template>
@@ -62,6 +72,15 @@ const secondaryButtons = computed(() => updatedActionButtons.value.filter(button
           </svg>
         </div>
         <span>{{ t('home.role') }}</span>
+        <div 
+          class="exclamation-mark ml-2 cursor-pointer" 
+          @click="openPdfViewer"
+          :title="t('home.viewCV')"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 exclamation-animate" fill="none" viewBox="0 0 24 24" stroke="currentColor" :style="{ 'color': colorStore.currentColor.secondary }">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+        </div>
       </h2>
       <div class="grid grid-cols-1 xl:w-[630px] sm:grid-cols-2 gap-4 text-gray-700 dark:text-gray-300 mb-8 bg-white dark:bg-gray-800 p-4 lg:p-6 rounded-xl shadow-md border-l-4 groups" :style="{ 'border-color': colorStore.currentColor.primary }">
         <div v-for="item in contactItems" :key="item.id" class="flex items-center group">  
@@ -111,6 +130,14 @@ const secondaryButtons = computed(() => updatedActionButtons.value.filter(button
       </div>
     </div>
   </div>
+
+  <!-- PDF Viewer Modal -->
+  <PDFViewer 
+    :is-open="isPdfViewerOpen" 
+    :pdf-url="profileStore.cvPath" 
+    :title="t('home.viewCV')"
+    @close="closePdfViewer"
+  />
 </template>
 
 <style scoped>
@@ -163,6 +190,17 @@ const secondaryButtons = computed(() => updatedActionButtons.value.filter(button
 .download-animate {
   animation: download-motion 2s ease-in-out infinite;
   transform-origin: center;
+}
+
+/* Hiệu ứng cho icon chấm than */
+.exclamation-animate {
+  animation: pulse 1.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 2px currentColor);
+  transition: transform 0.2s;
+}
+
+.exclamation-mark:hover .exclamation-animate {
+  transform: scale(1.2);
 }
 
 /* Định nghĩa các keyframes */
