@@ -8,8 +8,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <LazySection threshold="0.1" rootMargin="100px" class="h-full">
-    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-8 transform hover:-translate-y-1 border-l-4 h-full flex flex-col" :style="{ 'border-color': colorStore.currentColor.primary }">
+  <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-8 transform hover:-translate-y-1 border-l-4 h-full flex flex-col" :style="{ 'border-color': colorStore.currentColor.primary }">
       <div class="flex items-center mb-6">
         <div class="h-10 w-10 rounded-lg flex items-center justify-center mr-3" :style="{ 'background-image': `linear-gradient(to right, ${colorStore.currentColor.primary}, ${colorStore.currentColor.secondary})` }">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -106,5 +105,4 @@ const { t } = useI18n()
         </div>
       </div>
     </div>
-  </LazySection>
 </template>
