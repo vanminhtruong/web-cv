@@ -1,0 +1,127 @@
+:root {
+  --color-primary: #6366f1;   /* Default Indigo */
+  --color-secondary: #818cf8;
+  --color-accent: #4f46e5;
+}
+
+/* Add smooth transitions for all color variables */
+* {
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Utility classes for color themes */
+.text-theme-primary {
+  color: var(--color-primary);
+  transition: color 0.3s ease;
+}
+
+.text-theme-secondary {
+  color: var(--color-secondary);
+  transition: color 0.3s ease;
+}
+
+.text-theme-accent {
+  color: var(--color-accent);
+  transition: color 0.3s ease;
+}
+
+.bg-theme-primary {
+  background-color: var(--color-primary);
+  transition: background-color 0.3s ease;
+}
+
+.bg-theme-secondary {
+  background-color: var(--color-secondary);
+  transition: background-color 0.3s ease;
+}
+
+.bg-theme-accent {
+  background-color: var(--color-accent);
+  transition: background-color 0.3s ease;
+}
+
+.border-theme-primary {
+  border-color: var(--color-primary);
+  transition: border-color 0.3s ease;
+}
+
+.border-theme-secondary {
+  border-color: var(--color-secondary);
+  transition: border-color 0.3s ease;
+}
+
+.border-theme-accent {
+  border-color: var(--color-accent);
+  transition: border-color 0.3s ease;
+}
+
+/* Hover variants */
+.hover\:text-theme-primary:hover {
+  color: var(--color-primary);
+}
+
+.hover\:text-theme-secondary:hover {
+  color: var(--color-secondary);
+}
+
+.hover\:text-theme-accent:hover {
+  color: var(--color-accent);
+}
+
+.hover\:bg-theme-primary:hover {
+  background-color: var(--color-primary);
+}
+
+.hover\:bg-theme-secondary:hover {
+  background-color: var(--color-secondary);
+}
+
+.hover\:bg-theme-accent:hover {
+  background-color: var(--color-accent);
+}
+
+.hover\:border-theme-primary:hover {
+  border-color: var(--color-primary);
+}
+
+.hover\:border-theme-secondary:hover {
+  border-color: var(--color-secondary);
+}
+
+.hover\:border-theme-accent:hover {
+  border-color: var(--color-accent);
+}
+
+/* Special rainbow animation styles */
+.rainbow-text {
+  background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: rainbow-shift 4s ease-in-out infinite;
+}
+
+.rainbow-border {
+  background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+  background-size: 200% 200%;
+  animation: rainbow-shift 4s ease-in-out infinite;
+}
+
+@keyframes rainbow-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 100%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
