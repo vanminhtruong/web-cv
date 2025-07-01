@@ -51,7 +51,7 @@ export function useContactInfo() {
     {
       id: 'download-cv',
       label: t('home.downloadCV'),
-      href: null, 
+      href: './src/assets/file/TruongVanMinh-CV.pdf', 
       isPrimary: false,
       icon: 'M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4'
     }

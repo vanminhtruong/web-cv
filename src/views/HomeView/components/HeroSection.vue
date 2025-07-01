@@ -134,7 +134,7 @@ const closePdfViewer = () => {
   <!-- PDF Viewer Modal -->
   <PDFViewer 
     :is-open="isPdfViewerOpen" 
-    :pdf-url="profileStore.cvPath" 
+    :pdf-url="'./src/assets/file/TruongVanMinh-CV.pdf'" 
     :title="t('home.viewCV')"
     @close="closePdfViewer"
   />
