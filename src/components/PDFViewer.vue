@@ -23,6 +23,17 @@
               <path v-else stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
+          <a 
+            :href="pdfUrl" 
+            target="_blank" 
+            class="download-button flex items-center gap-1 px-2 py-1 rounded-md bg-white/20 hover:bg-white/30 transition-colors" 
+            title="Open in new tab"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+            <span class="text-sm">Open</span>
+          </a>
           <button class="close-button" @click="closeModal">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -31,14 +42,49 @@
         </div>
       </div>
       <div class="pdf-viewer-content" ref="pdfContainer">
-        <div class="pdf-wrapper">
+        <div v-if="!pdfLoadError" class="pdf-wrapper">
           <iframe 
             ref="pdfFrame"
             :src="pdfUrl" 
             frameborder="0" 
             :style="{ transform: `scale(${zoomLevel})`, transformOrigin: 'top center' }"
             allow="fullscreen"
+            @load="handleIframeLoad"
+            @error="handleIframeError"
           ></iframe>
+        </div>
+        <div v-else class="pdf-fallback">
+          <div class="pdf-error-message">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mb-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <h3 class="text-xl font-bold mb-2">PDF không thể hiển thị trực tiếp</h3>
+            <p class="mb-4">Vui lòng sử dụng nút tải CV hoặc mở trong tab mới</p>
+            <div class="flex justify-center gap-4">
+              <a 
+                :href="pdfUrl" 
+                download 
+                class="inline-flex items-center px-4 py-2 rounded-md"
+                :style="{ 'background-color': colorStore.currentColor.primary, color: 'white' }"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                Tải CV
+              </a>
+              <a 
+                :href="pdfUrl" 
+                target="_blank" 
+                class="inline-flex items-center px-4 py-2 border-2 rounded-md"
+                :style="{ 'border-color': colorStore.currentColor.primary, 'color': colorStore.currentColor.primary }"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+                Mở trong tab mới
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -54,6 +100,7 @@ const zoomLevel = ref(1.0); // Default zoom to 100%
 const pdfContainer = ref(null);
 const pdfFrame = ref(null);
 const isFullScreen = ref(false);
+const pdfLoadError = ref(false);
 
 const props = defineProps({
   isOpen: {
@@ -100,6 +147,28 @@ const toggleFullScreen = () => {
       isFullScreen.value = false;
     }
   }
+};
+
+const handleIframeLoad = (event) => {
+  try {
+    // Check if the iframe loaded content is an error page
+    const iframe = event.target;
+    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+    
+    // Check if there's a 404 or other error message in the loaded document
+    if (iframeDoc.title.includes('404') || iframeDoc.body.textContent.includes('404 Not Found')) {
+      pdfLoadError.value = true;
+    } else {
+      pdfLoadError.value = false;
+    }
+  } catch (error) {
+    // If we can't access the iframe content due to CORS, assume it's working
+    pdfLoadError.value = false;
+  }
+};
+
+const handleIframeError = () => {
+  pdfLoadError.value = true;
 };
 
 // Listen for fullscreen change events
@@ -209,6 +278,22 @@ document.addEventListener('fullscreenchange', () => {
   transition: transform 0.3s ease;
   background-color: white;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.pdf-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+.pdf-error-message {
+  text-align: center;
+  padding: 2rem;
+  max-width: 500px;
+  color: #333;
 }
 
 @media (max-width: 768px) {
