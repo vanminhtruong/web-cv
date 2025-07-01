@@ -1,0 +1,301 @@
+
+.pdf-viewer-modal[data-v-436adaf4] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 0.5rem;
+}
+.pdf-viewer-container[data-v-436adaf4] {
+  background-color: white;
+  border-radius: 0.5rem;
+  width: 98%;
+  max-width: 1400px; /* Further increased max-width */
+  height: 98vh; /* Further increased height */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+.pdf-viewer-header[data-v-436adaf4] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  color: white;
+}
+.zoom-controls[data-v-436adaf4] {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+.zoom-level[data-v-436adaf4] {
+  font-weight: bold;
+  min-width: 4rem;
+  text-align: center;
+}
+.zoom-button[data-v-436adaf4] {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s;
+}
+.zoom-button[data-v-436adaf4]:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.close-button[data-v-436adaf4] {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s;
+}
+.close-button[data-v-436adaf4]:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.pdf-viewer-content[data-v-436adaf4] {
+  flex: 1;
+  overflow: auto;
+  background-color: #444;
+  scroll-behavior: smooth;
+  display: flex;
+  justify-content: center;
+}
+.pdf-wrapper[data-v-436adaf4] {
+  width: 100%;
+  min-height: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+.pdf-viewer-content iframe[data-v-436adaf4] {
+  width: 100%;
+  height: 100%;
+  border: none;
+  transition: transform 0.3s ease;
+  background-color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+.pdf-fallback[data-v-436adaf4] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+.pdf-error-message[data-v-436adaf4] {
+  text-align: center;
+  padding: 2rem;
+  max-width: 500px;
+  color: #333;
+}
+@media (max-width: 768px) {
+.pdf-viewer-container[data-v-436adaf4] {
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+}
+.zoom-level[data-v-436adaf4] {
+    min-width: 3rem;
+}
+}
+
+.icon-container[data-v-7f9c5dd0] {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hiệu ứng chung */
+.icon-animate[data-v-7f9c5dd0] {
+  animation: pulse-7f9c5dd0 2s infinite;
+}
+
+/* Hiệu ứng cho icon briefcase */
+.briefcase-container[data-v-7f9c5dd0] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+.briefcase-animate[data-v-7f9c5dd0] {
+  animation: pulse-7f9c5dd0 3s ease-in-out infinite;
+}
+
+/* Hiệu ứng cho icon email */
+.email-animate[data-v-7f9c5dd0] {
+  animation: bounce-7f9c5dd0 2s infinite;
+}
+
+/* Hiệu ứng cho icon điện thoại */
+.phone-animate[data-v-7f9c5dd0] {
+  animation: shake-7f9c5dd0 1.5s infinite;
+}
+
+/* Hiệu ứng cho icon github */
+.github-animate[data-v-7f9c5dd0] {
+  animation: rotate-7f9c5dd0 3s infinite;
+}
+
+/* Hiệu ứng cho icon địa chỉ */
+.address-animate[data-v-7f9c5dd0] {
+  animation: pulse-location-7f9c5dd0 2s infinite;
+}
+
+/* Hiệu ứng cho icon tải xuống */
+.download-animate[data-v-7f9c5dd0] {
+  animation: download-motion-7f9c5dd0 2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Hiệu ứng cho icon chấm than */
+.exclamation-animate[data-v-7f9c5dd0] {
+  animation: pulse-7f9c5dd0 1.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 2px currentColor);
+  transition: transform 0.2s;
+}
+.exclamation-mark:hover .exclamation-animate[data-v-7f9c5dd0] {
+  transform: scale(1.2);
+}
+
+/* Định nghĩa các keyframes */
+@keyframes pulse-7f9c5dd0 {
+0% {
+    transform: scale(1);
+}
+50% {
+    transform: scale(1.1);
+}
+100% {
+    transform: scale(1);
+}
+}
+@keyframes bounce-7f9c5dd0 {
+0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+}
+40% {
+    transform: translateY(-6px);
+}
+60% {
+    transform: translateY(-3px);
+}
+}
+@keyframes shake-7f9c5dd0 {
+0% {
+    transform: rotate(0deg);
+}
+10% {
+    transform: rotate(-10deg);
+}
+20% {
+    transform: rotate(10deg);
+}
+30% {
+    transform: rotate(-10deg);
+}
+40% {
+    transform: rotate(10deg);
+}
+50% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(0deg);
+}
+}
+@keyframes rotate-7f9c5dd0 {
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(360deg);
+}
+}
+@keyframes pulse-location-7f9c5dd0 {
+0% {
+    transform: scale(1);
+}
+50% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 3px currentColor);
+}
+100% {
+    transform: scale(1);
+}
+}
+@keyframes download-motion-7f9c5dd0 {
+0% {
+    transform: translateY(0);
+    filter: drop-shadow(0 0 0px currentColor);
+}
+50% {
+    transform: translateY(2px);
+    filter: drop-shadow(0 0 1px currentColor);
+}
+100% {
+    transform: translateY(0);
+    filter: drop-shadow(0 0 0px currentColor);
+}
+}
+@media (min-width: 768px) and (max-width: 1270px) {
+.wrapper[data-v-7f9c5dd0]{
+    display: block;
+}
+.groups[data-v-7f9c5dd0]{
+    width: 100%;
+}
+.avatar[data-v-7f9c5dd0]{
+    margin: 0 auto;
+    margin-top: 25px;
+    order: 2;
+}
+}
+.typing-cursor[data-v-7f9c5dd0] {
+  display: inline-block;
+  width: 3px;
+  animation: blink-7f9c5dd0 0.7s infinite;
+  color: var(--theme-primary);
+}
+@keyframes blink-7f9c5dd0 {
+0% { opacity: 1;
+}
+50% { opacity: 0;
+}
+100% { opacity: 1;
+}
+}
+.typing-effect[data-v-7f9c5dd0] {
+  display: inline-block;
+  font-weight: bold;
+}
+.dark .typing-cursor[data-v-7f9c5dd0] {
+  color: var(--theme-secondary);
+}
+
+.lazy-hidden[data-v-5d390cda] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.lazy-visible[data-v-5d390cda] {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
