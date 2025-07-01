@@ -38,11 +38,17 @@ export function useColorSwitcher() {
     window.addEventListener('theme-toggle-open', () => {
       isOpen.value = false
     })
+    window.addEventListener('language-switcher-open', () => {
+      isOpen.value = false
+    })
   })
 
   onUnmounted(() => {
     document.removeEventListener('click', handleClickOutside)
     window.removeEventListener('theme-toggle-open', () => {
+      isOpen.value = false
+    })
+    window.removeEventListener('language-switcher-open', () => {
       isOpen.value = false
     })
   })

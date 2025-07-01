@@ -49,11 +49,17 @@ export function useThemeToggle() {
     window.addEventListener('color-switcher-open', () => {
       isMenuOpen.value = false
     })
+    window.addEventListener('language-switcher-open', () => {
+      isMenuOpen.value = false
+    })
   })
 
   onUnmounted(() => {
     document.removeEventListener('click', handleClickOutside)
     window.removeEventListener('color-switcher-open', () => {
+      isMenuOpen.value = false
+    })
+    window.removeEventListener('language-switcher-open', () => {
       isMenuOpen.value = false
     })
   })

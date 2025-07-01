@@ -3,6 +3,7 @@ import { useColorStore } from '../../stores/color'
 import { useI18n } from 'vue-i18n'
 import ContactInfoSection from './components/ContactInfoSection.vue'
 import ContactFormSection from './components/ContactFormSection.vue'
+import LazySection from '../../components/LazySection.vue'
 
 const colorStore = useColorStore()
 const { t } = useI18n()
@@ -11,7 +12,7 @@ const { t } = useI18n()
 <template>
   <div class="min-h-screen py-10 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="mb-16">
+      <LazySection class="mb-16">
         <div class="flex items-center mb-10">
           <div class="mr-4 hidden md:block">
             <div class="h-12 w-12 rounded-lg flex items-center justify-center shadow-md" :style="{ 'background-color': colorStore.currentColor.primary }">
@@ -24,14 +25,14 @@ const { t } = useI18n()
         </div>
 
         <div class="flex flex-col md:flex-row gap-8 h-full">
-          <div class="w-full md:w-1/2">
+          <LazySection class="w-full md:w-1/2" threshold="0.1" rootMargin="50px">
             <ContactInfoSection />
-          </div>
-          <div class="w-full md:w-1/2">
+          </LazySection>
+          <LazySection class="w-full md:w-1/2" threshold="0.1" rootMargin="50px">
             <ContactFormSection />
-          </div>
+          </LazySection>
         </div>
-      </div>
+      </LazySection>
     </div>
   </div>
 </template>

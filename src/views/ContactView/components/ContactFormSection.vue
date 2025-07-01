@@ -2,7 +2,6 @@
 import { useColorStore } from '../../../stores/color'
 import { useToastStore } from '../../../stores/toast'
 import { useI18n } from 'vue-i18n'
-import LazySection from '../../../components/LazySection.vue'
 import { ref, reactive } from 'vue'
 
 const colorStore = useColorStore()

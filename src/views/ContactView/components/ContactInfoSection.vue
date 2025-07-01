@@ -1,7 +1,6 @@
 <script setup>
 import { useColorStore } from '../../../stores/color'
 import { useI18n } from 'vue-i18n'
-import LazySection from '../../../components/LazySection.vue'
 
 const colorStore = useColorStore()
 const { t } = useI18n()
