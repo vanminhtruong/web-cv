@@ -1429,22 +1429,22 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: () => __vitePreload(() => import("./HomeView-f3f5798d.js"), true ? ["assets/HomeView-f3f5798d.js","assets/vendor-adf92722.js","assets/useContactInfo-70322d11.js","assets/LazySection-80701274.js","assets/LazySection-7a201195.css","assets/vendor-toast-e005dfbd.js","assets/vendor-toast-53142c17.css","assets/HomeView-13ed7c24.css"] : void 0)
+      component: () => __vitePreload(() => import("./HomeView-acc7e16f.js"), true ? ["assets/HomeView-acc7e16f.js","assets/vendor-adf92722.js","assets/useContactInfo-70322d11.js","assets/LazySection-cf8ad774.js","assets/LazySection-7a201195.css","assets/vendor-toast-e005dfbd.js","assets/vendor-toast-53142c17.css","assets/HomeView-13ed7c24.css"] : void 0)
     },
     {
       path: "/skills",
       name: "skills",
-      component: () => __vitePreload(() => import("./SkillsView-9011da5c.js"), true ? ["assets/SkillsView-9011da5c.js","assets/vendor-adf92722.js","assets/LazySection-80701274.js","assets/LazySection-7a201195.css","assets/vendor-toast-e005dfbd.js","assets/vendor-toast-53142c17.css"] : void 0)
+      component: () => __vitePreload(() => import("./SkillsView-7b888826.js"), true ? ["assets/SkillsView-7b888826.js","assets/vendor-adf92722.js","assets/LazySection-cf8ad774.js","assets/LazySection-7a201195.css","assets/vendor-toast-e005dfbd.js","assets/vendor-toast-53142c17.css"] : void 0)
     },
     {
       path: "/experience",
       name: "experience",
-      component: () => __vitePreload(() => import("./ExperienceView-0431afb3.js"), true ? ["assets/ExperienceView-0431afb3.js","assets/vendor-adf92722.js","assets/LazySection-80701274.js","assets/LazySection-7a201195.css","assets/vendor-toast-e005dfbd.js","assets/vendor-toast-53142c17.css"] : void 0)
+      component: () => __vitePreload(() => import("./ExperienceView-f25abea3.js"), true ? ["assets/ExperienceView-f25abea3.js","assets/vendor-adf92722.js","assets/LazySection-cf8ad774.js","assets/LazySection-7a201195.css","assets/vendor-toast-e005dfbd.js","assets/vendor-toast-53142c17.css"] : void 0)
     },
     {
       path: "/contact",
       name: "contact",
-      component: () => __vitePreload(() => import("./ContactView-756ca09a.js"), true ? ["assets/ContactView-756ca09a.js","assets/vendor-adf92722.js","assets/useContactInfo-70322d11.js","assets/vendor-toast-e005dfbd.js","assets/vendor-toast-53142c17.css","assets/LazySection-80701274.js","assets/LazySection-7a201195.css","assets/ContactView-b665dc97.css"] : void 0)
+      component: () => __vitePreload(() => import("./ContactView-8f445884.js"), true ? ["assets/ContactView-8f445884.js","assets/vendor-adf92722.js","assets/useContactInfo-70322d11.js","assets/vendor-toast-e005dfbd.js","assets/vendor-toast-53142c17.css","assets/LazySection-cf8ad774.js","assets/LazySection-7a201195.css","assets/ContactView-b665dc97.css"] : void 0)
     }
   ]
 });
@@ -1469,7 +1469,7 @@ const nav$5 = {
 };
 const home$5 = {
   greeting: "Hello, I'm",
-  role: "Intern ReactJS",
+  role: "Intern VueJS",
   objective: "Objective",
   shortTermTitle: "Short-term Goal",
   longTermTitle: "Long-term Goal",
@@ -1482,7 +1482,7 @@ const home$5 = {
 };
 const about$5 = {
   title: "About Me",
-  content: "I am a final-year Information Technology student with a strong passion for programming, particularly in web development using modern frameworks like ReactJS. I completed a 3-month internship at CY Vietnam Software Development Co., Ltd., where I gained valuable hands-on experience in developing and optimizing web applications using ReactJS. Additionally, I interned at Nacencom Technology Joint Stock Company, which further enhanced my practical skills and experience in the IT field. I am eager to apply my knowledge and continue honing my programming skills in a professional working environment.",
+  content: "I am a final-year Information Technology student with a strong passion for programming, particularly in web development using modern frameworks like VueJS. I completed a 3-month internship at CY Vietnam Software Development Co., Ltd., where I gained valuable hands-on experience in developing and optimizing web applications using VueJS. Additionally, I interned at Nacencom Technology Joint Stock Company, which further enhanced my practical skills and experience in the IT field. I am eager to apply my knowledge and continue honing my programming skills in a professional working environment.",
   description: "I am a dedicated web developer with a passion for creating innovative solutions. I enjoy working on challenging projects and continuously learning new technologies.",
   personalInfo: "Personal Information",
   name: "Name",
@@ -1673,7 +1673,7 @@ const nav$4 = {
 };
 const home$4 = {
   greeting: "안녕하세요, 저는",
-  role: "ReactJS 인턴",
+  role: "VueJS 인턴",
   objective: "목표",
   shortTermTitle: "단기 목표",
   longTermTitle: "장기 목표",
@@ -1687,7 +1687,7 @@ const home$4 = {
 };
 const about$4 = {
   title: "소개",
-  content: "저는 프로그래밍, 특히 ReactJS와 같은 현대적인 프레임워크를 사용한 웹 개발에 대한 강한 열정을 가진 정보기술 전공 마지막 학년 학생입니다. CY 베트남 소프트웨어 개발 회사에서 3개월 인턴십을 완료하였고, 그곳에서 ReactJS를 사용하여 웹 애플리케이션을 개발하고 최적화하는 가치 있는 실무 경험을 쌓았습니다. 또한 Nacencom 기술 주식회사에서 인턴십을 하였고, 이를 통해 IT 분야에서 실용적인 기술과 경험을 더욱 향상시켰습니다. 전문적인 작업 환경에서 지식을 적용하고 프로그래밍 기술을 계속 다듬고 싶습니다.",
+  content: "저는 프로그래밍, 특히 VueJS와 같은 현대적인 프레임워크를 사용한 웹 개발에 대한 강한 열정을 가진 정보기술 전공 마지막 학년 학생입니다. CY 베트남 소프트웨어 개발 회사에서 3개월 인턴십을 완료하였고, 그곳에서 VueJS를 사용하여 웹 애플리케이션을 개발하고 최적화하는 가치 있는 실무 경험을 쌓았습니다. 또한 Nacencom 기술 주식회사에서 인턴십을 하였고, 이를 통해 IT 분야에서 실용적인 기술과 경험을 더욱 향상시켰습니다. 전문적인 작업 환경에서 지식을 적용하고 프로그래밍 기술을 계속 다듬고 싶습니다.",
   description: "저는 혁신적인 솔루션을 만드는 데 열정을 가진 헌신적인 웹 개발자입니다. 저는 도전적인 프로젝트에서 일하고 새로운 기술을 지속적으로 배우는 것을 즐깁니다.",
   personalInfo: "개인 정보",
   name: "이름",
@@ -1878,7 +1878,7 @@ const nav$3 = {
 };
 const home$3 = {
   greeting: "Xin chào, tôi là",
-  role: "Thực tập sinh ReactJS",
+  role: "Thực tập sinh VueJS",
   objective: "Mục tiêu",
   shortTermTitle: "Mục tiêu ngắn hạn",
   longTermTitle: "Mục tiêu dài hạn",
@@ -1892,7 +1892,7 @@ const home$3 = {
 };
 const about$3 = {
   title: "Về Tôi",
-  content: "Tôi là sinh viên năm cuối ngành Công nghệ Thông tin với niềm đam mê mạnh mẽ về lập trình, đặc biệt là phát triển web sử dụng các framework hiện đại như ReactJS. Tôi đã hoàn thành khóa thực tập 3 tháng tại Công ty TNHH Phát triển Phần mềm CY Việt Nam, nơi tôi đã có được kinh nghiệm thực tế quý báu trong việc phát triển và tối ưu hóa các ứng dụng web sử dụng ReactJS. Ngoài ra, tôi còn thực tập tại Công ty Cổ phần Công nghệ Nacencom, giúp nâng cao kỹ năng thực tế và kinh nghiệm trong lĩnh vực CNTT. Tôi mong muốn áp dụng kiến thức của mình và tiếp tục trau dồi kỹ năng lập trình trong môi trường làm việc chuyên nghiệp.",
+  content: "Tôi là sinh viên năm cuối ngành Công nghệ Thông tin với niềm đam mê mạnh mẽ về lập trình, đặc biệt là phát triển web sử dụng các framework hiện đại như VueJS. Tôi đã hoàn thành khóa thực tập 3 tháng tại Công ty TNHH Phát triển Phần mềm CY Việt Nam, nơi tôi đã có được kinh nghiệm thực tế quý báu trong việc phát triển và tối ưu hóa các ứng dụng web sử dụng VueJS. Ngoài ra, tôi còn thực tập tại Công ty Cổ phần Công nghệ Nacencom, giúp nâng cao kỹ năng thực tế và kinh nghiệm trong lĩnh vực CNTT. Tôi mong muốn áp dụng kiến thức của mình và tiếp tục trau dồi kỹ năng lập trình trong môi trường làm việc chuyên nghiệp.",
   description: "Tôi là một nhà phát triển web tận tâm với niềm đam mê tạo ra các giải pháp sáng tạo. Tôi thích làm việc trên các dự án thách thức và liên tục học hỏi các công nghệ mới.",
   personalInfo: "Thông Tin Cá Nhân",
   name: "Tên",
@@ -2083,7 +2083,7 @@ const nav$2 = {
 };
 const home$2 = {
   greeting: "你好，我是",
-  role: "ReactJS 实习生",
+  role: "VueJS 实习生",
   objective: "目标",
   shortTermTitle: "短期目标",
   longTermTitle: "长期目标",
@@ -2096,7 +2096,7 @@ const home$2 = {
 };
 const about$2 = {
   title: "关于我",
-  content: "我是一名信息技术专业的应届毕业生，对编程充满热情，特别是使用ReactJS等现代框架进行网络开发。我在CY越南软件开发有限公司完成了为期3个月的实习，在那里我获得了实用的经验，使用ReactJS开发和优化网络应用程序。此外，我还在Nacencom科技股份公司实习，这进一步提高了我在IT领域的实用技能和经验。我渴望在专业的工作环境中应用我的知识并继续提升我的编程技能。",
+  content: "我是一名信息技术专业的应届毕业生，对编程充满热情，特别是使用VueJS等现代框架进行网络开发。我在CY越南软件开发有限公司完成了为期3个月的实习，在那里我获得了实用的经验，使用VueJS开发和优化网络应用程序。此外，我还在Nacencom科技股份公司实习，这进一步提高了我在IT领域的实用技能和经验。我渴望在专业的工作环境中应用我的知识并继续提升我的编程技能。",
   description: "我是一名专注的网页开发者，热衷于创造创新解决方案。我喜欢从事具有挑战性的项目，并不断学习新技术。",
   personalInfo: "个人信息",
   name: "姓名",
@@ -2287,7 +2287,7 @@ const nav$1 = {
 };
 const home$1 = {
   greeting: "Hola, soy",
-  role: "Practicante ReactJS",
+  role: "Practicante VueJS",
   objective: "Objetivo",
   shortTermTitle: "Meta a Corto Plazo",
   longTermTitle: "Meta a Largo Plazo",
@@ -2299,7 +2299,7 @@ const home$1 = {
 };
 const about$1 = {
   title: "Acerca de Mí",
-  content: "Soy un estudiante de último año de Tecnología de la Información con una fuerte pasión por la programación, particularmente en el desarrollo web usando frameworks modernos como ReactJS. Completé una pasantía de 3 meses en CY Vietnam Software Development Co., Ltd., donde adquirí valiosa experiencia práctica en el desarrollo y optimización de aplicaciones web usando ReactJS. Además, hice una pasantía en Nacencom Technology Joint Stock Company, lo que mejoró aún más mis habilidades prácticas y experiencia en el campo de TI. Estoy ansioso por aplicar mis conocimientos y continuar perfeccionando mis habilidades de programación en un entorno de trabajo profesional.",
+  content: "Soy un estudiante de último año de Tecnología de la Información con una fuerte pasión por la programación, particularmente en el desarrollo web utilizando frameworks modernos como VueJS. Completé una pasantía de 3 meses en CY Vietnam Software Development Co., Ltd., donde adquirí valiosa experiencia práctica en el desarrollo y optimización de aplicaciones web utilizando VueJS. Además, hice una pasantía en Nacencom Technology Joint Stock Company, lo que mejoró aún más mis habilidades prácticas y experiencia en el campo de TI. Estoy ansioso por aplicar mis conocimientos y continuar perfeccionando mis habilidades de programación en un entorno de trabajo profesional.",
   description: "Soy un desarrollador web dedicado con pasión por crear soluciones innovadoras. Disfruto trabajando en proyectos desafiantes y aprendiendo continuamente nuevas tecnologías.",
   personalInfo: "Información Personal",
   name: "Nombre",
@@ -2489,7 +2489,7 @@ const nav = {
 };
 const home = {
   greeting: "Bonjour, je suis",
-  role: "Stagiaire ReactJS",
+  role: "Stagiaire VueJS",
   objective: "Objectif",
   shortTermTitle: "Objectif à court terme",
   longTermTitle: "Objectif à long terme",
@@ -2500,10 +2500,10 @@ const home = {
   avatar: "TVM"
 };
 const about = {
-  title: "À propos de moi",
-  content: "Je suis un étudiant en dernière année en Technologies de l'Information avec une passion forte pour la programmation, particulièrement dans le développement web utilisant des frameworks modernes comme ReactJS. J'ai effectué un stage de 3 mois chez CY Vietnam Software Development Co., Ltd., où j'ai acquis une expérience pratique précieuse dans le développement et l'optimisation d'applications web utilisant ReactJS. De plus, j'ai fait un stage chez Nacencom Technology Joint Stock Company, ce qui a encore amélioré mes compétences pratiques et mon expérience dans le domaine informatique. Je suis désireux d'appliquer mes connaissances et de continuer à perfectionner mes compétences de programmation dans un environnement de travail professionnel.",
-  description: "Je suis un développeur web dévoué avec une passion pour créer des solutions innovantes. J'aime travailler sur des projets stimulants et apprendre continuellement de nouvelles technologies.",
-  personalInfo: "Informations personnelles",
+  title: "À Propos de Moi",
+  content: "Je suis un étudiant en dernière année d'Informatique avec une forte passion pour la programmation, particulièrement dans le développement web utilisant des frameworks modernes comme VueJS. J'ai effectué un stage de 3 mois chez CY Vietnam Software Development Co., Ltd., où j'ai acquis une précieuse expérience pratique dans le développement et l'optimisation d'applications web utilisant VueJS. De plus, j'ai effectué un stage chez Nacencom Technology Joint Stock Company, ce qui a encore amélioré mes compétences pratiques et mon expérience dans le domaine de l'informatique. Je suis impatient d'appliquer mes connaissances et de continuer à perfectionner mes compétences en programmation dans un environnement de travail professionnel.",
+  description: "Je suis un développeur web dévoué avec une passion pour la création de solutions innovantes. J'aime travailler sur des projets stimulants et apprendre continuellement de nouvelles technologies.",
+  personalInfo: "Informations Personnelles",
   name: "Nom",
   age: "Âge",
   email: "Email",
