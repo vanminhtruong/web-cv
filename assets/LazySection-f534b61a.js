@@ -1,5 +1,5 @@
 import { A as ref, C as onMounted, Q as onBeforeUnmount, o as openBlock, c as createElementBlock, k as renderSlot, a as normalizeClass, u as unref } from "./vendor-adf92722.js";
-import { _ as _export_sfc } from "./index-0eda4b7e.js";
+import { _ as _export_sfc } from "./index-b2bf28ff.js";
 function useLazySection(props) {
   const lazySection = ref(null);
   const isVisible = ref(false);

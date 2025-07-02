@@ -1429,22 +1429,22 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: () => __vitePreload(() => import("./HomeView-acc7e16f.js"), true ? ["assets/HomeView-acc7e16f.js","assets/vendor-adf92722.js","assets/useContactInfo-70322d11.js","assets/LazySection-cf8ad774.js","assets/LazySection-7a201195.css","assets/vendor-toast-e005dfbd.js","assets/vendor-toast-53142c17.css","assets/HomeView-13ed7c24.css"] : void 0)
+      component: () => __vitePreload(() => import("./HomeView-c95b4c65.js"), true ? ["assets/HomeView-c95b4c65.js","assets/vendor-adf92722.js","assets/useContactInfo-70322d11.js","assets/LazySection-f534b61a.js","assets/LazySection-7a201195.css","assets/vendor-toast-e005dfbd.js","assets/vendor-toast-53142c17.css","assets/HomeView-13ed7c24.css"] : void 0)
     },
     {
       path: "/skills",
       name: "skills",
-      component: () => __vitePreload(() => import("./SkillsView-7b888826.js"), true ? ["assets/SkillsView-7b888826.js","assets/vendor-adf92722.js","assets/LazySection-cf8ad774.js","assets/LazySection-7a201195.css","assets/vendor-toast-e005dfbd.js","assets/vendor-toast-53142c17.css"] : void 0)
+      component: () => __vitePreload(() => import("./SkillsView-5dd94f4c.js"), true ? ["assets/SkillsView-5dd94f4c.js","assets/vendor-adf92722.js","assets/LazySection-f534b61a.js","assets/LazySection-7a201195.css","assets/vendor-toast-e005dfbd.js","assets/vendor-toast-53142c17.css"] : void 0)
     },
     {
       path: "/experience",
       name: "experience",
-      component: () => __vitePreload(() => import("./ExperienceView-f25abea3.js"), true ? ["assets/ExperienceView-f25abea3.js","assets/vendor-adf92722.js","assets/LazySection-cf8ad774.js","assets/LazySection-7a201195.css","assets/vendor-toast-e005dfbd.js","assets/vendor-toast-53142c17.css"] : void 0)
+      component: () => __vitePreload(() => import("./ExperienceView-115ea29e.js"), true ? ["assets/ExperienceView-115ea29e.js","assets/vendor-adf92722.js","assets/LazySection-f534b61a.js","assets/LazySection-7a201195.css","assets/vendor-toast-e005dfbd.js","assets/vendor-toast-53142c17.css"] : void 0)
     },
     {
       path: "/contact",
       name: "contact",
-      component: () => __vitePreload(() => import("./ContactView-8f445884.js"), true ? ["assets/ContactView-8f445884.js","assets/vendor-adf92722.js","assets/useContactInfo-70322d11.js","assets/vendor-toast-e005dfbd.js","assets/vendor-toast-53142c17.css","assets/LazySection-cf8ad774.js","assets/LazySection-7a201195.css","assets/ContactView-b665dc97.css"] : void 0)
+      component: () => __vitePreload(() => import("./ContactView-d00c715c.js"), true ? ["assets/ContactView-d00c715c.js","assets/vendor-adf92722.js","assets/useContactInfo-70322d11.js","assets/vendor-toast-e005dfbd.js","assets/vendor-toast-53142c17.css","assets/LazySection-f534b61a.js","assets/LazySection-7a201195.css","assets/ContactView-6d39d7f0.css"] : void 0)
     }
   ]
 });
