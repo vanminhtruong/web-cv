@@ -72,13 +72,10 @@ const { contactItems, getPdfPath } = useContactInfo()
         </div>
       </div>
 
-      <!-- Divider -->
       <div class="border-t border-gray-200 dark:border-gray-700 my-4"></div>
 
-      <!-- Links Section -->
       <h4 class="text-lg font-medium text-gray-900 dark:text-white mb-4">{{ t('nav.links') }}</h4>
       
-      <!-- GitHub Project -->
       <a href="https://github.com/vanminhtruong/Team03-cy.git" target="_blank" rel="noopener noreferrer" class="flex items-center mb-3 group">
         <div class="h-10 w-10 rounded-full flex items-center justify-center mr-3" :style="{ 'background-color': colorStore.currentColor.primary }">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="currentColor">
