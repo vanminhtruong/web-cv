@@ -1429,22 +1429,22 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: () => __vitePreload(() => import("./HomeView-793bebd0.js"), true ? ["assets/HomeView-793bebd0.js","assets/vendor-adf92722.js","assets/LazySection-865beede.js","assets/LazySection-7a201195.css","assets/vendor-toast-e005dfbd.js","assets/vendor-toast-53142c17.css","assets/HomeView-13ed7c24.css"] : void 0)
+      component: () => __vitePreload(() => import("./HomeView-f3f5798d.js"), true ? ["assets/HomeView-f3f5798d.js","assets/vendor-adf92722.js","assets/useContactInfo-70322d11.js","assets/LazySection-80701274.js","assets/LazySection-7a201195.css","assets/vendor-toast-e005dfbd.js","assets/vendor-toast-53142c17.css","assets/HomeView-13ed7c24.css"] : void 0)
     },
     {
       path: "/skills",
       name: "skills",
-      component: () => __vitePreload(() => import("./SkillsView-6b9eb996.js"), true ? ["assets/SkillsView-6b9eb996.js","assets/vendor-adf92722.js","assets/LazySection-865beede.js","assets/LazySection-7a201195.css","assets/vendor-toast-e005dfbd.js","assets/vendor-toast-53142c17.css"] : void 0)
+      component: () => __vitePreload(() => import("./SkillsView-9011da5c.js"), true ? ["assets/SkillsView-9011da5c.js","assets/vendor-adf92722.js","assets/LazySection-80701274.js","assets/LazySection-7a201195.css","assets/vendor-toast-e005dfbd.js","assets/vendor-toast-53142c17.css"] : void 0)
     },
     {
       path: "/experience",
       name: "experience",
-      component: () => __vitePreload(() => import("./ExperienceView-e514e7b9.js"), true ? ["assets/ExperienceView-e514e7b9.js","assets/vendor-adf92722.js","assets/LazySection-865beede.js","assets/LazySection-7a201195.css","assets/vendor-toast-e005dfbd.js","assets/vendor-toast-53142c17.css"] : void 0)
+      component: () => __vitePreload(() => import("./ExperienceView-0431afb3.js"), true ? ["assets/ExperienceView-0431afb3.js","assets/vendor-adf92722.js","assets/LazySection-80701274.js","assets/LazySection-7a201195.css","assets/vendor-toast-e005dfbd.js","assets/vendor-toast-53142c17.css"] : void 0)
     },
     {
       path: "/contact",
       name: "contact",
-      component: () => __vitePreload(() => import("./ContactView-fad7a255.js"), true ? ["assets/ContactView-fad7a255.js","assets/vendor-adf92722.js","assets/vendor-toast-e005dfbd.js","assets/vendor-toast-53142c17.css","assets/LazySection-865beede.js","assets/LazySection-7a201195.css"] : void 0)
+      component: () => __vitePreload(() => import("./ContactView-756ca09a.js"), true ? ["assets/ContactView-756ca09a.js","assets/vendor-adf92722.js","assets/useContactInfo-70322d11.js","assets/vendor-toast-e005dfbd.js","assets/vendor-toast-53142c17.css","assets/LazySection-80701274.js","assets/LazySection-7a201195.css","assets/ContactView-b665dc97.css"] : void 0)
     }
   ]
 });
