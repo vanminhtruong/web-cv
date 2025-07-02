@@ -20,7 +20,7 @@
   },
   "home": {
     "greeting": "Bonjour, je suis",
-    "role": "Stagiaire ReactJS",
+    "role": "Stagiaire VueJS",
     "objective": "Objectif",
     "shortTermTitle": "Objectif à court terme",
     "longTermTitle": "Objectif à long terme",
@@ -31,10 +31,10 @@
     "avatar": "TVM"
   },
   "about": {
-    "title": "À propos de moi",
-    "content": "Je suis un étudiant en dernière année en Technologies de l'Information avec une passion forte pour la programmation, particulièrement dans le développement web utilisant des frameworks modernes comme ReactJS. J'ai effectué un stage de 3 mois chez CY Vietnam Software Development Co., Ltd., où j'ai acquis une expérience pratique précieuse dans le développement et l'optimisation d'applications web utilisant ReactJS. De plus, j'ai fait un stage chez Nacencom Technology Joint Stock Company, ce qui a encore amélioré mes compétences pratiques et mon expérience dans le domaine informatique. Je suis désireux d'appliquer mes connaissances et de continuer à perfectionner mes compétences de programmation dans un environnement de travail professionnel.",
-    "description": "Je suis un développeur web dévoué avec une passion pour créer des solutions innovantes. J'aime travailler sur des projets stimulants et apprendre continuellement de nouvelles technologies.",
-    "personalInfo": "Informations personnelles",
+    "title": "À Propos de Moi",
+    "content": "Je suis un étudiant en dernière année d'Informatique avec une forte passion pour la programmation, particulièrement dans le développement web utilisant des frameworks modernes comme VueJS. J'ai effectué un stage de 3 mois chez CY Vietnam Software Development Co., Ltd., où j'ai acquis une précieuse expérience pratique dans le développement et l'optimisation d'applications web utilisant VueJS. De plus, j'ai effectué un stage chez Nacencom Technology Joint Stock Company, ce qui a encore amélioré mes compétences pratiques et mon expérience dans le domaine de l'informatique. Je suis impatient d'appliquer mes connaissances et de continuer à perfectionner mes compétences en programmation dans un environnement de travail professionnel.",
+    "description": "Je suis un développeur web dévoué avec une passion pour la création de solutions innovantes. J'aime travailler sur des projets stimulants et apprendre continuellement de nouvelles technologies.",
+    "personalInfo": "Informations Personnelles",
     "name": "Nom",
     "age": "Âge",
     "email": "Email",

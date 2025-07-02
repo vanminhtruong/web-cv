@@ -20,7 +20,7 @@
   },
   "home": {
     "greeting": "Xin chào, tôi là",
-    "role": "Thực tập sinh ReactJS",
+    "role": "Thực tập sinh VueJS",
     "objective": "Mục tiêu",
     "shortTermTitle": "Mục tiêu ngắn hạn",
     "longTermTitle": "Mục tiêu dài hạn",
@@ -34,7 +34,7 @@
   },
   "about": {
     "title": "Về Tôi",
-    "content": "Tôi là sinh viên năm cuối ngành Công nghệ Thông tin với niềm đam mê mạnh mẽ về lập trình, đặc biệt là phát triển web sử dụng các framework hiện đại như ReactJS. Tôi đã hoàn thành khóa thực tập 3 tháng tại Công ty TNHH Phát triển Phần mềm CY Việt Nam, nơi tôi đã có được kinh nghiệm thực tế quý báu trong việc phát triển và tối ưu hóa các ứng dụng web sử dụng ReactJS. Ngoài ra, tôi còn thực tập tại Công ty Cổ phần Công nghệ Nacencom, giúp nâng cao kỹ năng thực tế và kinh nghiệm trong lĩnh vực CNTT. Tôi mong muốn áp dụng kiến thức của mình và tiếp tục trau dồi kỹ năng lập trình trong môi trường làm việc chuyên nghiệp.",
+    "content": "Tôi là sinh viên năm cuối ngành Công nghệ Thông tin với niềm đam mê mạnh mẽ về lập trình, đặc biệt là phát triển web sử dụng các framework hiện đại như VueJS. Tôi đã hoàn thành khóa thực tập 3 tháng tại Công ty TNHH Phát triển Phần mềm CY Việt Nam, nơi tôi đã có được kinh nghiệm thực tế quý báu trong việc phát triển và tối ưu hóa các ứng dụng web sử dụng VueJS. Ngoài ra, tôi còn thực tập tại Công ty Cổ phần Công nghệ Nacencom, giúp nâng cao kỹ năng thực tế và kinh nghiệm trong lĩnh vực CNTT. Tôi mong muốn áp dụng kiến thức của mình và tiếp tục trau dồi kỹ năng lập trình trong môi trường làm việc chuyên nghiệp.",
     "description": "Tôi là một nhà phát triển web tận tâm với niềm đam mê tạo ra các giải pháp sáng tạo. Tôi thích làm việc trên các dự án thách thức và liên tục học hỏi các công nghệ mới.",
     "personalInfo": "Thông Tin Cá Nhân",
     "name": "Tên",

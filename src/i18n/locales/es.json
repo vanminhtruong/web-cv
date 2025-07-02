@@ -20,7 +20,7 @@
   },
   "home": {
     "greeting": "Hola, soy",
-    "role": "Practicante ReactJS",
+    "role": "Practicante VueJS",
     "objective": "Objetivo",
     "shortTermTitle": "Meta a Corto Plazo",
     "longTermTitle": "Meta a Largo Plazo",
@@ -32,7 +32,7 @@
   },
   "about": {
     "title": "Acerca de Mí",
-    "content": "Soy un estudiante de último año de Tecnología de la Información con una fuerte pasión por la programación, particularmente en el desarrollo web usando frameworks modernos como ReactJS. Completé una pasantía de 3 meses en CY Vietnam Software Development Co., Ltd., donde adquirí valiosa experiencia práctica en el desarrollo y optimización de aplicaciones web usando ReactJS. Además, hice una pasantía en Nacencom Technology Joint Stock Company, lo que mejoró aún más mis habilidades prácticas y experiencia en el campo de TI. Estoy ansioso por aplicar mis conocimientos y continuar perfeccionando mis habilidades de programación en un entorno de trabajo profesional.",
+    "content": "Soy un estudiante de último año de Tecnología de la Información con una fuerte pasión por la programación, particularmente en el desarrollo web utilizando frameworks modernos como VueJS. Completé una pasantía de 3 meses en CY Vietnam Software Development Co., Ltd., donde adquirí valiosa experiencia práctica en el desarrollo y optimización de aplicaciones web utilizando VueJS. Además, hice una pasantía en Nacencom Technology Joint Stock Company, lo que mejoró aún más mis habilidades prácticas y experiencia en el campo de TI. Estoy ansioso por aplicar mis conocimientos y continuar perfeccionando mis habilidades de programación en un entorno de trabajo profesional.",
     "description": "Soy un desarrollador web dedicado con pasión por crear soluciones innovadoras. Disfruto trabajando en proyectos desafiantes y aprendiendo continuamente nuevas tecnologías.",
     "personalInfo": "Información Personal",
     "name": "Nombre",

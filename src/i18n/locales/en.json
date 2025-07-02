@@ -20,7 +20,7 @@
   },
   "home": {
     "greeting": "Hello, I'm",
-    "role": "Intern ReactJS",
+    "role": "Intern VueJS",
     "objective": "Objective",
     "shortTermTitle": "Short-term Goal",
     "longTermTitle": "Long-term Goal",
@@ -33,7 +33,7 @@
   },
   "about": {
     "title": "About Me",
-    "content": "I am a final-year Information Technology student with a strong passion for programming, particularly in web development using modern frameworks like ReactJS. I completed a 3-month internship at CY Vietnam Software Development Co., Ltd., where I gained valuable hands-on experience in developing and optimizing web applications using ReactJS. Additionally, I interned at Nacencom Technology Joint Stock Company, which further enhanced my practical skills and experience in the IT field. I am eager to apply my knowledge and continue honing my programming skills in a professional working environment.",
+    "content": "I am a final-year Information Technology student with a strong passion for programming, particularly in web development using modern frameworks like VueJS. I completed a 3-month internship at CY Vietnam Software Development Co., Ltd., where I gained valuable hands-on experience in developing and optimizing web applications using VueJS. Additionally, I interned at Nacencom Technology Joint Stock Company, which further enhanced my practical skills and experience in the IT field. I am eager to apply my knowledge and continue honing my programming skills in a professional working environment.",
     "description": "I am a dedicated web developer with a passion for creating innovative solutions. I enjoy working on challenging projects and continuously learning new technologies.",
     "personalInfo": "Personal Information",
     "name": "Name",
